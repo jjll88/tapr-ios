@@ -200,6 +200,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "ByteFly Inc.";
 				TargetAttributes = {
+					07EB51C7194A0EAA0031150D = {
+						DevelopmentTeam = 2NJB457542;
+					};
 					07EB51E8194A0EAA0031150D = {
 						TestTargetID = 07EB51C7194A0EAA0031150D;
 					};
@@ -377,6 +380,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tapr/tapr-Prefix.pch";
 				INFOPLIST_FILE = "tapr/tapr-Info.plist";
@@ -390,6 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tapr/tapr-Prefix.pch";
 				INFOPLIST_FILE = "tapr/tapr-Info.plist";

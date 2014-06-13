@@ -11,6 +11,24 @@
 #endif
 
 #ifdef __OBJC__
+// built-in frameworks
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+    #import "SWRevealViewController.h"
+    #import "MBProgressHUD.h"
+
+// Base VCs
+    #import "TPBaseVC.h"
+
+// Managers
+    #import "TPThemeManager.h"
+    #import "TPDataManager.h"
+
+// Others
+    #import "Constants.h"
+    #import "Utils.h"
+
+
+
 #endif

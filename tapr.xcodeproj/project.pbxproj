@@ -7,6 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07046C99194AC7FD004A6D38 /* TPBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07046C98194AC7FD004A6D38 /* TPBaseVC.m */; };
+		07046C9C194AC89C004A6D38 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 07046C9B194AC89C004A6D38 /* MBProgressHUD.m */; };
+		07046CA0194ACA37004A6D38 /* TPThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07046C9F194ACA37004A6D38 /* TPThemeManager.m */; };
+		07046CA3194ACA52004A6D38 /* TPDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07046CA2194ACA52004A6D38 /* TPDataManager.m */; };
+		07046CA7194ACA7C004A6D38 /* UINavigationItem+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07046CA6194ACA7C004A6D38 /* UINavigationItem+Additions.m */; };
+		07046CB5194ACD7E004A6D38 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07046CAA194ACD7E004A6D38 /* Lato-Black.ttf */; };
+		07046CB6194ACD7E004A6D38 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07046CAB194ACD7E004A6D38 /* Lato-BlackItalic.ttf */; };
+		07046CB7194ACD7E004A6D38 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07046CAC194ACD7E004A6D38 /* Lato-Bold.ttf */; };
+		07046CB8194ACD7E004A6D38 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07046CAD194ACD7E004A6D38 /* Lato-BoldItalic.ttf */; };
+		07046CB9194ACD7E004A6D38 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07046CAE194ACD7E004A6D38 /* Lato-Hairline.ttf */; };
+		07046CBA194ACD7E004A6D38 /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07046CAF194ACD7E004A6D38 /* Lato-HairlineItalic.ttf */; };
+		07046CBB194ACD7E004A6D38 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07046CB0194ACD7E004A6D38 /* Lato-Italic.ttf */; };
+		07046CBC194ACD7E004A6D38 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07046CB1194ACD7E004A6D38 /* Lato-Light.ttf */; };
+		07046CBD194ACD7E004A6D38 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07046CB2194ACD7E004A6D38 /* Lato-LightItalic.ttf */; };
+		07046CBE194ACD7E004A6D38 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07046CB3194ACD7E004A6D38 /* Lato-Regular.ttf */; };
+		07046CBF194ACD7E004A6D38 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07046CB4194ACD7E004A6D38 /* OFL.txt */; };
+		07046CC1194ACD8B004A6D38 /* Strait-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07046CC0194ACD8B004A6D38 /* Strait-Regular.ttf */; };
+		07046CC4194AD0DE004A6D38 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07046CC3194AD0DE004A6D38 /* UIColor+Additions.m */; };
+		07046CC7194AD280004A6D38 /* TPLeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07046CC6194AD280004A6D38 /* TPLeftMenuVC.m */; };
+		07363A17194A138E00FFEF34 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07363A16194A138E00FFEF34 /* SWRevealViewController.m */; };
+		0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EB194AD7EB0011E1AC /* TPMenuCell.m */; };
+		0739D4F0194AD8930011E1AC /* TPProgressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EF194AD8930011E1AC /* TPProgressVC.m */; };
+		0739D4F4194AD96D0011E1AC /* TPMeasureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4F3194AD96D0011E1AC /* TPMeasureVC.m */; };
+		07A64177194AE58D00F75BBA /* TPTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A64176194AE58D00F75BBA /* TPTestVC.m */; };
+		07A6417A194B021000F75BBA /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A64179194B021000F75BBA /* UIImage+Additions.m */; };
 		07EB51CC194A0EAA0031150D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EB51CB194A0EAA0031150D /* Foundation.framework */; };
 		07EB51CE194A0EAA0031150D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EB51CD194A0EAA0031150D /* CoreGraphics.framework */; };
 		07EB51D0194A0EAA0031150D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EB51CF194A0EAA0031150D /* UIKit.framework */; };
@@ -14,7 +39,6 @@
 		07EB51D8194A0EAA0031150D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EB51D7194A0EAA0031150D /* main.m */; };
 		07EB51DC194A0EAA0031150D /* TPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EB51DB194A0EAA0031150D /* TPAppDelegate.m */; };
 		07EB51DF194A0EAA0031150D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EB51DD194A0EAA0031150D /* Main.storyboard */; };
-		07EB51E2194A0EAA0031150D /* TPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EB51E1194A0EAA0031150D /* TPViewController.m */; };
 		07EB51E4194A0EAA0031150D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07EB51E3194A0EAA0031150D /* Images.xcassets */; };
 		07EB51EB194A0EAA0031150D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EB51EA194A0EAA0031150D /* XCTest.framework */; };
 		07EB51EC194A0EAA0031150D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EB51CB194A0EAA0031150D /* Foundation.framework */; };
@@ -34,6 +58,46 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07046C97194AC7FD004A6D38 /* TPBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPBaseVC.h; sourceTree = "<group>"; };
+		07046C98194AC7FD004A6D38 /* TPBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPBaseVC.m; sourceTree = "<group>"; };
+		07046C9A194AC89C004A6D38 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		07046C9B194AC89C004A6D38 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		07046C9E194ACA37004A6D38 /* TPThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPThemeManager.h; sourceTree = "<group>"; };
+		07046C9F194ACA37004A6D38 /* TPThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPThemeManager.m; sourceTree = "<group>"; };
+		07046CA1194ACA52004A6D38 /* TPDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDataManager.h; sourceTree = "<group>"; };
+		07046CA2194ACA52004A6D38 /* TPDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDataManager.m; sourceTree = "<group>"; };
+		07046CA5194ACA7C004A6D38 /* UINavigationItem+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+Additions.h"; sourceTree = "<group>"; };
+		07046CA6194ACA7C004A6D38 /* UINavigationItem+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+Additions.m"; sourceTree = "<group>"; };
+		07046CA8194ACA9D004A6D38 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		07046CAA194ACD7E004A6D38 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		07046CAB194ACD7E004A6D38 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		07046CAC194ACD7E004A6D38 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		07046CAD194ACD7E004A6D38 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		07046CAE194ACD7E004A6D38 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
+		07046CAF194ACD7E004A6D38 /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
+		07046CB0194ACD7E004A6D38 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		07046CB1194ACD7E004A6D38 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		07046CB2194ACD7E004A6D38 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		07046CB3194ACD7E004A6D38 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		07046CB4194ACD7E004A6D38 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		07046CC0194ACD8B004A6D38 /* Strait-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Strait-Regular.ttf"; sourceTree = "<group>"; };
+		07046CC2194AD0DE004A6D38 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
+		07046CC3194AD0DE004A6D38 /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
+		07046CC5194AD280004A6D38 /* TPLeftMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLeftMenuVC.h; sourceTree = "<group>"; };
+		07046CC6194AD280004A6D38 /* TPLeftMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLeftMenuVC.m; sourceTree = "<group>"; };
+		07363A15194A138E00FFEF34 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		07363A16194A138E00FFEF34 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		07363A18194A140F00FFEF34 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		0739D4EA194AD7EB0011E1AC /* TPMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMenuCell.h; sourceTree = "<group>"; };
+		0739D4EB194AD7EB0011E1AC /* TPMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMenuCell.m; sourceTree = "<group>"; };
+		0739D4EE194AD8930011E1AC /* TPProgressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPProgressVC.h; sourceTree = "<group>"; };
+		0739D4EF194AD8930011E1AC /* TPProgressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPProgressVC.m; sourceTree = "<group>"; };
+		0739D4F2194AD96D0011E1AC /* TPMeasureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeasureVC.h; sourceTree = "<group>"; };
+		0739D4F3194AD96D0011E1AC /* TPMeasureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMeasureVC.m; sourceTree = "<group>"; };
+		07A64175194AE58D00F75BBA /* TPTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTestVC.h; sourceTree = "<group>"; };
+		07A64176194AE58D00F75BBA /* TPTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTestVC.m; sourceTree = "<group>"; };
+		07A64178194B021000F75BBA /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
+		07A64179194B021000F75BBA /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
 		07EB51C8194A0EAA0031150D /* tapr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tapr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07EB51CB194A0EAA0031150D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		07EB51CD194A0EAA0031150D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,8 +109,6 @@
 		07EB51DA194A0EAA0031150D /* TPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPAppDelegate.h; sourceTree = "<group>"; };
 		07EB51DB194A0EAA0031150D /* TPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPAppDelegate.m; sourceTree = "<group>"; };
 		07EB51DE194A0EAA0031150D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		07EB51E0194A0EAA0031150D /* TPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPViewController.h; sourceTree = "<group>"; };
-		07EB51E1194A0EAA0031150D /* TPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPViewController.m; sourceTree = "<group>"; };
 		07EB51E3194A0EAA0031150D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		07EB51E9194A0EAA0031150D /* taprTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = taprTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07EB51EA194A0EAA0031150D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -79,6 +141,142 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07046C96194AC7B8004A6D38 /* Left Menu */ = {
+			isa = PBXGroup;
+			children = (
+				07046CC5194AD280004A6D38 /* TPLeftMenuVC.h */,
+				07046CC6194AD280004A6D38 /* TPLeftMenuVC.m */,
+			);
+			name = "Left Menu";
+			sourceTree = "<group>";
+		};
+		07046C9D194AC8A1004A6D38 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				07046C9A194AC89C004A6D38 /* MBProgressHUD.h */,
+				07046C9B194AC89C004A6D38 /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		07046CA4194ACA72004A6D38 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				07A64178194B021000F75BBA /* UIImage+Additions.h */,
+				07A64179194B021000F75BBA /* UIImage+Additions.m */,
+				07046CA5194ACA7C004A6D38 /* UINavigationItem+Additions.h */,
+				07046CA6194ACA7C004A6D38 /* UINavigationItem+Additions.m */,
+				07046CC2194AD0DE004A6D38 /* UIColor+Additions.h */,
+				07046CC3194AD0DE004A6D38 /* UIColor+Additions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		07046CA9194ACD7E004A6D38 /* Lato */ = {
+			isa = PBXGroup;
+			children = (
+				07046CAA194ACD7E004A6D38 /* Lato-Black.ttf */,
+				07046CAB194ACD7E004A6D38 /* Lato-BlackItalic.ttf */,
+				07046CAC194ACD7E004A6D38 /* Lato-Bold.ttf */,
+				07046CAD194ACD7E004A6D38 /* Lato-BoldItalic.ttf */,
+				07046CAE194ACD7E004A6D38 /* Lato-Hairline.ttf */,
+				07046CAF194ACD7E004A6D38 /* Lato-HairlineItalic.ttf */,
+				07046CB0194ACD7E004A6D38 /* Lato-Italic.ttf */,
+				07046CB1194ACD7E004A6D38 /* Lato-Light.ttf */,
+				07046CB2194ACD7E004A6D38 /* Lato-LightItalic.ttf */,
+				07046CB3194ACD7E004A6D38 /* Lato-Regular.ttf */,
+				07046CB4194ACD7E004A6D38 /* OFL.txt */,
+			);
+			path = Lato;
+			sourceTree = "<group>";
+		};
+		07363A0D194A131300FFEF34 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		07363A0E194A131C00FFEF34 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				07046C9E194ACA37004A6D38 /* TPThemeManager.h */,
+				07046C9F194ACA37004A6D38 /* TPThemeManager.m */,
+				07046CA1194ACA52004A6D38 /* TPDataManager.h */,
+				07046CA2194ACA52004A6D38 /* TPDataManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		07363A0F194A132900FFEF34 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		07363A10194A132F00FFEF34 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				07046CA8194ACA9D004A6D38 /* Utils.h */,
+				07046CA4194ACA72004A6D38 /* Categories */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		07363A11194A134000FFEF34 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				07363A12194A134600FFEF34 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		07363A12194A134600FFEF34 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				07046CC0194ACD8B004A6D38 /* Strait-Regular.ttf */,
+				07046CA9194ACD7E004A6D38 /* Lato */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		07363A14194A138E00FFEF34 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				07363A15194A138E00FFEF34 /* SWRevealViewController.h */,
+				07363A16194A138E00FFEF34 /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		0739D4E9194AD7B30011E1AC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0739D4EA194AD7EB0011E1AC /* TPMenuCell.h */,
+				0739D4EB194AD7EB0011E1AC /* TPMenuCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0739D4ED194AD86C0011E1AC /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				0739D4EE194AD8930011E1AC /* TPProgressVC.h */,
+				0739D4EF194AD8930011E1AC /* TPProgressVC.m */,
+			);
+			name = Progress;
+			sourceTree = "<group>";
+		};
+		0739D4F1194AD9550011E1AC /* Measure */ = {
+			isa = PBXGroup;
+			children = (
+				0739D4F2194AD96D0011E1AC /* TPMeasureVC.h */,
+				0739D4F3194AD96D0011E1AC /* TPMeasureVC.m */,
+			);
+			name = Measure;
+			sourceTree = "<group>";
+		};
 		07EB51BF194A0EAA0031150D = {
 			isa = PBXGroup;
 			children = (
@@ -112,13 +310,20 @@
 		07EB51D1194A0EAA0031150D /* tapr */ = {
 			isa = PBXGroup;
 			children = (
+				07363A18194A140F00FFEF34 /* Constants.h */,
 				07EB51DA194A0EAA0031150D /* TPAppDelegate.h */,
 				07EB51DB194A0EAA0031150D /* TPAppDelegate.m */,
-				07EB51DD194A0EAA0031150D /* Main.storyboard */,
-				07EB51E0194A0EAA0031150D /* TPViewController.h */,
-				07EB51E1194A0EAA0031150D /* TPViewController.m */,
 				07EB51E3194A0EAA0031150D /* Images.xcassets */,
+				07EB51DD194A0EAA0031150D /* Main.storyboard */,
+				07363A0E194A131C00FFEF34 /* Managers */,
+				07363A0F194A132900FFEF34 /* Models */,
+				07363A0D194A131300FFEF34 /* Views */,
+				0739D4E9194AD7B30011E1AC /* Cells */,
+				07EB5200194A0F6E0031150D /* ViewControllers */,
+				07363A10194A132F00FFEF34 /* Utils */,
 				07EB51D2194A0EAA0031150D /* Supporting Files */,
+				07363A11194A134000FFEF34 /* Resources */,
+				07EB5201194A11FE0031150D /* ThirdParty Libraries */,
 			);
 			path = tapr;
 			sourceTree = "<group>";
@@ -150,6 +355,29 @@
 				07EB51F3194A0EAA0031150D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07EB5200194A0F6E0031150D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				07046C97194AC7FD004A6D38 /* TPBaseVC.h */,
+				07046C98194AC7FD004A6D38 /* TPBaseVC.m */,
+				07046C96194AC7B8004A6D38 /* Left Menu */,
+				0739D4ED194AD86C0011E1AC /* Progress */,
+				0739D4F1194AD9550011E1AC /* Measure */,
+				07A64175194AE58D00F75BBA /* TPTestVC.h */,
+				07A64176194AE58D00F75BBA /* TPTestVC.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		07EB5201194A11FE0031150D /* ThirdParty Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				07046C9D194AC8A1004A6D38 /* MBProgressHUD */,
+				07363A14194A138E00FFEF34 /* SWRevealViewController */,
+			);
+			path = "ThirdParty Libraries";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,8 +460,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07046CBF194ACD7E004A6D38 /* OFL.txt in Resources */,
+				07046CBB194ACD7E004A6D38 /* Lato-Italic.ttf in Resources */,
+				07046CB5194ACD7E004A6D38 /* Lato-Black.ttf in Resources */,
+				07046CB7194ACD7E004A6D38 /* Lato-Bold.ttf in Resources */,
+				07046CBC194ACD7E004A6D38 /* Lato-Light.ttf in Resources */,
 				07EB51E4194A0EAA0031150D /* Images.xcassets in Resources */,
+				07046CB6194ACD7E004A6D38 /* Lato-BlackItalic.ttf in Resources */,
 				07EB51D6194A0EAA0031150D /* InfoPlist.strings in Resources */,
+				07046CBD194ACD7E004A6D38 /* Lato-LightItalic.ttf in Resources */,
+				07046CC1194ACD8B004A6D38 /* Strait-Regular.ttf in Resources */,
+				07046CBA194ACD7E004A6D38 /* Lato-HairlineItalic.ttf in Resources */,
+				07046CB8194ACD7E004A6D38 /* Lato-BoldItalic.ttf in Resources */,
+				07046CBE194ACD7E004A6D38 /* Lato-Regular.ttf in Resources */,
+				07046CB9194ACD7E004A6D38 /* Lato-Hairline.ttf in Resources */,
 				07EB51DF194A0EAA0031150D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,9 +493,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07EB51E2194A0EAA0031150D /* TPViewController.m in Sources */,
+				0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */,
+				07046C9C194AC89C004A6D38 /* MBProgressHUD.m in Sources */,
 				07EB51DC194A0EAA0031150D /* TPAppDelegate.m in Sources */,
+				0739D4F0194AD8930011E1AC /* TPProgressVC.m in Sources */,
+				07046CA3194ACA52004A6D38 /* TPDataManager.m in Sources */,
+				0739D4F4194AD96D0011E1AC /* TPMeasureVC.m in Sources */,
+				07046CA0194ACA37004A6D38 /* TPThemeManager.m in Sources */,
+				07046CC4194AD0DE004A6D38 /* UIColor+Additions.m in Sources */,
 				07EB51D8194A0EAA0031150D /* main.m in Sources */,
+				07046CA7194ACA7C004A6D38 /* UINavigationItem+Additions.m in Sources */,
+				07A64177194AE58D00F75BBA /* TPTestVC.m in Sources */,
+				07046C99194AC7FD004A6D38 /* TPBaseVC.m in Sources */,
+				07363A17194A138E00FFEF34 /* SWRevealViewController.m in Sources */,
+				07A6417A194B021000F75BBA /* UIImage+Additions.m in Sources */,
+				07046CC7194AD280004A6D38 /* TPLeftMenuVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +714,7 @@
 				07EB51FC194A0EAA0031150D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07EB51FD194A0EAA0031150D /* Build configuration list for PBXNativeTarget "taprTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +723,7 @@
 				07EB51FF194A0EAA0031150D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -13,6 +13,7 @@
 #import "UINavigationItem+Additions.h"
 #import "UIColor+Additions.h"
 #import "UIImage+Additions.h"
+#import "UIButton+Additions.h"
 
 //Subclasses
 

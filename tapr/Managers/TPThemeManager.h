@@ -10,10 +10,16 @@
 
 typedef enum ThemeFontType : NSUInteger {
     ThemeFontType_NavBarTitle = 1,
+    ThemeFontType_Subheader,
     
     ThemeFontType_LeftMenuCell,
     ThemeFontType_RegularCell_Title,
-    ThemeFontType_RegularCell_Subtitle
+    ThemeFontType_RegularCell_TitleHiglighted,
+    ThemeFontType_RegularCell_Subtitle,
+    ThemeFontType_LightCell_Title,
+    
+    ThemeFontType_MeasureValue,
+    ThemeFontType_MeasureUnit
     
 } ThemeFontType;
 

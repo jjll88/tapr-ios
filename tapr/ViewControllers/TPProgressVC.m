@@ -7,12 +7,24 @@
 //
 
 #import "TPProgressVC.h"
+#import "TPMeasureCell.h"
+#import "TPSummaryVC.h"
 
-@interface TPProgressVC ()
+@interface TPProgressVC () <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+// Local variables
+@property (nonatomic, strong) NSArray *menuItemTitlesArr;
 
 @end
 
 @implementation TPProgressVC
+
+- (NSArray *) menuItemTitlesArr { // Order is important.
+    if (!_menuItemTitlesArr) _menuItemTitlesArr = [[TPDataManager sharedManager] dummyBodyPartCategories];
+    return _menuItemTitlesArr;
+}
 
 #pragma mark - init
 - (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -35,17 +47,65 @@
 #pragma mark - view events
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];
-    
+        
     [self setupUI];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - Set up UI
 - (void) setupUI {
     // Nav bar Title
     [self setupNavBarTitle:@"Progress"];
+    
+    // tableview
+    self.tableView.allowsSelection = YES;
+    self.tableView.allowsMultipleSelection = NO;
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+# pragma mark - TableView datasource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [self.menuItemTitlesArr count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // Custom Cell
+    static NSString *CellIdentifier = @"MeasureCell";
+    TPMeasureCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if(cell == nil) {
+        cell = [[TPMeasureCell alloc] init];
+    }
+    
+    // Configure the cell...
+    cell.titleLbl.text = self.menuItemTitlesArr[indexPath.row];
+    
+    return cell;
+}
+
+#pragma mark - TableView Delegates
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"segueSummaryVC" sender:indexPath];
+}
+
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(NSIndexPath *)sender {
+    if ([segue.identifier isEqualToString:@"segueSummaryVC"]) {
+        TPSummaryVC *summaryVC = segue.destinationViewController;
+        summaryVC.index = (int)sender.row;
+    }
 }
 
 #pragma mark - Others
@@ -53,16 +113,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

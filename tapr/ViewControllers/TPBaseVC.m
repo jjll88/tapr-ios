@@ -8,6 +8,7 @@
 
 #import "TPBaseVC.h"
 #import "TPMeasureVC.h"
+//#import "TPSummaryVC.h"
 
 @interface TPBaseVC ()
 
@@ -39,7 +40,7 @@
         [self setupMenuBarButton];
     }
     
-    if (self.shouldAddPlusBarBtn || self.shouldAddCloseBarBtn) {
+    if (self.shouldAddPlusBarBtn) {
         [self setupRightBarButton];
     }
     
@@ -60,8 +61,6 @@
                                                                      self.navigationController.navigationBar.bounds.size.width, lineThickness)];
     separatorLine.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightOrange];
     [self.navigationController.navigationBar addSubview:separatorLine];
-    
-    
 }
 
 #pragma mark - Set up UI
@@ -85,20 +84,7 @@
                                                                                        target:self action:@selector(plusBarButtonPressed)];
         self.navigationController.navigationBar.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_OrangeTintColor];
         [self.navigationItem addRightBarButtonItem:customBarItem];
-
-    } else if (self.shouldAddCloseBarBtn) {
-        UINavigationBar *navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 64)];
-        [navBar setTintColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_OrangeTintColor]];
-        [self.view addSubview:navBar];
-        customBarItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn-nav-X"]
-                                                                          style:UIBarButtonItemStyleBordered
-                                                                         target:self
-                                                                         action:@selector(closeBarButtonPressed)];
-        UINavigationItem *navItem = [[UINavigationItem alloc] initWithTitle:@""];
-        [navItem setRightBarButtonItem:customBarItem animated:YES];
-        [navBar setItems:[NSArray arrayWithObject:navItem] animated:YES];
     }
-    
 }
 
 - (void) setupNavBarTitle:(NSString *) navTitle {
@@ -128,10 +114,6 @@
 
 - (void) plusBarButtonPressed {
     [self performSegueWithIdentifier:@"segueMeasureVC" sender:nil];
-}
-
-- (void) closeBarButtonPressed {
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Gesture recognizer
@@ -231,13 +213,14 @@
                      otherButtonTitles:nil] show];
 }
 
-
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"segueMeasureVC"]) {
-        TPMeasureVC *measureVC = segue.destinationViewController;
-        measureVC.addMenuPanGesture = NO;
-        measureVC.addCloseBarBtn = YES;
+//        TPMeasureVC *measureVC = segue.destinationViewController;
+    } else if ([segue.identifier isEqualToString:@"segueMeasureVC"]) {
+//        TPSummaryVC *summaryVC = segue.destinationViewController;
+        
+        
     }
     
 

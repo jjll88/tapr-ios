@@ -30,8 +30,13 @@
 		0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EB194AD7EB0011E1AC /* TPMenuCell.m */; };
 		0739D4F0194AD8930011E1AC /* TPProgressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EF194AD8930011E1AC /* TPProgressVC.m */; };
 		0739D4F4194AD96D0011E1AC /* TPMeasureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4F3194AD96D0011E1AC /* TPMeasureVC.m */; };
+		076C9231194B2ACA00F3A2A9 /* TPSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C9230194B2ACA00F3A2A9 /* TPSummaryCell.m */; };
 		07A64177194AE58D00F75BBA /* TPTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A64176194AE58D00F75BBA /* TPTestVC.m */; };
 		07A6417A194B021000F75BBA /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A64179194B021000F75BBA /* UIImage+Additions.m */; };
+		07A6417D194B099800F75BBA /* TPMeasureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A6417C194B099800F75BBA /* TPMeasureCell.m */; };
+		07A64180194B1A8F00F75BBA /* TPSummaryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A6417F194B1A8F00F75BBA /* TPSummaryVC.m */; };
+		07DF0B25194B3C3100FE76FA /* TPLiveMeasureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DF0B24194B3C3100FE76FA /* TPLiveMeasureVC.m */; };
+		07DF0B28194B40F200FE76FA /* UIButton+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DF0B27194B40F200FE76FA /* UIButton+Additions.m */; };
 		07EB51CC194A0EAA0031150D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EB51CB194A0EAA0031150D /* Foundation.framework */; };
 		07EB51CE194A0EAA0031150D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EB51CD194A0EAA0031150D /* CoreGraphics.framework */; };
 		07EB51D0194A0EAA0031150D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EB51CF194A0EAA0031150D /* UIKit.framework */; };
@@ -94,10 +99,20 @@
 		0739D4EF194AD8930011E1AC /* TPProgressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPProgressVC.m; sourceTree = "<group>"; };
 		0739D4F2194AD96D0011E1AC /* TPMeasureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeasureVC.h; sourceTree = "<group>"; };
 		0739D4F3194AD96D0011E1AC /* TPMeasureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMeasureVC.m; sourceTree = "<group>"; };
+		076C922F194B2ACA00F3A2A9 /* TPSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSummaryCell.h; sourceTree = "<group>"; };
+		076C9230194B2ACA00F3A2A9 /* TPSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSummaryCell.m; sourceTree = "<group>"; };
 		07A64175194AE58D00F75BBA /* TPTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTestVC.h; sourceTree = "<group>"; };
 		07A64176194AE58D00F75BBA /* TPTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTestVC.m; sourceTree = "<group>"; };
 		07A64178194B021000F75BBA /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
 		07A64179194B021000F75BBA /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
+		07A6417B194B099800F75BBA /* TPMeasureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeasureCell.h; sourceTree = "<group>"; };
+		07A6417C194B099800F75BBA /* TPMeasureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMeasureCell.m; sourceTree = "<group>"; };
+		07A6417E194B1A8F00F75BBA /* TPSummaryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSummaryVC.h; sourceTree = "<group>"; };
+		07A6417F194B1A8F00F75BBA /* TPSummaryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSummaryVC.m; sourceTree = "<group>"; };
+		07DF0B23194B3C3100FE76FA /* TPLiveMeasureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLiveMeasureVC.h; sourceTree = "<group>"; };
+		07DF0B24194B3C3100FE76FA /* TPLiveMeasureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLiveMeasureVC.m; sourceTree = "<group>"; };
+		07DF0B26194B40F200FE76FA /* UIButton+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Additions.h"; sourceTree = "<group>"; };
+		07DF0B27194B40F200FE76FA /* UIButton+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Additions.m"; sourceTree = "<group>"; };
 		07EB51C8194A0EAA0031150D /* tapr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tapr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07EB51CB194A0EAA0031150D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		07EB51CD194A0EAA0031150D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -162,6 +177,8 @@
 		07046CA4194ACA72004A6D38 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				07DF0B26194B40F200FE76FA /* UIButton+Additions.h */,
+				07DF0B27194B40F200FE76FA /* UIButton+Additions.m */,
 				07A64178194B021000F75BBA /* UIImage+Additions.h */,
 				07A64179194B021000F75BBA /* UIImage+Additions.m */,
 				07046CA5194ACA7C004A6D38 /* UINavigationItem+Additions.h */,
@@ -255,6 +272,10 @@
 			children = (
 				0739D4EA194AD7EB0011E1AC /* TPMenuCell.h */,
 				0739D4EB194AD7EB0011E1AC /* TPMenuCell.m */,
+				07A6417B194B099800F75BBA /* TPMeasureCell.h */,
+				07A6417C194B099800F75BBA /* TPMeasureCell.m */,
+				076C922F194B2ACA00F3A2A9 /* TPSummaryCell.h */,
+				076C9230194B2ACA00F3A2A9 /* TPSummaryCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -264,6 +285,8 @@
 			children = (
 				0739D4EE194AD8930011E1AC /* TPProgressVC.h */,
 				0739D4EF194AD8930011E1AC /* TPProgressVC.m */,
+				07A6417E194B1A8F00F75BBA /* TPSummaryVC.h */,
+				07A6417F194B1A8F00F75BBA /* TPSummaryVC.m */,
 			);
 			name = Progress;
 			sourceTree = "<group>";
@@ -273,6 +296,8 @@
 			children = (
 				0739D4F2194AD96D0011E1AC /* TPMeasureVC.h */,
 				0739D4F3194AD96D0011E1AC /* TPMeasureVC.m */,
+				07DF0B23194B3C3100FE76FA /* TPLiveMeasureVC.h */,
+				07DF0B24194B3C3100FE76FA /* TPLiveMeasureVC.m */,
 			);
 			name = Measure;
 			sourceTree = "<group>";
@@ -493,11 +518,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07A6417D194B099800F75BBA /* TPMeasureCell.m in Sources */,
 				0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */,
 				07046C9C194AC89C004A6D38 /* MBProgressHUD.m in Sources */,
+				07DF0B25194B3C3100FE76FA /* TPLiveMeasureVC.m in Sources */,
 				07EB51DC194A0EAA0031150D /* TPAppDelegate.m in Sources */,
 				0739D4F0194AD8930011E1AC /* TPProgressVC.m in Sources */,
 				07046CA3194ACA52004A6D38 /* TPDataManager.m in Sources */,
+				07DF0B28194B40F200FE76FA /* UIButton+Additions.m in Sources */,
 				0739D4F4194AD96D0011E1AC /* TPMeasureVC.m in Sources */,
 				07046CA0194ACA37004A6D38 /* TPThemeManager.m in Sources */,
 				07046CC4194AD0DE004A6D38 /* UIColor+Additions.m in Sources */,
@@ -508,6 +536,8 @@
 				07363A17194A138E00FFEF34 /* SWRevealViewController.m in Sources */,
 				07A6417A194B021000F75BBA /* UIImage+Additions.m in Sources */,
 				07046CC7194AD280004A6D38 /* TPLeftMenuVC.m in Sources */,
+				076C9231194B2ACA00F3A2A9 /* TPSummaryCell.m in Sources */,
+				07A64180194B1A8F00F75BBA /* TPSummaryVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

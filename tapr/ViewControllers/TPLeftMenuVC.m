@@ -22,7 +22,7 @@
 @implementation TPLeftMenuVC
 
 - (NSArray *) menuItemTitlesArr { // Order is important.
-    if (!_menuItemTitlesArr) _menuItemTitlesArr = @[@"profile",@"bluetooth",@"progress",@"about",@"settings",@"log out"];
+    if (!_menuItemTitlesArr) _menuItemTitlesArr = @[@"Profile",@"Bluetooth",@"Progress",@"About",@"Settings",@"Log out"];
     return _menuItemTitlesArr;
 }
 
@@ -67,7 +67,6 @@
     self.tableView.allowsMultipleSelection = NO;
     self.tableView.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuBackground];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.tintColor = [UIColor redColor];
 }
 
 #pragma mark - Table view data source
@@ -88,7 +87,7 @@
         cell = [[TPMenuCell alloc] init];
     }
     // Configure the cell...
-    cell.titleLbl.text = [self.menuItemTitlesArr[indexPath.row] capitalizedString];
+    cell.titleLbl.text = self.menuItemTitlesArr[indexPath.row];
     
     if (indexPath.row == 0) {
         cell.tag = CellProfile;

@@ -14,5 +14,10 @@
 
 + (id)sharedManager;
 
+@property (nonatomic, strong) NSArray *dummyBodyPartCategories;
+@property (nonatomic, strong) NSArray *dummyBodyPartData;
+
+- (void) addMeasure:(NSDictionary *)dataInfo intoIndex: (int) categoryIndex;
+
 
 @end

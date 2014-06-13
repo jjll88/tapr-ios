@@ -37,7 +37,7 @@
             color = [UIColor colorWithRed:152/255.0 green:152/255.0 blue:152/255.0 alpha:1.0];
             break;
         case ThemeColorType_MenuHighLigthedCell:
-            color = [UIColor colorWithRed:219/255.0 green:82/255.0 blue:42/255.0 alpha:1.0];
+            color = [UIColor colorWithRed:222/255.0 green:82/255.0 blue:34/255.0 alpha:0.5];
             break;
         case ThemeColorType_MenuCellSeparator:
             color = [UIColor colorWithRed:129/255.0 green:129/255.0 blue:129/255.0 alpha:1.0];
@@ -67,7 +67,10 @@
     UIFont *font = nil;
     switch (type) {
         case ThemeFontType_NavBarTitle:
-            font = [UIFont fontWithName:@"Strait-Regular" size:21];
+            font = [UIFont fontWithName:@"Strait-Regular" size:24];
+            break;
+        case ThemeFontType_Subheader:
+            font = [UIFont fontWithName:@"Lato-Bold" size:18];
             break;
         case ThemeFontType_LeftMenuCell:
             font = [UIFont fontWithName:@"Lato-Bold" size:20];
@@ -75,8 +78,20 @@
         case ThemeFontType_RegularCell_Title:
             font = [UIFont fontWithName:@"Lato-Regular" size:18];
             break;
+        case ThemeFontType_RegularCell_TitleHiglighted:
+            font = [UIFont fontWithName:@"Lato-Bold" size:18];
+            break;
         case ThemeFontType_RegularCell_Subtitle:
-            font = [UIFont fontWithName:@"Lato-Regular" size:15];
+            font = [UIFont fontWithName:@"Lato-Bold" size:10];
+            break;
+        case ThemeFontType_LightCell_Title:
+            font = [UIFont fontWithName:@"Lato-Light" size:18];
+            break;
+        case ThemeFontType_MeasureValue:
+            font = [UIFont fontWithName:@"Lato-Bold" size:30];
+            break;
+        case ThemeFontType_MeasureUnit:
+            font = [UIFont fontWithName:@"Lato-Light" size:18];
             break;
         default:
             break;

@@ -667,6 +667,7 @@
 				GCC_PREFIX_HEADER = "tapr/tapr-Prefix.pch";
 				INFOPLIST_FILE = "tapr/tapr-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7197609E-6BF5-4A6B-80FE-9E6181707FA9";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -681,6 +682,7 @@
 				GCC_PREFIX_HEADER = "tapr/tapr-Prefix.pch";
 				INFOPLIST_FILE = "tapr/tapr-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7197609E-6BF5-4A6B-80FE-9E6181707FA9";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -9,21 +9,28 @@
 #import "TPLeftMenuVC.h"
 #import "TPMenuCell.h"
 
+#define initialSelectedRow 1
+
 @interface TPLeftMenuVC () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 // Local variables
 @property (nonatomic) int selectedRow;
-@property (nonatomic, strong) NSArray *menuItemTitlesArr;
+@property (nonatomic, strong) NSArray *menuItemArr;   //arr of dictionaries
 
 @end
 
 @implementation TPLeftMenuVC
 
-- (NSArray *) menuItemTitlesArr { // Order is important.
-    if (!_menuItemTitlesArr) _menuItemTitlesArr = @[@"Profile",@"Bluetooth",@"Progress",@"About",@"Settings",@"Log out"];
-    return _menuItemTitlesArr;
+- (NSArray *) menuItemArr { // Ordered elements of left menu
+    if (!_menuItemArr) _menuItemArr = @[@{@"title":@"Profile",@"index":@CellProfile},
+                                        @{@"title":@"Progress",@"index":@CellProgress},
+                                        @{@"title":@"Bluetooth",@"index":@CellBluetooth},
+                                        @{@"title":@"About",@"index":@CellAbout},
+                                        @{@"title":@"Settings",@"index":@CellSettings},
+                                        @{@"title":@"Log out",@"index":@CellLogOut}];
+    return _menuItemArr;
 }
 
 #pragma mark - init
@@ -40,7 +47,7 @@
 - (void) setup {
     // Initialization that can't wait until viewDidLoad
     
-    self.selectedRow = 2; // Initial value
+    self.selectedRow = initialSelectedRow; // Initial value
 }
 
 #pragma mark - view events
@@ -53,9 +60,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-//    [self.tableView reloadData];
-    
-    if ( self.selectedRow < [self.menuItemTitlesArr count]) {
+    if ( self.selectedRow < [self.menuItemArr count]) {
         [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:self.selectedRow inSection:0] animated:NO scrollPosition:UITableViewScrollPositionMiddle];
     }
 }
@@ -71,13 +76,11 @@
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-    return [self.menuItemTitlesArr count];
+    return [self.menuItemArr count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -87,21 +90,8 @@
         cell = [[TPMenuCell alloc] init];
     }
     // Configure the cell...
-    cell.titleLbl.text = self.menuItemTitlesArr[indexPath.row];
-    
-    if (indexPath.row == 0) {
-        cell.tag = CellProfile;
-    } else if (indexPath.row == 1) {
-        cell.tag = CellBluetooth;
-    } else if (indexPath.row == 2) {
-        cell.tag = CellProgress;
-    } else if (indexPath.row == 3) {
-        cell.tag = CellAbout;
-    } else if (indexPath.row == 4) {
-        cell.tag = CellSettings;
-    } else if (indexPath.row == 5) {
-        cell.tag = CellLogOut;
-    }
+    cell.titleLbl.text = [self.menuItemArr[indexPath.row] objectForKey:@"title"];
+    cell.tag = [[self.menuItemArr[indexPath.row] objectForKey:@"index"] integerValue];
     
     return cell;
 }
@@ -143,16 +133,15 @@
     // Set the title of navigation bar by using the menu items
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;
-    destViewController.title = [[self.menuItemTitlesArr objectAtIndex:indexPath.row] capitalizedString];
-    [(TPBaseVC *)destViewController setupNavBarTitle:[[self.menuItemTitlesArr objectAtIndex:indexPath.row] capitalizedString]];
+    [(TPBaseVC *)destViewController setupNavBarTitle:[self.menuItemArr[indexPath.row] objectForKey:@"title"]];
 
     
     // Set the photo if it navigates to the PhotoView
-    if ([segue.identifier isEqualToString:@"showPhoto"]) {
+//    if ([segue.identifier isEqualToString:@"showPhoto"]) {
 //        PhotoViewController *photoController = (PhotoViewController*)segue.destinationViewController;
 //        NSString *photoFilename = [NSString stringWithFormat:@"%@_photo.jpg", [menuItems objectAtIndex:indexPath.row]];
 //        photoController.photoFilename = photoFilename;
-    }
+//    }
     
     if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
         SWRevealViewControllerSegue *swSegue = (SWRevealViewControllerSegue*) segue;
@@ -163,9 +152,7 @@
             [navController setViewControllers: @[dvc] animated: NO ];
             [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
         };
-        
     }
-    
 }
 
 

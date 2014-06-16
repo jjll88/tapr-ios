@@ -31,6 +31,8 @@
 		0739D4F0194AD8930011E1AC /* TPProgressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EF194AD8930011E1AC /* TPProgressVC.m */; };
 		0739D4F4194AD96D0011E1AC /* TPMeasureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4F3194AD96D0011E1AC /* TPMeasureVC.m */; };
 		076C9231194B2ACA00F3A2A9 /* TPSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C9230194B2ACA00F3A2A9 /* TPSummaryCell.m */; };
+		078FFBBF194EC5C7008BFFF9 /* TPMeasureInputVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 078FFBBE194EC5C7008BFFF9 /* TPMeasureInputVC.m */; };
+		078FFBC2194EF3FD008BFFF9 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 078FFBC1194EF3FD008BFFF9 /* NSString+Additions.m */; };
 		07A64177194AE58D00F75BBA /* TPTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A64176194AE58D00F75BBA /* TPTestVC.m */; };
 		07A6417A194B021000F75BBA /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A64179194B021000F75BBA /* UIImage+Additions.m */; };
 		07A6417D194B099800F75BBA /* TPMeasureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A6417C194B099800F75BBA /* TPMeasureCell.m */; };
@@ -101,6 +103,10 @@
 		0739D4F3194AD96D0011E1AC /* TPMeasureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMeasureVC.m; sourceTree = "<group>"; };
 		076C922F194B2ACA00F3A2A9 /* TPSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSummaryCell.h; sourceTree = "<group>"; };
 		076C9230194B2ACA00F3A2A9 /* TPSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSummaryCell.m; sourceTree = "<group>"; };
+		078FFBBD194EC5C7008BFFF9 /* TPMeasureInputVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeasureInputVC.h; sourceTree = "<group>"; };
+		078FFBBE194EC5C7008BFFF9 /* TPMeasureInputVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMeasureInputVC.m; sourceTree = "<group>"; };
+		078FFBC0194EF3FD008BFFF9 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		078FFBC1194EF3FD008BFFF9 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		07A64175194AE58D00F75BBA /* TPTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTestVC.h; sourceTree = "<group>"; };
 		07A64176194AE58D00F75BBA /* TPTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTestVC.m; sourceTree = "<group>"; };
 		07A64178194B021000F75BBA /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
@@ -177,6 +183,8 @@
 		07046CA4194ACA72004A6D38 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				078FFBC0194EF3FD008BFFF9 /* NSString+Additions.h */,
+				078FFBC1194EF3FD008BFFF9 /* NSString+Additions.m */,
 				07DF0B26194B40F200FE76FA /* UIButton+Additions.h */,
 				07DF0B27194B40F200FE76FA /* UIButton+Additions.m */,
 				07A64178194B021000F75BBA /* UIImage+Additions.h */,
@@ -302,6 +310,17 @@
 			name = Measure;
 			sourceTree = "<group>";
 		};
+		078FFBBC194EC5A1008BFFF9 /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				07A64175194AE58D00F75BBA /* TPTestVC.h */,
+				07A64176194AE58D00F75BBA /* TPTestVC.m */,
+				078FFBBD194EC5C7008BFFF9 /* TPMeasureInputVC.h */,
+				078FFBBE194EC5C7008BFFF9 /* TPMeasureInputVC.m */,
+			);
+			name = Dev;
+			sourceTree = "<group>";
+		};
 		07EB51BF194A0EAA0031150D = {
 			isa = PBXGroup;
 			children = (
@@ -385,13 +404,12 @@
 		07EB5200194A0F6E0031150D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				078FFBBC194EC5A1008BFFF9 /* Dev */,
 				07046C97194AC7FD004A6D38 /* TPBaseVC.h */,
 				07046C98194AC7FD004A6D38 /* TPBaseVC.m */,
 				07046C96194AC7B8004A6D38 /* Left Menu */,
 				0739D4ED194AD86C0011E1AC /* Progress */,
 				0739D4F1194AD9550011E1AC /* Measure */,
-				07A64175194AE58D00F75BBA /* TPTestVC.h */,
-				07A64176194AE58D00F75BBA /* TPTestVC.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -519,7 +537,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				07A6417D194B099800F75BBA /* TPMeasureCell.m in Sources */,
+				078FFBBF194EC5C7008BFFF9 /* TPMeasureInputVC.m in Sources */,
 				0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */,
+				078FFBC2194EF3FD008BFFF9 /* NSString+Additions.m in Sources */,
 				07046C9C194AC89C004A6D38 /* MBProgressHUD.m in Sources */,
 				07DF0B25194B3C3100FE76FA /* TPLiveMeasureVC.m in Sources */,
 				07EB51DC194A0EAA0031150D /* TPAppDelegate.m in Sources */,

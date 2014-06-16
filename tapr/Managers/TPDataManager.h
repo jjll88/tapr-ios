@@ -17,7 +17,7 @@
 @property (nonatomic, strong) NSArray *dummyBodyPartCategories;
 @property (nonatomic, strong) NSArray *dummyBodyPartData;
 
-- (void) addMeasure:(NSDictionary *)dataInfo intoIndex: (int) categoryIndex;
-
+- (void) addMeasure:(NSDictionary *)dataInfo toCategory: (int) categoryIndex;
+- (void) removeMeasure:(NSDictionary *)dataInfo atIndex:(int) rowIndex ofCategory: (int) categoryIndex;
 
 @end

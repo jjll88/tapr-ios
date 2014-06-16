@@ -14,6 +14,7 @@
 #import "UIColor+Additions.h"
 #import "UIImage+Additions.h"
 #import "UIButton+Additions.h"
+#import "NSString+Additions.h"
 
 //Subclasses
 

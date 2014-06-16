@@ -23,7 +23,7 @@
 
 @implementation TPSummaryVC
 
-- (NSArray *)bodyPartData  {
+- (NSArray *)bodyPartData  {  // data model
     if  (!_bodyPartData) {
         if (self.index <= [[[TPDataManager sharedManager] dummyBodyPartData] count]) {
             _bodyPartData = [[TPDataManager sharedManager] dummyBodyPartData][self.index];
@@ -68,18 +68,23 @@
     } else {
         self.summaryTitleLbl.text = @"";
     }
+    
+    // Right button
+    if (self.shouldShowNewMeasure) {
+        UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                       target:self action:@selector(doneBarButtonPressed)];
+        self.navigationController.navigationBar.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_OrangeTintColor];
+        [self.navigationItem setRightBarButtonItem:customBarItem];
+    }
 }
 
 # pragma mark - TableView datasource
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return 4;
+    return [self.bodyPartData count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -98,7 +103,7 @@
     cell.titleLbl.text = [NSString stringWithFormat:@"%@ inch",[obj objectForKey:@"value"]];
     cell.dateLbl.text = [obj objectForKey:@"date"];
     
-    if (indexPath.row == 0 && self.shouldShowNewMeasure) {
+    if (indexPath.row == 0 && self.shouldShowNewMeasure) {  // Highlight new added measure
         self.showNewMeasure = NO;
         
         cell.titleLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_OrangeTintColor];
@@ -108,21 +113,40 @@
     return cell;
 }
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        // Update data model
+        [[TPDataManager sharedManager] removeMeasure:self.bodyPartData[indexPath.row] atIndex:(int)indexPath.row ofCategory:self.index];
+        // Force data model loading
+        _bodyPartData = nil; // [[TPDataManager sharedManager] dummyBodyPartData][self.index];
+        
+        // Update table view
+        [tableView beginUpdates];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView endUpdates];
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"Delete";
+}
+
 #pragma mark - Others
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) doneBarButtonPressed {
+    if ([self respondsToSelector:@selector(dismissViewControllerAnimated:completion:)]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
-*/
 
 @end

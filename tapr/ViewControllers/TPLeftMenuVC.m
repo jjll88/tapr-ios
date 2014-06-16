@@ -155,7 +155,6 @@
     }
 }
 
-
 #pragma mark - Others
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

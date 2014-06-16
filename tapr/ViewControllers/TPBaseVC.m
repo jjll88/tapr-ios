@@ -41,7 +41,7 @@
     }
     
     if (self.shouldAddPlusBarBtn) {
-        [self setupRightBarButton];
+        [self setupPlusBarButton];
     }
     
     if (self.shouldAddMenuPanGesture) {
@@ -76,15 +76,12 @@
     [self.navigationItem addLeftBarButtonItem:customBarItem];
 }
 
-- (void) setupRightBarButton {
+- (void) setupPlusBarButton {
     
-    UIBarButtonItem *customBarItem;
-    if (self.shouldAddPlusBarBtn) {
-        customBarItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                                                       target:self action:@selector(plusBarButtonPressed)];
-        self.navigationController.navigationBar.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_OrangeTintColor];
-        [self.navigationItem addRightBarButtonItem:customBarItem];
-    }
+    UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                   target:self action:@selector(plusBarButtonPressed)];
+    self.navigationController.navigationBar.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_OrangeTintColor];
+    [self.navigationItem addRightBarButtonItem:customBarItem];
 }
 
 - (void) setupNavBarTitle:(NSString *) navTitle {
@@ -94,6 +91,7 @@
     title.textAlignment = NSTextAlignmentCenter;
     title.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
     title.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_NavBarTitle];
+    
     self.navigationItem.titleView = title;
 }
 
@@ -217,13 +215,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"segueMeasureVC"]) {
 //        TPMeasureVC *measureVC = segue.destinationViewController;
+        
     } else if ([segue.identifier isEqualToString:@"segueMeasureVC"]) {
 //        TPSummaryVC *summaryVC = segue.destinationViewController;
         
-        
     }
-    
-
 }
 
 

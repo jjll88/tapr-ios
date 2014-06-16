@@ -8,12 +8,16 @@
 
 #import "TPLiveMeasureVC.h"
 #import "TPSummaryVC.h"
+#import "TPMeasureInputVC.h"
 
-@interface TPLiveMeasureVC ()
+@interface TPLiveMeasureVC () <TPMeasureInputDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *measureBtn;
 @property (weak, nonatomic) IBOutlet UILabel *measureDisplay;
 @property (weak, nonatomic) IBOutlet UILabel *measureUnits;
+
+//Local variables
+@property (nonatomic, strong) NSString *measureDate;
 
 @end
 
@@ -44,13 +48,20 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.measureBtn.selected = NO;
-    self.measureDisplay.text = @"";
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [self resetValues];
 }
 
 #pragma mark - Set up UI
 - (void) setupUI {
-    // Displays
+    
+    [self resetValues];
+    
+    // Displays ****
     self.measureUnits.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
     self.measureUnits.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_MeasureUnit];
     
@@ -61,16 +72,17 @@
     UIView *separatorLine = [[UIView alloc] initWithFrame:CGRectMake(0, self.measureDisplay.bounds.size.height-lineThickness, self.measureDisplay.bounds.size.width, lineThickness)];
     separatorLine.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
     [self.measureDisplay addSubview:separatorLine];
-
     
-    // Measure Btn
+    // Measure Btn ****
+    self.measureBtn.tintColor = [UIColor clearColor];
+    self.measureBtn.backgroundColor = [UIColor clearColor];
+    self.measureBtn.adjustsImageWhenHighlighted = NO;
     self.measureBtn.tag = self.index;
     
-    UIColor *normalColor = [[[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightOrange] colorWithAlphaComponent:0.16];
-    UIColor *highlightedColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightOrange];
     UIColor *selectedColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightOrange];
+    UIColor *highlightedColor = [[[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightOrange] colorWithAlphaComponent:0.75];
+    UIColor *normalColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightOrange];
     
-    self.measureBtn.tintColor = [UIColor clearColor];
     [self.measureBtn setBackgroundColor:normalColor forState:UIControlStateNormal];
     [self.measureBtn setBackgroundColor:highlightedColor forState:UIControlStateHighlighted];
     [self.measureBtn setBackgroundColor:selectedColor forState:UIControlStateSelected];
@@ -82,21 +94,35 @@
 #pragma mark - IBActions
 - (IBAction)measureBtnPressed:(UIButton *)sender {
     if (!self.measureBtn.selected) {
-        self.measureBtn.selected = YES;
-        self.measureDisplay.text = [self createDummyMeasure];
+        [self performSegueWithIdentifier:@"segueMeasureInputVC" sender:sender];
     } else {
+        
+        // Save data
+        NSDictionary *dataInfo = @{@"value":self.measureDisplay.text,@"date":self.measureDate};
+        [[TPDataManager sharedManager] addMeasure:dataInfo toCategory:self.index];
+        
         [self performSegueWithIdentifier:@"segueSummaryVC" sender:sender];
     }
 }
 
+- (IBAction)editInputValue:(UITapGestureRecognizer *)sender {
+    if (![NSString isEmpty:self.measureDisplay.text]) {
+        [self performSegueWithIdentifier:@"segueMeasureInputVC" sender:sender];
+    }
+}
+
+#pragma mark - TPMeasureInput Delegates
+- (void)TPMeasureInputVC:(TPMeasureInputVC *)controller didFinishEnteringMeasure:(NSString *)measureValue atDate:(NSString *)measureDate {
+    self.measureBtn.selected = YES;
+    self.measureDisplay.text = measureValue;
+    self.measureDate = measureDate;
+}
+
 #pragma mark - Helpers
-- (NSString *) createDummyMeasure {
-    NSString *dummy = @"23.5";
-    
-    NSDictionary *dataInfo = @{@"value":dummy,@"date":@"June 13, 2014\n6:15am"};
-    [[TPDataManager sharedManager] addMeasure:dataInfo intoIndex:self.index];
-    
-    return dummy;
+- (void) resetValues {
+    self.measureBtn.selected = NO;
+    self.measureDisplay.text = @"";
+    self.measureDate = nil;
 }
 
 #pragma mark - Others
@@ -105,13 +131,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender {
     if ([segue.identifier isEqualToString:@"segueSummaryVC"]) {
         TPSummaryVC *summaryVC = segue.destinationViewController;
         summaryVC.index = (int)sender.tag;
         summaryVC.showNewMeasure = YES;
+    } else if ([segue.identifier isEqualToString:@"segueMeasureInputVC"]) {
+        TPMeasureInputVC *measureInputVC = segue.destinationViewController;
+        measureInputVC.delegate = self;
     }
 }
 

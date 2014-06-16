@@ -67,7 +67,7 @@
     UIFont *font = nil;
     switch (type) {
         case ThemeFontType_NavBarTitle:
-            font = [UIFont fontWithName:@"Strait-Regular" size:24];
+            font = [UIFont fontWithName:@"Lato-Light" size:24];
             break;
         case ThemeFontType_Subheader:
             font = [UIFont fontWithName:@"Lato-Bold" size:18];

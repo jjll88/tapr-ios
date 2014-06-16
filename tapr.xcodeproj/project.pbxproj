@@ -101,6 +101,7 @@
 		0739D4EF194AD8930011E1AC /* TPProgressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPProgressVC.m; sourceTree = "<group>"; };
 		0739D4F2194AD96D0011E1AC /* TPMeasureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeasureVC.h; sourceTree = "<group>"; };
 		0739D4F3194AD96D0011E1AC /* TPMeasureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMeasureVC.m; sourceTree = "<group>"; };
+		074F6EB8194F32350097BA01 /* tapr_Dist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = tapr_Dist.plist; sourceTree = "<group>"; };
 		076C922F194B2ACA00F3A2A9 /* TPSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSummaryCell.h; sourceTree = "<group>"; };
 		076C9230194B2ACA00F3A2A9 /* TPSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSummaryCell.m; sourceTree = "<group>"; };
 		078FFBBD194EC5C7008BFFF9 /* TPMeasureInputVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeasureInputVC.h; sourceTree = "<group>"; };
@@ -123,7 +124,7 @@
 		07EB51CB194A0EAA0031150D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		07EB51CD194A0EAA0031150D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		07EB51CF194A0EAA0031150D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		07EB51D3194A0EAA0031150D /* tapr-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "tapr-Info.plist"; sourceTree = "<group>"; };
+		07EB51D3194A0EAA0031150D /* tapr_Dev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = tapr_Dev.plist; sourceTree = "<group>"; };
 		07EB51D5194A0EAA0031150D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07EB51D7194A0EAA0031150D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07EB51D9194A0EAA0031150D /* tapr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tapr-Prefix.pch"; sourceTree = "<group>"; };
@@ -375,7 +376,8 @@
 		07EB51D2194A0EAA0031150D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				07EB51D3194A0EAA0031150D /* tapr-Info.plist */,
+				074F6EB8194F32350097BA01 /* tapr_Dist.plist */,
+				07EB51D3194A0EAA0031150D /* tapr_Dev.plist */,
 				07EB51D4194A0EAA0031150D /* InfoPlist.strings */,
 				07EB51D7194A0EAA0031150D /* main.m */,
 				07EB51D9194A0EAA0031150D /* tapr-Prefix.pch */,
@@ -682,10 +684,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: David Regatos Gomez (KSRSGZ42UK)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tapr/tapr-Prefix.pch";
-				INFOPLIST_FILE = "tapr/tapr-Info.plist";
+				INFOPLIST_FILE = tapr/tapr_Dev.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7197609E-6BF5-4A6B-80FE-9E6181707FA9";
@@ -698,13 +700,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ByteFly, Inc. (2NJB457542)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tapr/tapr-Prefix.pch";
-				INFOPLIST_FILE = "tapr/tapr-Info.plist";
+				INFOPLIST_FILE = tapr/tapr_Dist.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7197609E-6BF5-4A6B-80FE-9E6181707FA9";
+				PROVISIONING_PROFILE = "9821E509-E745-4020-B443-58395C0746C7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

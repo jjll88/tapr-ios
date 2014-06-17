@@ -9,12 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "TPUserProfile.h"
 
-@interface TPUserManager : NSObject
+@interface TPProfileManager : NSObject
 
 + (instancetype)sharedManager;
 
 @property (nonatomic, strong) TPUserProfile *user;
 
-- (void) initWithDummyUserProfile;
+//Persistance
+- (BOOL) saveProfile;
+- (void) loadProfile;
 
 @end

@@ -24,7 +24,7 @@
 // Managers
     #import "TPThemeManager.h"
     #import "TPDataManager.h"
-    #import "TPUserManager.h"
+    #import "TPProfileManager.h"
 
 // Others
     #import "Constants.h"

@@ -27,7 +27,7 @@
 @implementation TPProfileVC
 
 - (TPUserProfile *)user  {
-    if  (!_user) _user = [TPUserManager sharedManager].user;
+    if  (!_user) _user = [TPProfileManager sharedManager].user;
     return _user;
 }
 
@@ -58,9 +58,6 @@
     self.addMenuBarBtn = YES;
     self.addMenuPanGesture = YES;
     self.addPlusBarBtn = NO;
-    
-    // Init User
-    [[TPUserManager sharedManager] initWithDummyUserProfile];
 }
 
 #pragma mark - view events

@@ -17,5 +17,8 @@
 #define CellSettings        104
 #define CellLogOut          105
 
+//Archived Data Paths
+
+#define TPUserProfilePathKey @"user_profile_data"
 
 #endif

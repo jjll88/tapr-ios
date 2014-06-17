@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TPUserProfile : NSObject
+@interface TPUserProfile : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *birthday;
@@ -19,5 +19,6 @@
 @property (nonatomic, strong) UIImage *avatar;
 @property (nonatomic, strong) NSString *joinedDateStr;
 
+@property (nonatomic, strong) NSString *email;
 
 @end

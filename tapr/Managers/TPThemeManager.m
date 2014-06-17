@@ -10,7 +10,7 @@
 
 @implementation TPThemeManager
 
-+ (id)sharedManager {
++ (instancetype)sharedManager {
     static dispatch_once_t once;
     static TPThemeManager *shared;
     dispatch_once(&once, ^{

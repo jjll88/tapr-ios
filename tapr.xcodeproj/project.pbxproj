@@ -33,6 +33,10 @@
 		076C9231194B2ACA00F3A2A9 /* TPSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C9230194B2ACA00F3A2A9 /* TPSummaryCell.m */; };
 		078FFBBF194EC5C7008BFFF9 /* TPMeasureInputVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 078FFBBE194EC5C7008BFFF9 /* TPMeasureInputVC.m */; };
 		078FFBC2194EF3FD008BFFF9 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 078FFBC1194EF3FD008BFFF9 /* NSString+Additions.m */; };
+		079216BA1950289B005D7A09 /* TPProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 079216B91950289B005D7A09 /* TPProfileVC.m */; };
+		079216BD195028E0005D7A09 /* TPUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 079216BC195028E0005D7A09 /* TPUserManager.m */; };
+		079216C0195039AE005D7A09 /* TPProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 079216BF195039AE005D7A09 /* TPProfileCell.m */; };
+		079216C319503B8E005D7A09 /* TPUserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 079216C219503B8E005D7A09 /* TPUserProfile.m */; };
 		07A64177194AE58D00F75BBA /* TPTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A64176194AE58D00F75BBA /* TPTestVC.m */; };
 		07A6417A194B021000F75BBA /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A64179194B021000F75BBA /* UIImage+Additions.m */; };
 		07A6417D194B099800F75BBA /* TPMeasureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A6417C194B099800F75BBA /* TPMeasureCell.m */; };
@@ -108,6 +112,14 @@
 		078FFBBE194EC5C7008BFFF9 /* TPMeasureInputVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMeasureInputVC.m; sourceTree = "<group>"; };
 		078FFBC0194EF3FD008BFFF9 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		078FFBC1194EF3FD008BFFF9 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		079216B81950289B005D7A09 /* TPProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPProfileVC.h; sourceTree = "<group>"; };
+		079216B91950289B005D7A09 /* TPProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPProfileVC.m; sourceTree = "<group>"; };
+		079216BB195028E0005D7A09 /* TPUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPUserManager.h; sourceTree = "<group>"; };
+		079216BC195028E0005D7A09 /* TPUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPUserManager.m; sourceTree = "<group>"; };
+		079216BE195039AE005D7A09 /* TPProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPProfileCell.h; sourceTree = "<group>"; };
+		079216BF195039AE005D7A09 /* TPProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPProfileCell.m; sourceTree = "<group>"; };
+		079216C119503B8E005D7A09 /* TPUserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPUserProfile.h; sourceTree = "<group>"; };
+		079216C219503B8E005D7A09 /* TPUserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPUserProfile.m; sourceTree = "<group>"; };
 		07A64175194AE58D00F75BBA /* TPTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTestVC.h; sourceTree = "<group>"; };
 		07A64176194AE58D00F75BBA /* TPTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTestVC.m; sourceTree = "<group>"; };
 		07A64178194B021000F75BBA /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
@@ -230,6 +242,8 @@
 				07046C9F194ACA37004A6D38 /* TPThemeManager.m */,
 				07046CA1194ACA52004A6D38 /* TPDataManager.h */,
 				07046CA2194ACA52004A6D38 /* TPDataManager.m */,
+				079216BB195028E0005D7A09 /* TPUserManager.h */,
+				079216BC195028E0005D7A09 /* TPUserManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -237,6 +251,8 @@
 		07363A0F194A132900FFEF34 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				079216C119503B8E005D7A09 /* TPUserProfile.h */,
+				079216C219503B8E005D7A09 /* TPUserProfile.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,6 +301,8 @@
 				07A6417C194B099800F75BBA /* TPMeasureCell.m */,
 				076C922F194B2ACA00F3A2A9 /* TPSummaryCell.h */,
 				076C9230194B2ACA00F3A2A9 /* TPSummaryCell.m */,
+				079216BE195039AE005D7A09 /* TPProfileCell.h */,
+				079216BF195039AE005D7A09 /* TPProfileCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -320,6 +338,15 @@
 				078FFBBE194EC5C7008BFFF9 /* TPMeasureInputVC.m */,
 			);
 			name = Dev;
+			sourceTree = "<group>";
+		};
+		079216B719502883005D7A09 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				079216B81950289B005D7A09 /* TPProfileVC.h */,
+				079216B91950289B005D7A09 /* TPProfileVC.m */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		07EB51BF194A0EAA0031150D = {
@@ -410,6 +437,7 @@
 				07046C97194AC7FD004A6D38 /* TPBaseVC.h */,
 				07046C98194AC7FD004A6D38 /* TPBaseVC.m */,
 				07046C96194AC7B8004A6D38 /* Left Menu */,
+				079216B719502883005D7A09 /* Profile */,
 				0739D4ED194AD86C0011E1AC /* Progress */,
 				0739D4F1194AD9550011E1AC /* Measure */,
 			);
@@ -538,6 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079216C319503B8E005D7A09 /* TPUserProfile.m in Sources */,
 				07A6417D194B099800F75BBA /* TPMeasureCell.m in Sources */,
 				078FFBBF194EC5C7008BFFF9 /* TPMeasureInputVC.m in Sources */,
 				0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */,
@@ -546,13 +575,16 @@
 				07DF0B25194B3C3100FE76FA /* TPLiveMeasureVC.m in Sources */,
 				07EB51DC194A0EAA0031150D /* TPAppDelegate.m in Sources */,
 				0739D4F0194AD8930011E1AC /* TPProgressVC.m in Sources */,
+				079216C0195039AE005D7A09 /* TPProfileCell.m in Sources */,
 				07046CA3194ACA52004A6D38 /* TPDataManager.m in Sources */,
 				07DF0B28194B40F200FE76FA /* UIButton+Additions.m in Sources */,
 				0739D4F4194AD96D0011E1AC /* TPMeasureVC.m in Sources */,
+				079216BA1950289B005D7A09 /* TPProfileVC.m in Sources */,
 				07046CA0194ACA37004A6D38 /* TPThemeManager.m in Sources */,
 				07046CC4194AD0DE004A6D38 /* UIColor+Additions.m in Sources */,
 				07EB51D8194A0EAA0031150D /* main.m in Sources */,
 				07046CA7194ACA7C004A6D38 /* UINavigationItem+Additions.m in Sources */,
+				079216BD195028E0005D7A09 /* TPUserManager.m in Sources */,
 				07A64177194AE58D00F75BBA /* TPTestVC.m in Sources */,
 				07046C99194AC7FD004A6D38 /* TPBaseVC.m in Sources */,
 				07363A17194A138E00FFEF34 /* SWRevealViewController.m in Sources */,

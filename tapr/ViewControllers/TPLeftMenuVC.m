@@ -9,7 +9,7 @@
 #import "TPLeftMenuVC.h"
 #import "TPMenuCell.h"
 
-#define initialSelectedRow 1
+#define initialSelectedRow 0
 
 @interface TPLeftMenuVC () <UITableViewDataSource, UITableViewDelegate>
 
@@ -27,8 +27,8 @@
     if (!_menuItemArr) _menuItemArr = @[@{@"title":@"Profile",@"index":@CellProfile},
                                         @{@"title":@"Progress",@"index":@CellProgress},
                                         @{@"title":@"Bluetooth",@"index":@CellBluetooth},
-                                        @{@"title":@"About",@"index":@CellAbout},
                                         @{@"title":@"Settings",@"index":@CellSettings},
+                                        @{@"title":@"About",@"index":@CellAbout},
                                         @{@"title":@"Log out",@"index":@CellLogOut}];
     return _menuItemArr;
 }
@@ -105,6 +105,8 @@
     
     if (cell.tag == CellProgress) {
         [self performSegueWithIdentifier:@"segueProgressVC" sender:cell];
+    } else if (cell.tag == CellProfile){
+        [self performSegueWithIdentifier:@"segueProfileVC" sender:cell];
     } else if (cell.tag != CellLogOut){
         [self performSegueWithIdentifier:@"segueTestVC" sender:cell];
     } else {
@@ -130,18 +132,13 @@
 
 #pragma mark - Navigation
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender {
-    // Set the title of navigation bar by using the menu items
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;
-    [(TPBaseVC *)destViewController setupNavBarTitle:[self.menuItemArr[indexPath.row] objectForKey:@"title"]];
-
     
-    // Set the photo if it navigates to the PhotoView
-//    if ([segue.identifier isEqualToString:@"showPhoto"]) {
-//        PhotoViewController *photoController = (PhotoViewController*)segue.destinationViewController;
-//        NSString *photoFilename = [NSString stringWithFormat:@"%@_photo.jpg", [menuItems objectAtIndex:indexPath.row]];
-//        photoController.photoFilename = photoFilename;
-//    }
+    if ([segue.identifier isEqualToString:@"segueTestVC"]) {
+        // Set the title of navigation bar by using the menu items
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;
+        [(TPBaseVC *)destViewController setupNavBarTitle:[self.menuItemArr[indexPath.row] objectForKey:@"title"]];
+    }
     
     if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
         SWRevealViewControllerSegue *swSegue = (SWRevealViewControllerSegue*) segue;

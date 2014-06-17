@@ -42,7 +42,7 @@ typedef enum ThemeResizableImageType : NSUInteger {
 
 @interface TPThemeManager : NSObject
 
-+ (id)sharedManager;
++ (instancetype)sharedManager;
 
 //// colors
 - (UIColor *)colorOfType:(ThemeColorType)type;

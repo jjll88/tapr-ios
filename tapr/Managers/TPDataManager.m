@@ -20,7 +20,7 @@
 
 @implementation TPDataManager
 
-+ (id)sharedManager {
++ (instancetype)sharedManager {
     static dispatch_once_t once;
     static TPDataManager *shared;
     dispatch_once(&once, ^{

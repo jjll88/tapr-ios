@@ -12,7 +12,7 @@
 
 @interface TPDataManager : NSObject
 
-+ (id)sharedManager;
++ (instancetype)sharedManager;
 
 @property (nonatomic, strong) NSArray *dummyBodyPartCategories;
 @property (nonatomic, strong) NSArray *dummyBodyPartData;

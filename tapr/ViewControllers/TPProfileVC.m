@@ -10,8 +10,6 @@
 #import "TPProfileCell.h"
 #import "TPUserProfile.h"
 
-#define vcTitle @"Profile"
-
 @interface TPProfileVC () <UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatar;
@@ -70,7 +68,7 @@
 #pragma mark - Set up UI
 - (void) setupUI {
     // Nav bar Title
-    [self setupNavBarTitle:vcTitle];
+    [self setupNavBarTitle:profileTitle];
     
     UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
                                                                                    target:self action:@selector(editBarButtonPressed)];

@@ -24,12 +24,12 @@
 @implementation TPLeftMenuVC
 
 - (NSArray *) menuItemArr { // Ordered elements of left menu
-    if (!_menuItemArr) _menuItemArr = @[@{@"title":@"Profile",@"index":@CellProfile},
-                                        @{@"title":@"Progress",@"index":@CellProgress},
-                                        @{@"title":@"Bluetooth",@"index":@CellBluetooth},
-                                        @{@"title":@"Settings",@"index":@CellSettings},
-                                        @{@"title":@"About",@"index":@CellAbout},
-                                        @{@"title":@"Log out",@"index":@CellLogOut}];
+    if (!_menuItemArr) _menuItemArr = @[@{@"title":profileTitle,@"index":@profileCellIndex},
+                                        @{@"title":progressTitle,@"index":@progressCellIndex},
+                                        @{@"title":bluetoothTitle,@"index":@bluetoothCellIndex},
+                                        @{@"title":settingsTitle,@"index":@settingsCellIndex},
+                                        @{@"title":aboutTitle,@"index":@aboutCellIndex},
+                                        @{@"title":logoutTitle,@"index":@logoutCellIndex}];
     return _menuItemArr;
 }
 
@@ -103,11 +103,13 @@
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    if (cell.tag == CellProgress) {
+    if (cell.tag == progressCellIndex) {
         [self performSegueWithIdentifier:@"segueProgressVC" sender:cell];
-    } else if (cell.tag == CellProfile){
+    } else if (cell.tag == profileCellIndex){
         [self performSegueWithIdentifier:@"segueProfileVC" sender:cell];
-    } else if (cell.tag != CellLogOut){
+    } else if (cell.tag == bluetoothCellIndex){
+        [self performSegueWithIdentifier:@"segueBluetoothVC" sender:cell];
+    } else if (cell.tag != logoutCellIndex){
         [self performSegueWithIdentifier:@"segueTestVC" sender:cell];
     } else {
         [self toastMessage:@"Under construction"];
@@ -133,7 +135,7 @@
 #pragma mark - Navigation
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender {
     
-    if ([segue.identifier isEqualToString:@"segueTestVC"]) {
+    if ([segue.identifier isEqualToString:@"segueTestVC"]) {            //DEBUG: set up TestVC
         // Set the title of navigation bar by using the menu items
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;

@@ -10,7 +10,6 @@
 #import "TPMeasureCell.h"
 #import "TPSummaryVC.h"
 
-#define vcTitle @"Progress"
 
 @interface TPProgressVC () <UITableViewDataSource, UITableViewDelegate>
 
@@ -62,7 +61,7 @@
 #pragma mark - Set up UI
 - (void) setupUI {
     // Nav bar Title
-    [self setupNavBarTitle:vcTitle];
+    [self setupNavBarTitle:progressTitle];
     
     // tableview
     self.tableView.allowsSelection = YES;

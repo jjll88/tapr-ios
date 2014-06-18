@@ -13,6 +13,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    // Load stored User Profile
+    [[TPProfileManager sharedManager] loadProfile];
+    
+    
     return YES;
 }
 							
@@ -26,6 +31,13 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    BOOL success = [[TPProfileManager sharedManager] saveProfile];
+    if (success) {
+        DMLog(@"User profile succesfully saved");
+    } else {
+        DMLog(@"Could not save User profile");
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

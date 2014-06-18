@@ -11,6 +11,31 @@
 #endif
 
 #ifdef __OBJC__
+// built-in frameworks
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+    #import "SWRevealViewController.h"
+    #import "MBProgressHUD.h"
+
+// Base VCs
+    #import "TPBaseVC.h"
+
+// Managers
+    #import "TPThemeManager.h"
+    #import "TPDataManager.h"
+    #import "TPProfileManager.h"
+
+// Others
+    #import "Constants.h"
+    #import "Utils.h"
+
+
+
+#endif
+
+#ifdef DEBUG
+#define DMLog(...) NSLog(@"%s %@", __PRETTY_FUNCTION__, [NSString stringWithFormat:__VA_ARGS__])
+#else
+#define DMLog(...) do { } while (0)
 #endif

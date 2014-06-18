@@ -50,8 +50,7 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
 }
 
 - (NSArray *)reverseBodyPartData  {
-    if  (!_reverseBodyPartData) _reverseBodyPartData = [self.bodyPartData reversedArray];
-    return _reverseBodyPartData;
+    return[self.bodyPartData reversedArray];
 }
 
 #pragma mark - init

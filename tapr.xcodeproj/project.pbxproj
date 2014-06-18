@@ -29,6 +29,10 @@
 		0704970F195170B4007CC681 /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704970A195170B4007CC681 /* JBBarChartView.m */; };
 		07049710195170B4007CC681 /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704970C195170B4007CC681 /* JBChartView.m */; };
 		07049711195170B4007CC681 /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704970E195170B4007CC681 /* JBLineChartView.m */; };
+		070497161951916D007CC681 /* JBChartTooltipTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 070497131951916D007CC681 /* JBChartTooltipTipView.m */; };
+		070497171951916D007CC681 /* JBChartTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 070497151951916D007CC681 /* JBChartTooltipView.m */; };
+		0704971A1951B4FC007CC681 /* JBLineChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 070497191951B4FC007CC681 /* JBLineChartFooterView.m */; };
+		0704971E1951BA04007CC681 /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704971D1951BA04007CC681 /* NSArray+Additions.m */; };
 		07363A17194A138E00FFEF34 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07363A16194A138E00FFEF34 /* SWRevealViewController.m */; };
 		0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EB194AD7EB0011E1AC /* TPMenuCell.m */; };
 		0739D4F0194AD8930011E1AC /* TPProgressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EF194AD8930011E1AC /* TPProgressVC.m */; };
@@ -105,6 +109,14 @@
 		0704970C195170B4007CC681 /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartView.m; sourceTree = "<group>"; };
 		0704970D195170B4007CC681 /* JBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartView.h; sourceTree = "<group>"; };
 		0704970E195170B4007CC681 /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartView.m; sourceTree = "<group>"; };
+		070497121951916D007CC681 /* JBChartTooltipTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartTooltipTipView.h; sourceTree = "<group>"; };
+		070497131951916D007CC681 /* JBChartTooltipTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartTooltipTipView.m; sourceTree = "<group>"; };
+		070497141951916D007CC681 /* JBChartTooltipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartTooltipView.h; sourceTree = "<group>"; };
+		070497151951916D007CC681 /* JBChartTooltipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartTooltipView.m; sourceTree = "<group>"; };
+		070497181951B4FC007CC681 /* JBLineChartFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartFooterView.h; sourceTree = "<group>"; };
+		070497191951B4FC007CC681 /* JBLineChartFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartFooterView.m; sourceTree = "<group>"; };
+		0704971C1951BA04007CC681 /* NSArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Additions.h"; sourceTree = "<group>"; };
+		0704971D1951BA04007CC681 /* NSArray+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Additions.m"; sourceTree = "<group>"; };
 		07363A15194A138E00FFEF34 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		07363A16194A138E00FFEF34 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		07363A18194A140F00FFEF34 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -215,6 +227,8 @@
 				07046CA6194ACA7C004A6D38 /* UINavigationItem+Additions.m */,
 				07046CC2194AD0DE004A6D38 /* UIColor+Additions.h */,
 				07046CC3194AD0DE004A6D38 /* UIColor+Additions.m */,
+				0704971C1951BA04007CC681 /* NSArray+Additions.h */,
+				0704971D1951BA04007CC681 /* NSArray+Additions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -250,9 +264,23 @@
 			path = JBChartView;
 			sourceTree = "<group>";
 		};
+		0704971B1951B54D007CC681 /* JBChart */ = {
+			isa = PBXGroup;
+			children = (
+				070497121951916D007CC681 /* JBChartTooltipTipView.h */,
+				070497131951916D007CC681 /* JBChartTooltipTipView.m */,
+				070497141951916D007CC681 /* JBChartTooltipView.h */,
+				070497151951916D007CC681 /* JBChartTooltipView.m */,
+				070497181951B4FC007CC681 /* JBLineChartFooterView.h */,
+				070497191951B4FC007CC681 /* JBLineChartFooterView.m */,
+			);
+			name = JBChart;
+			sourceTree = "<group>";
+		};
 		07363A0D194A131300FFEF34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0704971B1951B54D007CC681 /* JBChart */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -591,13 +619,17 @@
 			files = (
 				079216C319503B8E005D7A09 /* TPUserProfile.m in Sources */,
 				07A6417D194B099800F75BBA /* TPMeasureCell.m in Sources */,
+				0704971A1951B4FC007CC681 /* JBLineChartFooterView.m in Sources */,
 				07049711195170B4007CC681 /* JBLineChartView.m in Sources */,
 				078FFBBF194EC5C7008BFFF9 /* TPMeasureInputVC.m in Sources */,
+				070497171951916D007CC681 /* JBChartTooltipView.m in Sources */,
 				0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */,
+				0704971E1951BA04007CC681 /* NSArray+Additions.m in Sources */,
 				078FFBC2194EF3FD008BFFF9 /* NSString+Additions.m in Sources */,
 				07046C9C194AC89C004A6D38 /* MBProgressHUD.m in Sources */,
 				07DF0B25194B3C3100FE76FA /* TPLiveMeasureVC.m in Sources */,
 				07EB51DC194A0EAA0031150D /* TPAppDelegate.m in Sources */,
+				070497161951916D007CC681 /* JBChartTooltipTipView.m in Sources */,
 				0739D4F0194AD8930011E1AC /* TPProgressVC.m in Sources */,
 				079216C0195039AE005D7A09 /* TPProfileCell.m in Sources */,
 				07046CA3194ACA52004A6D38 /* TPDataManager.m in Sources */,

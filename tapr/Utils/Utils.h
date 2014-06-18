@@ -15,6 +15,7 @@
 #import "UIImage+Additions.h"
 #import "UIButton+Additions.h"
 #import "NSString+Additions.h"
+#import "NSArray+Additions.h"
 
 //Subclasses
 

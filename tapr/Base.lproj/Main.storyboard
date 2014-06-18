@@ -188,12 +188,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bp8-TC-Z29">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bp8-TC-Z29" userLabel="View - Subheader container">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body part Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="te3-rL-9db">
-                                        <rect key="frame" x="85" y="15" width="151" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body part Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="te3-rL-9db">
+                                        <rect key="frame" x="10" y="7" width="300" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -202,21 +202,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Rd0-FF-xdX"/>
+                                    <constraint firstAttribute="trailing" secondItem="te3-rL-9db" secondAttribute="trailing" constant="10" id="H8U-DH-6IU"/>
+                                    <constraint firstAttribute="height" constant="35" id="Rd0-FF-xdX"/>
                                     <constraint firstAttribute="centerY" secondItem="te3-rL-9db" secondAttribute="centerY" id="Ygm-Jw-rfL"/>
                                     <constraint firstAttribute="centerX" secondItem="te3-rL-9db" secondAttribute="centerX" id="iHN-SE-dWj"/>
+                                    <constraint firstItem="te3-rL-9db" firstAttribute="leading" secondItem="bp8-TC-Z29" secondAttribute="leading" constant="10" id="mo6-Qu-2fG"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1up-Kd-ugX">
-                                <rect key="frame" x="0.0" y="50" width="320" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="bqF-bF-RHP"/>
-                                </constraints>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="arV-h1-Fuk">
-                                <rect key="frame" x="0.0" y="250" width="320" height="318"/>
+                                <rect key="frame" x="0.0" y="235" width="320" height="333"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -266,35 +260,44 @@
                                     <outlet property="delegate" destination="agz-wB-v2t" id="gEc-Dw-4Xw"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress Chart for the respective body part" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="YHH-aZ-PU2" userLabel="label">
-                                <rect key="frame" x="20" y="95" width="280" height="110"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u3a-ex-UJP" userLabel="View - Chart Container">
+                                <rect key="frame" x="0.0" y="35" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyg-bN-kQD" customClass="JBLineChartView">
+                                        <rect key="frame" x="23" y="30" width="277" height="155"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="tyg-bN-kQD" firstAttribute="top" secondItem="u3a-ex-UJP" secondAttribute="top" constant="30" id="80p-yQ-1Xy"/>
+                                    <constraint firstAttribute="height" constant="200" id="CsL-NN-I2d"/>
+                                    <constraint firstItem="tyg-bN-kQD" firstAttribute="leading" secondItem="u3a-ex-UJP" secondAttribute="leading" constant="23" id="Jjo-O4-aUY"/>
+                                    <constraint firstAttribute="trailing" secondItem="tyg-bN-kQD" secondAttribute="trailing" constant="20" id="h9S-2O-ET7"/>
+                                    <constraint firstAttribute="bottom" secondItem="tyg-bN-kQD" secondAttribute="bottom" constant="15" id="me0-u2-8RO"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1up-Kd-ugX" firstAttribute="leading" secondItem="7Ch-oe-QFc" secondAttribute="leading" id="07b-DW-rFI"/>
-                            <constraint firstAttribute="trailing" secondItem="YHH-aZ-PU2" secondAttribute="trailing" constant="20" id="9Lg-XN-PgM"/>
-                            <constraint firstItem="1up-Kd-ugX" firstAttribute="centerX" secondItem="YHH-aZ-PU2" secondAttribute="centerX" id="9ed-gF-qxO"/>
-                            <constraint firstItem="YHH-aZ-PU2" firstAttribute="leading" secondItem="7Ch-oe-QFc" secondAttribute="leading" constant="20" id="9v0-fU-wcE"/>
                             <constraint firstItem="bp8-TC-Z29" firstAttribute="top" secondItem="7Ch-oe-QFc" secondAttribute="top" id="DQA-Mj-guv"/>
                             <constraint firstItem="arV-h1-Fuk" firstAttribute="leading" secondItem="7Ch-oe-QFc" secondAttribute="leading" id="DWJ-Kl-LgL"/>
-                            <constraint firstItem="1up-Kd-ugX" firstAttribute="centerY" secondItem="YHH-aZ-PU2" secondAttribute="centerY" id="G1f-xD-IIM"/>
+                            <constraint firstItem="u3a-ex-UJP" firstAttribute="top" secondItem="bp8-TC-Z29" secondAttribute="bottom" id="FBD-1t-IvQ"/>
+                            <constraint firstAttribute="trailing" secondItem="u3a-ex-UJP" secondAttribute="trailing" id="G24-za-07u"/>
                             <constraint firstItem="bp8-TC-Z29" firstAttribute="leading" secondItem="7Ch-oe-QFc" secondAttribute="leading" id="IiN-gc-nEQ"/>
-                            <constraint firstItem="1up-Kd-ugX" firstAttribute="top" secondItem="bp8-TC-Z29" secondAttribute="bottom" id="NyJ-tg-Wyd"/>
+                            <constraint firstItem="arV-h1-Fuk" firstAttribute="top" secondItem="u3a-ex-UJP" secondAttribute="bottom" id="J61-zK-g4P"/>
                             <constraint firstAttribute="bottom" secondItem="arV-h1-Fuk" secondAttribute="bottom" id="QhO-Zj-FF6"/>
-                            <constraint firstAttribute="trailing" secondItem="1up-Kd-ugX" secondAttribute="trailing" id="XdC-9B-4DH"/>
                             <constraint firstAttribute="trailing" secondItem="bp8-TC-Z29" secondAttribute="trailing" id="eNK-ww-daH"/>
+                            <constraint firstItem="u3a-ex-UJP" firstAttribute="leading" secondItem="7Ch-oe-QFc" secondAttribute="leading" id="myS-Mk-8eI"/>
                             <constraint firstAttribute="trailing" secondItem="arV-h1-Fuk" secondAttribute="trailing" id="ogx-J8-lBq"/>
-                            <constraint firstItem="arV-h1-Fuk" firstAttribute="top" secondItem="1up-Kd-ugX" secondAttribute="bottom" id="onh-nJ-rps"/>
-                            <constraint firstItem="1up-Kd-ugX" firstAttribute="bottom" secondItem="YHH-aZ-PU2" secondAttribute="bottom" constant="45" id="pnQ-K2-APP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zXZ-DX-Cc4"/>
                     <connections>
+                        <outlet property="chartContainerView" destination="u3a-ex-UJP" id="09z-XU-kcg"/>
+                        <outlet property="lineChartView" destination="tyg-bN-kQD" id="ddc-Z8-z4i"/>
                         <outlet property="subHeaderContainer" destination="bp8-TC-Z29" id="gda-i0-zAO"/>
                         <outlet property="summaryTitleLbl" destination="te3-rL-9db" id="DgP-XQ-Or8"/>
                         <outlet property="tableView" destination="arV-h1-Fuk" id="TU5-o8-5xv"/>

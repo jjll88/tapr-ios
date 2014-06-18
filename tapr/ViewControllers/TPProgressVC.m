@@ -99,7 +99,11 @@
 
 #pragma mark - TableView Delegates
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"segueSummaryVC" sender:indexPath];
+    if (![self isLeftMenuVisible]) {  //avoid push if left menu is visible
+        [self performSegueWithIdentifier:@"segueSummaryVC" sender:indexPath];
+    } else {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
 }
 
 #pragma mark - Navigation

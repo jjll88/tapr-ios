@@ -199,7 +199,7 @@
 
 #pragma mark - Helpers
 - (BOOL) isLeftMenuVisible {
-    return self.revealViewController.frontViewPosition <= FrontViewPositionLeft ? YES : NO;
+    return self.revealViewController.frontViewPosition <= FrontViewPositionLeft ? NO : YES;
 }
 
 #pragma mark - Alert view

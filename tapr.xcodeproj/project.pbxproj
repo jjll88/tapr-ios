@@ -26,6 +26,9 @@
 		07046CC1194ACD8B004A6D38 /* Strait-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07046CC0194ACD8B004A6D38 /* Strait-Regular.ttf */; };
 		07046CC4194AD0DE004A6D38 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07046CC3194AD0DE004A6D38 /* UIColor+Additions.m */; };
 		07046CC7194AD280004A6D38 /* TPLeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07046CC6194AD280004A6D38 /* TPLeftMenuVC.m */; };
+		0704970F195170B4007CC681 /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704970A195170B4007CC681 /* JBBarChartView.m */; };
+		07049710195170B4007CC681 /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704970C195170B4007CC681 /* JBChartView.m */; };
+		07049711195170B4007CC681 /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704970E195170B4007CC681 /* JBLineChartView.m */; };
 		07363A17194A138E00FFEF34 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07363A16194A138E00FFEF34 /* SWRevealViewController.m */; };
 		0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EB194AD7EB0011E1AC /* TPMenuCell.m */; };
 		0739D4F0194AD8930011E1AC /* TPProgressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EF194AD8930011E1AC /* TPProgressVC.m */; };
@@ -96,6 +99,12 @@
 		07046CC3194AD0DE004A6D38 /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
 		07046CC5194AD280004A6D38 /* TPLeftMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLeftMenuVC.h; sourceTree = "<group>"; };
 		07046CC6194AD280004A6D38 /* TPLeftMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLeftMenuVC.m; sourceTree = "<group>"; };
+		07049709195170B4007CC681 /* JBBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBarChartView.h; sourceTree = "<group>"; };
+		0704970A195170B4007CC681 /* JBBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBarChartView.m; sourceTree = "<group>"; };
+		0704970B195170B4007CC681 /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartView.h; sourceTree = "<group>"; };
+		0704970C195170B4007CC681 /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartView.m; sourceTree = "<group>"; };
+		0704970D195170B4007CC681 /* JBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartView.h; sourceTree = "<group>"; };
+		0704970E195170B4007CC681 /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartView.m; sourceTree = "<group>"; };
 		07363A15194A138E00FFEF34 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		07363A16194A138E00FFEF34 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		07363A18194A140F00FFEF34 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -226,6 +235,19 @@
 				07046CB4194ACD7E004A6D38 /* OFL.txt */,
 			);
 			path = Lato;
+			sourceTree = "<group>";
+		};
+		07049708195170B4007CC681 /* JBChartView */ = {
+			isa = PBXGroup;
+			children = (
+				07049709195170B4007CC681 /* JBBarChartView.h */,
+				0704970A195170B4007CC681 /* JBBarChartView.m */,
+				0704970B195170B4007CC681 /* JBChartView.h */,
+				0704970C195170B4007CC681 /* JBChartView.m */,
+				0704970D195170B4007CC681 /* JBLineChartView.h */,
+				0704970E195170B4007CC681 /* JBLineChartView.m */,
+			);
+			path = JBChartView;
 			sourceTree = "<group>";
 		};
 		07363A0D194A131300FFEF34 /* Views */ = {
@@ -447,6 +469,7 @@
 		07EB5201194A11FE0031150D /* ThirdParty Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				07049708195170B4007CC681 /* JBChartView */,
 				07046C9D194AC8A1004A6D38 /* MBProgressHUD */,
 				07363A14194A138E00FFEF34 /* SWRevealViewController */,
 			);
@@ -568,6 +591,7 @@
 			files = (
 				079216C319503B8E005D7A09 /* TPUserProfile.m in Sources */,
 				07A6417D194B099800F75BBA /* TPMeasureCell.m in Sources */,
+				07049711195170B4007CC681 /* JBLineChartView.m in Sources */,
 				078FFBBF194EC5C7008BFFF9 /* TPMeasureInputVC.m in Sources */,
 				0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */,
 				078FFBC2194EF3FD008BFFF9 /* NSString+Additions.m in Sources */,
@@ -581,7 +605,9 @@
 				0739D4F4194AD96D0011E1AC /* TPMeasureVC.m in Sources */,
 				079216BA1950289B005D7A09 /* TPProfileVC.m in Sources */,
 				07046CA0194ACA37004A6D38 /* TPThemeManager.m in Sources */,
+				0704970F195170B4007CC681 /* JBBarChartView.m in Sources */,
 				07046CC4194AD0DE004A6D38 /* UIColor+Additions.m in Sources */,
+				07049710195170B4007CC681 /* JBChartView.m in Sources */,
 				07EB51D8194A0EAA0031150D /* main.m in Sources */,
 				07046CA7194ACA7C004A6D38 /* UINavigationItem+Additions.m in Sources */,
 				079216BD195028E0005D7A09 /* TPProfileManager.m in Sources */,

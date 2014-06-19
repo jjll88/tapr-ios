@@ -10,8 +10,11 @@
 #import "TPSummaryVC.h"
 #import "TPMeasureInputVC.h"
 
+#import "WZBluetoothManager.h"
+
 @interface TPLiveMeasureVC () <TPMeasureInputDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *liveLabel;
 @property (weak, nonatomic) IBOutlet UIButton *measureBtn;
 @property (weak, nonatomic) IBOutlet UILabel *measureDisplay;
 @property (weak, nonatomic) IBOutlet UILabel *measureUnits;
@@ -42,7 +45,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setupNotificationObserver];
+    
     [self setupUI];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -54,6 +60,18 @@
     [super viewDidDisappear:animated];
     
     [self resetValues];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)setupNotificationObserver {
+    [[NSNotificationCenter defaultCenter] addObserverForName:BMNotification_PeripheralHaveUpdate object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        NSData *data = note.userInfo[BMNotificationKey_PeripheralUpdateKey];
+        NSString *dataStr = [NSString stringWithUTF8String:(char *)(data.bytes)];
+        self.liveLabel.text = dataStr;
+    }];
 }
 
 #pragma mark - Set up UI

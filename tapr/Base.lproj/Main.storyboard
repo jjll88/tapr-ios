@@ -545,8 +545,8 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live time Gauge" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="gqR-xy-phQ" userLabel="label">
                                 <rect key="frame" x="20" y="109" width="280" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
+                                <color key="textColor" red="0.41176470590000003" green="0.12941176469999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r75-GB-xPH">
@@ -611,6 +611,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="K5b-Xc-FRX"/>
                     <connections>
+                        <outlet property="liveLabel" destination="gqR-xy-phQ" id="fG0-Ub-hVc"/>
                         <outlet property="measureBtn" destination="r75-GB-xPH" id="AWS-By-gXo"/>
                         <outlet property="measureDisplay" destination="K7X-Jl-P6D" id="CwM-6Z-oOb"/>
                         <outlet property="measureUnits" destination="2g3-Eo-JVU" id="whm-nc-DHm"/>

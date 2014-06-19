@@ -14,6 +14,8 @@
 #import "JBChartTooltipTipView.h"
 #import "JBLineChartFooterView.h"
 
+#define dateFormat @"MMMM dd, yyyy\nhh:mm a"
+
 // Numerics
 CGFloat const kJBLineChartViewControllerChartPadding = 10.0f;
 CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
@@ -106,9 +108,9 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
     // X axis
     JBLineChartFooterView *footerView = [[JBLineChartFooterView alloc] initWithFrame:CGRectMake(kJBLineChartViewControllerChartPadding, ceil(self.view.bounds.size.height * 0.5) - ceil(kJBLineChartViewControllerChartFooterHeight * 0.5), self.view.bounds.size.width - (kJBLineChartViewControllerChartPadding * 2), kJBLineChartViewControllerChartFooterHeight)];
     footerView.backgroundColor = [UIColor clearColor];
-    footerView.leftLabel.text = [[self.reverseBodyPartData firstObject] objectForKey:@"date"];
+    footerView.leftLabel.text = [NSString Date:[[self.reverseBodyPartData firstObject] objectForKey:@"date"] toStringWithFormat:dateFormat];
     footerView.leftLabel.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
-    footerView.rightLabel.text = [[self.reverseBodyPartData lastObject] objectForKey:@"date"];
+    footerView.rightLabel.text = [NSString Date:[[self.reverseBodyPartData lastObject] objectForKey:@"date"] toStringWithFormat:dateFormat];
     footerView.rightLabel.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
     footerView.sectionCount = [self.reverseBodyPartData count];
     footerView.footerSeparatorColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
@@ -140,7 +142,7 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
 - (void)lineChartView:(JBLineChartView *)lineChartView didSelectLineAtIndex:(NSUInteger)lineIndex horizontalIndex:(NSUInteger)horizontalIndex touchPoint:(CGPoint)touchPoint {
     
     NSString *yValueStr = [NSString stringWithFormat:@"%@ inch",[self.reverseBodyPartData[horizontalIndex] objectForKey:@"value"]];
-    NSString *dateValueStr = [self.reverseBodyPartData[horizontalIndex] objectForKey:@"date"];
+    NSString *dateValueStr = [NSString Date:[self.reverseBodyPartData[horizontalIndex] objectForKey:@"date"] toStringWithFormat:dateFormat];
 //    NSString *pointValueStr = [NSString stringWithFormat:@"%@ at %@", yValueStr, dateValueStr];
     
     // Update view
@@ -213,8 +215,8 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
     NSDictionary *obj = (NSDictionary *) self.bodyPartData[indexPath.row];
 
     // Custom Cell
-    cell.titleLbl.text = [NSString stringWithFormat:@"%@ inch",[obj objectForKey:@"value"]];
-    cell.dateLbl.text = [obj objectForKey:@"date"];
+    cell.titleLbl.text = [NSString stringWithFormat:@"%@ inch",[[obj objectForKey:@"value"] stringValue]];
+    cell.dateLbl.text = [NSString Date:[obj objectForKey:@"date"] toStringWithFormat:dateFormat];;
     
     if (indexPath.row == 0 && self.shouldShowNewMeasure) {  // Highlight new added measure
         self.showNewMeasure = NO;

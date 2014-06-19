@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *measureUnits;
 
 //Local variables
-@property (nonatomic, strong) NSString *measureDate;
+@property (nonatomic, strong) NSDate *measureDate;
 
 @end
 
@@ -105,7 +105,7 @@
     [self.measureBtn setBackgroundColor:highlightedColor forState:UIControlStateHighlighted];
     [self.measureBtn setBackgroundColor:selectedColor forState:UIControlStateSelected];
     
-    [self.measureBtn setTitle:@"Start" forState:UIControlStateNormal];
+    [self.measureBtn setTitle:@"Capture" forState:UIControlStateNormal];
     [self.measureBtn setTitle:@"Save" forState:UIControlStateSelected];
 }
 
@@ -115,8 +115,12 @@
         [self performSegueWithIdentifier:@"segueMeasureInputVC" sender:sender];
     } else {
         
+        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+        [f setNumberStyle:NSNumberFormatterDecimalStyle];
+        NSNumber *newValue = [f numberFromString:self.measureDisplay.text];
+        
         // Save data
-        NSDictionary *dataInfo = @{@"value":self.measureDisplay.text,@"date":self.measureDate};
+        NSDictionary *dataInfo = @{@"value":newValue,@"date":self.measureDate};
         [[TPDataManager sharedManager] addMeasure:dataInfo toCategory:self.index];
         
         [self performSegueWithIdentifier:@"segueSummaryVC" sender:sender];
@@ -130,7 +134,7 @@
 }
 
 #pragma mark - TPMeasureInput Delegates
-- (void)TPMeasureInputVC:(TPMeasureInputVC *)controller didFinishEnteringMeasure:(NSString *)measureValue atDate:(NSString *)measureDate {
+- (void)TPMeasureInputVC:(TPMeasureInputVC *)controller didFinishEnteringMeasure:(NSString *)measureValue atDate:(NSDate *)measureDate {
     self.measureBtn.selected = YES;
     self.measureDisplay.text = measureValue;
     self.measureDate = measureDate;

@@ -17,7 +17,7 @@ CGFloat const kJBChartTooltipViewDefaultWidth = 75.0f;
 CGFloat const kJBChartTooltipViewDefaultHeight = 25.0f;
 
 #define kJBColorTooltipColor [UIColor colorWithWhite:1.0 alpha:0.9]
-#define kJBColorTooltipTextColor UIColorFromHex(0x313131)
+#define kJBColorTooltipTextColor [UIColor blackColor];
 #define kJBFontTooltipText [UIFont fontWithName:@"HelveticaNeue-Bold" size:14]
 
 @interface JBChartTooltipView ()

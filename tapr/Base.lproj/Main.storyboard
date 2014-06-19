@@ -328,7 +328,7 @@
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hMX-b9-Cnu" secondAttribute="height" multiplier="1:1" id="c0C-A1-zjz"/>
-                                    <constraint firstAttribute="width" constant="75" id="thG-sa-8sJ"/>
+                                    <constraint firstAttribute="height" constant="75" id="jCn-wE-l3p"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4q-yu-0qa">
@@ -757,7 +757,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="uca-0G-TOT"/>
-        <segue reference="zbR-JO-MNn"/>
+        <segue reference="AyT-U9-cWk"/>
         <segue reference="g9I-yE-KEY"/>
     </inferredMetricsTieBreakers>
 </document>

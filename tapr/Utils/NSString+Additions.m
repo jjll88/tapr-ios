@@ -97,5 +97,12 @@
     return numberStr;
 }
 
++ (NSString *) Date: (NSDate *) date toStringWithFormat:(NSString *) formatStr {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:formatStr];
+    //    DMLog(@"%@",[dateFormatter stringFromDate:currDate]);
+    
+    return [dateFormatter stringFromDate:date];
+}
 
 @end

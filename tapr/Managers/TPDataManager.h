@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 
-
 @interface TPDataManager : NSObject
 
 + (instancetype)sharedManager;

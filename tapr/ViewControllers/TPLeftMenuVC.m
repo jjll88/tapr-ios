@@ -109,6 +109,8 @@
         [self performSegueWithIdentifier:@"segueProfileVC" sender:cell];
     } else if (cell.tag == bluetoothCellIndex){
         [self performSegueWithIdentifier:@"segueBluetoothVC" sender:cell];
+    } else if (cell.tag == settingsCellIndex){
+        [self performSegueWithIdentifier:@"segueSettingsVC" sender:cell];
     } else if (cell.tag != logoutCellIndex){
         [self performSegueWithIdentifier:@"segueTestVC" sender:cell];
     } else {

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="TPMeasurement" representedClassName="TPMeasurement" syncable="YES">
+        <attribute name="createdOn" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="descriptionString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TPMeasurementType" inverseName="measurement" inverseEntity="TPMeasurementType" syncable="YES"/>
+    </entity>
+    <entity name="TPMeasurementType" representedClassName="TPMeasurementType" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="measurement" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TPMeasurement" inverseName="type" inverseEntity="TPMeasurement" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TPMeasurement" positionX="-443" positionY="-117" width="128" height="103"/>
+        <element name="TPMeasurementType" positionX="-54" positionY="-9" width="128" height="73"/>
+    </elements>
+</model>

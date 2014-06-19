@@ -23,7 +23,7 @@
 @implementation TPProgressVC
 
 - (NSArray *) menuItemTitlesArr { // Order is important.
-    if (!_menuItemTitlesArr) _menuItemTitlesArr = [[TPDataManager sharedManager] dummyBodyPartCategories];
+    if (!_menuItemTitlesArr) _menuItemTitlesArr = [[TPDataManager sharedManager] measurementTypesArr];
     return _menuItemTitlesArr;
 }
 
@@ -90,8 +90,11 @@
         cell = [[TPMeasureCell alloc] init];
     }
     
+    NSManagedObject *assetType = self.menuItemTitlesArr[indexPath.row];
+
+    
     // Configure the cell...
-    cell.titleLbl.text = self.menuItemTitlesArr[indexPath.row];
+    cell.titleLbl.text = [assetType valueForKey:@"name"];
     
     return cell;
 }

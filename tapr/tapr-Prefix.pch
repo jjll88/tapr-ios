@@ -14,6 +14,7 @@
 // built-in frameworks
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
 
     #import "SWRevealViewController.h"
     #import "MBProgressHUD.h"
@@ -25,6 +26,10 @@
     #import "TPThemeManager.h"
     #import "TPDataManager.h"
     #import "TPProfileManager.h"
+
+// Models
+    #import "TPMeasurement.h"
+#import "TPMeasurementType.h"
 
 // Others
     #import "Constants.h"

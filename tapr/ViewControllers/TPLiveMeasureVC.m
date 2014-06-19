@@ -87,7 +87,7 @@
     [self.measureBtn setBackgroundColor:highlightedColor forState:UIControlStateHighlighted];
     [self.measureBtn setBackgroundColor:selectedColor forState:UIControlStateSelected];
     
-    [self.measureBtn setTitle:@"Start" forState:UIControlStateNormal];
+    [self.measureBtn setTitle:@"Capture" forState:UIControlStateNormal];
     [self.measureBtn setTitle:@"Save" forState:UIControlStateSelected];
 }
 

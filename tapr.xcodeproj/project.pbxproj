@@ -40,6 +40,10 @@
 		0739D4F0194AD8930011E1AC /* TPProgressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EF194AD8930011E1AC /* TPProgressVC.m */; };
 		0739D4F4194AD96D0011E1AC /* TPMeasureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4F3194AD96D0011E1AC /* TPMeasureVC.m */; };
 		076C9231194B2ACA00F3A2A9 /* TPSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C9230194B2ACA00F3A2A9 /* TPSummaryCell.m */; };
+		078AAEDD1952A8F00044E28D /* MeasureModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 078AAEDB1952A8F00044E28D /* MeasureModel.xcdatamodeld */; };
+		078AAEDF1952AB710044E28D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078AAEDE1952AB710044E28D /* CoreData.framework */; };
+		078AAEF419531A380044E28D /* TPMeasurementType.m in Sources */ = {isa = PBXBuildFile; fileRef = 078AAEF319531A380044E28D /* TPMeasurementType.m */; };
+		078AAEF719531A390044E28D /* TPMeasurement.m in Sources */ = {isa = PBXBuildFile; fileRef = 078AAEF619531A390044E28D /* TPMeasurement.m */; };
 		078FFBBF194EC5C7008BFFF9 /* TPMeasureInputVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 078FFBBE194EC5C7008BFFF9 /* TPMeasureInputVC.m */; };
 		078FFBC2194EF3FD008BFFF9 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 078FFBC1194EF3FD008BFFF9 /* NSString+Additions.m */; };
 		079216BA1950289B005D7A09 /* TPProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 079216B91950289B005D7A09 /* TPProfileVC.m */; };
@@ -135,6 +139,12 @@
 		074F6EB8194F32350097BA01 /* tapr_Dist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = tapr_Dist.plist; sourceTree = "<group>"; };
 		076C922F194B2ACA00F3A2A9 /* TPSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSummaryCell.h; sourceTree = "<group>"; };
 		076C9230194B2ACA00F3A2A9 /* TPSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSummaryCell.m; sourceTree = "<group>"; };
+		078AAEDC1952A8F00044E28D /* MeasureModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeasureModel.xcdatamodel; sourceTree = "<group>"; };
+		078AAEDE1952AB710044E28D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		078AAEF219531A380044E28D /* TPMeasurementType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeasurementType.h; sourceTree = "<group>"; };
+		078AAEF319531A380044E28D /* TPMeasurementType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMeasurementType.m; sourceTree = "<group>"; };
+		078AAEF519531A390044E28D /* TPMeasurement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeasurement.h; sourceTree = "<group>"; };
+		078AAEF619531A390044E28D /* TPMeasurement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMeasurement.m; sourceTree = "<group>"; };
 		078FFBBD194EC5C7008BFFF9 /* TPMeasureInputVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeasureInputVC.h; sourceTree = "<group>"; };
 		078FFBBE194EC5C7008BFFF9 /* TPMeasureInputVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMeasureInputVC.m; sourceTree = "<group>"; };
 		078FFBC0194EF3FD008BFFF9 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
@@ -183,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				078AAEDF1952AB710044E28D /* CoreData.framework in Frameworks */,
 				07EB51CE194A0EAA0031150D /* CoreGraphics.framework in Frameworks */,
 				07EB51D0194A0EAA0031150D /* UIKit.framework in Frameworks */,
 				07EB51CC194A0EAA0031150D /* Foundation.framework in Frameworks */,
@@ -322,12 +333,18 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		07363A0F194A132900FFEF34 /* Models */ = {
+		07363A0F194A132900FFEF34 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				078AAEDB1952A8F00044E28D /* MeasureModel.xcdatamodeld */,
+				078AAEF519531A390044E28D /* TPMeasurement.h */,
+				078AAEF619531A390044E28D /* TPMeasurement.m */,
+				078AAEF219531A380044E28D /* TPMeasurementType.h */,
+				078AAEF319531A380044E28D /* TPMeasurementType.m */,
 				079216C119503B8E005D7A09 /* TPUserProfile.h */,
 				079216C219503B8E005D7A09 /* TPUserProfile.m */,
 			);
+			name = Model;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -445,6 +462,7 @@
 		07EB51CA194A0EAA0031150D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				078AAEDE1952AB710044E28D /* CoreData.framework */,
 				07EB51CB194A0EAA0031150D /* Foundation.framework */,
 				07EB51CD194A0EAA0031150D /* CoreGraphics.framework */,
 				07EB51CF194A0EAA0031150D /* UIKit.framework */,
@@ -462,7 +480,7 @@
 				07EB51E3194A0EAA0031150D /* Images.xcassets */,
 				07EB51DD194A0EAA0031150D /* Main.storyboard */,
 				07363A0E194A131C00FFEF34 /* Managers */,
-				07363A0F194A132900FFEF34 /* Models */,
+				07363A0F194A132900FFEF34 /* Model */,
 				07363A0D194A131300FFEF34 /* Views */,
 				0739D4E9194AD7B30011E1AC /* Cells */,
 				07EB5200194A0F6E0031150D /* ViewControllers */,
@@ -647,6 +665,7 @@
 				07A6417D194B099800F75BBA /* TPMeasureCell.m in Sources */,
 				0704971A1951B4FC007CC681 /* JBLineChartFooterView.m in Sources */,
 				07049711195170B4007CC681 /* JBLineChartView.m in Sources */,
+				078AAEDD1952A8F00044E28D /* MeasureModel.xcdatamodeld in Sources */,
 				078FFBBF194EC5C7008BFFF9 /* TPMeasureInputVC.m in Sources */,
 				070497171951916D007CC681 /* JBChartTooltipView.m in Sources */,
 				0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */,
@@ -658,6 +677,7 @@
 				070497161951916D007CC681 /* JBChartTooltipTipView.m in Sources */,
 				0739D4F0194AD8930011E1AC /* TPProgressVC.m in Sources */,
 				079216C0195039AE005D7A09 /* TPProfileCell.m in Sources */,
+				078AAEF419531A380044E28D /* TPMeasurementType.m in Sources */,
 				07046CA3194ACA52004A6D38 /* TPDataManager.m in Sources */,
 				07DF0B28194B40F200FE76FA /* UIButton+Additions.m in Sources */,
 				0739D4F4194AD96D0011E1AC /* TPMeasureVC.m in Sources */,
@@ -673,6 +693,7 @@
 				07046C99194AC7FD004A6D38 /* TPBaseVC.m in Sources */,
 				07363A17194A138E00FFEF34 /* SWRevealViewController.m in Sources */,
 				07A6417A194B021000F75BBA /* UIImage+Additions.m in Sources */,
+				078AAEF719531A390044E28D /* TPMeasurement.m in Sources */,
 				07046CC7194AD280004A6D38 /* TPLeftMenuVC.m in Sources */,
 				070497221951D906007CC681 /* TPBluetoothVC.m in Sources */,
 				070497261951E3D2007CC681 /* TPSettingsVC.m in Sources */,
@@ -900,6 +921,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		078AAEDB1952A8F00044E28D /* MeasureModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				078AAEDC1952A8F00044E28D /* MeasureModel.xcdatamodel */,
+			);
+			currentVersion = 078AAEDC1952A8F00044E28D /* MeasureModel.xcdatamodel */;
+			path = MeasureModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 07EB51C0194A0EAA0031150D /* Project object */;
 }

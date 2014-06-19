@@ -63,6 +63,7 @@
 		07EB51ED194A0EAA0031150D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EB51CF194A0EAA0031150D /* UIKit.framework */; };
 		07EB51F5194A0EAA0031150D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07EB51F3194A0EAA0031150D /* InfoPlist.strings */; };
 		07EB51F7194A0EAA0031150D /* taprTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EB51F6194A0EAA0031150D /* taprTests.m */; };
+		43E5BCC0195238530078AD6D /* WZBluetoothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E5BCBF195238530078AD6D /* WZBluetoothManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +171,8 @@
 		07EB51F2194A0EAA0031150D /* taprTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "taprTests-Info.plist"; sourceTree = "<group>"; };
 		07EB51F4194A0EAA0031150D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07EB51F6194A0EAA0031150D /* taprTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = taprTests.m; sourceTree = "<group>"; };
+		43E5BCBE195238530078AD6D /* WZBluetoothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZBluetoothManager.h; sourceTree = "<group>"; };
+		43E5BCBF195238530078AD6D /* WZBluetoothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZBluetoothManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +291,8 @@
 		07363A0E194A131C00FFEF34 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				43E5BCBE195238530078AD6D /* WZBluetoothManager.h */,
+				43E5BCBF195238530078AD6D /* WZBluetoothManager.m */,
 				07046C9E194ACA37004A6D38 /* TPThemeManager.h */,
 				07046C9F194ACA37004A6D38 /* TPThemeManager.m */,
 				07046CA1194ACA52004A6D38 /* TPDataManager.h */,
@@ -622,6 +627,7 @@
 				0704971A1951B4FC007CC681 /* JBLineChartFooterView.m in Sources */,
 				07049711195170B4007CC681 /* JBLineChartView.m in Sources */,
 				078FFBBF194EC5C7008BFFF9 /* TPMeasureInputVC.m in Sources */,
+				43E5BCC0195238530078AD6D /* WZBluetoothManager.m in Sources */,
 				070497171951916D007CC681 /* JBChartTooltipView.m in Sources */,
 				0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */,
 				0704971E1951BA04007CC681 /* NSArray+Additions.m in Sources */,
@@ -774,13 +780,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: David Regatos Gomez (KSRSGZ42UK)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tapr/tapr-Prefix.pch";
 				INFOPLIST_FILE = tapr/tapr_Dev.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7197609E-6BF5-4A6B-80FE-9E6181707FA9";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -790,13 +797,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: ByteFly, Inc. (2NJB457542)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tapr/tapr-Prefix.pch";
 				INFOPLIST_FILE = tapr/tapr_Dist.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9821E509-E745-4020-B443-58395C0746C7";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

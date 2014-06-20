@@ -53,7 +53,7 @@
     // Nav bar Title
     [self setupNavBarTitle:settingsTitle];
     
-    self.unitSegmentedControl.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_OrangeTintColor];
+    self.unitSegmentedControl.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_DarkBlueTintColor];
     self.unitSegmentedControl.selectedSegmentIndex = self.user.preferedUnits;
     [self.unitSegmentedControl addTarget:self
                               action:@selector(segmentedChanged:)

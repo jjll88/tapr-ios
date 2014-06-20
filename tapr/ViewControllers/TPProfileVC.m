@@ -67,19 +67,22 @@
 
 #pragma mark - Set up UI
 - (void) setupUI {
+    
+    self.view.backgroundColor = [UIColor whiteColor];
     // Nav bar Title
     [self setupNavBarTitle:profileTitle];
     
     UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
                                                                                    target:self action:@selector(editBarButtonPressed)];
-    self.navigationController.navigationBar.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_OrangeTintColor];
+    self.navigationController.navigationBar.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_DarkBlueTintColor];
     [self.navigationItem setRightBarButtonItem:customBarItem];
     
     // tableview
-    self.tableView.allowsSelection = YES;
+    self.tableView.allowsSelection = NO;
     self.tableView.allowsMultipleSelection = NO;
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.scrollEnabled = NO;
     
     //avatar
     self.avatar.layer.cornerRadius = self.avatar.bounds.size.width/2;
@@ -88,7 +91,7 @@
     
     //joined
     self.joinedLbl.text = [NSString stringWithFormat:@"Joined %@",self.user.joinedDateStr];
-    self.joinedLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
+    self.joinedLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];
     self.joinedLbl.font = [UIFont fontWithName:@"Lato-Regular" size:15];
 }
 
@@ -116,13 +119,6 @@
     
     cell.categoryNameLbl.text = [categoryInfo objectForKey:@"type"];
     cell.categoryValueLbl.text = [categoryInfo objectForKey:@"value"];
-    
-    if (indexPath.row < [self.profileInfoArr count]-1) {
-        //separator line
-        UIView* separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(15, cell.bounds.size.height-1, cell.bounds.size.width, 1)];
-        separatorLineView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
-        [cell.contentView addSubview:separatorLineView];
-    }
     
     return cell;
 }

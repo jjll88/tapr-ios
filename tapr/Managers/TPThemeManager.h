@@ -12,25 +12,30 @@ typedef enum ThemeFontType : NSUInteger {
     ThemeFontType_NavBarTitle = 1,
     ThemeFontType_Subheader,
     
-    ThemeFontType_LeftMenuCell,
-    ThemeFontType_RegularCell_Title,
-    ThemeFontType_RegularCell_TitleHiglighted,
-    ThemeFontType_RegularCell_Subtitle,
-    ThemeFontType_LightCell_Title,
+    ThemeFontType_LeftMenu_Cell,
+    ThemeFontType_Cell_RegularTitle,
+    ThemeFontType_Cell_BoldTitle,
+    ThemeFontType_Cell_RegularSubtitle,
+    ThemeFontType_Cell_LightTitle,
     
     ThemeFontType_MeasureValue,
-    ThemeFontType_MeasureUnit
+    ThemeFontType_MeasureUnit,
+    ThemeFontType_BluetoothStatusMessage
     
 } ThemeFontType;
 
 typedef enum ThemeColorType : NSUInteger {
-    ThemeColorType_BlueTintColor = 1,
+    ThemeColorType_RegularBlueTintColor = 1,
+    ThemeColorType_DarkBlueTintColor,
+    ThemeColorType_LightBlueTintColor,
+    ThemeColorType_TurquoiseTintColor,
     ThemeColorType_OrangeTintColor,
-    ThemeColorType_LightOrange,
     
+    ThemeColorType_Background,
     ThemeColorType_MenuBackground,
     ThemeColorType_MenuHighLigthedCell,
-    ThemeColorType_MenuCellSeparator
+    ThemeColorType_MenuCellSeparator,
+    ThemeColorType_StatusBarTintColor
     
 } ThemeColorType;
 

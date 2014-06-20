@@ -90,7 +90,7 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
     
     //Subheader Lbl
     self.summaryTitleLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_Subheader];
-    self.summaryTitleLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
+    self.summaryTitleLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     if (self.index <= [self.bodyPartCategories count]) {
         self.summaryTitleLbl.text = self.bodyPartCategories[self.index];
     } else {
@@ -101,7 +101,7 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
     if (self.shouldShowNewMeasure) {
         UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                        target:self action:@selector(doneBarButtonPressed)];
-        self.navigationController.navigationBar.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_OrangeTintColor];
+        self.navigationController.navigationBar.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_DarkBlueTintColor];
         [self.navigationItem setRightBarButtonItem:customBarItem];
     }
     
@@ -114,15 +114,15 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
     JBLineChartFooterView *footerView = [[JBLineChartFooterView alloc] initWithFrame:CGRectMake(kJBLineChartViewControllerChartPadding, ceil(self.view.bounds.size.height * 0.5) - ceil(kJBLineChartViewControllerChartFooterHeight * 0.5), self.view.bounds.size.width - (kJBLineChartViewControllerChartPadding * 2), kJBLineChartViewControllerChartFooterHeight)];
     footerView.backgroundColor = [UIColor clearColor];
     footerView.leftLabel.text = [NSString Date:[[self.reverseBodyPartData firstObject] objectForKey:@"date"] toStringWithFormat:dateFormat];
-    footerView.leftLabel.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
+    footerView.leftLabel.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     footerView.rightLabel.text = [NSString Date:[[self.reverseBodyPartData lastObject] objectForKey:@"date"] toStringWithFormat:dateFormat];
-    footerView.rightLabel.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
+    footerView.rightLabel.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     footerView.sectionCount = [self.reverseBodyPartData count];
-    footerView.footerSeparatorColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
+    footerView.footerSeparatorColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     self.lineChartView.footerView = footerView;
     // Y axis
     UIView *yAxis = [[UIView alloc] initWithFrame:CGRectMake(20, self.lineChartView.frame.origin.y, 0.5, self.lineChartView.frame.size.height-20)];
-    yAxis.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
+    yAxis.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     [self.chartContainerView addSubview:yAxis];
     
     [self.lineChartView reloadData];
@@ -186,7 +186,7 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
 }
 
 - (UIColor *)lineChartView:(JBLineChartView *)lineChartView colorForLineAtLineIndex:(NSUInteger)lineIndex {
-    return [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor]; // color of line in chart
+    return [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor]; // color of line in chart
 }
 
 - (JBLineChartViewLineStyle)lineChartView:(JBLineChartView *)lineChartView lineStyleForLineAtLineIndex:(NSUInteger)lineIndex {
@@ -194,7 +194,7 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
 }
 
 - (UIColor *)verticalSelectionColorForLineChartView:(JBLineChartView *)lineChartView {
-    return [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];;
+    return [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];;
 }
 
 
@@ -227,8 +227,8 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
     if (indexPath.row == 0 && self.shouldShowNewMeasure) {  // Highlight new added measure
         self.showNewMeasure = NO;
         
-        cell.titleLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_OrangeTintColor];
-        cell.dateLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_OrangeTintColor];
+        cell.titleLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_DarkBlueTintColor];
+        cell.dateLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_DarkBlueTintColor];
     }
     
     return cell;

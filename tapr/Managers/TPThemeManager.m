@@ -23,24 +23,35 @@
 - (UIColor *)colorOfType:(ThemeColorType)type {
     UIColor *color = nil;
     switch (type) {
-        case ThemeColorType_BlueTintColor:
-            color = [UIColor colorWithRed:100/255.0 green:177/255.0 blue:197/255.0 alpha:1.0];
+        case ThemeColorType_RegularBlueTintColor:
+            color = [UIColor colorWithRed:14/255.0 green:128/255.0 blue:204/255.0 alpha:1.0];
+            break;
+        case ThemeColorType_DarkBlueTintColor:
+            color = [UIColor colorWithRed:17/255.0 green:106/255.0 blue:192/255.0 alpha:0.75];
+            break;
+        case ThemeColorType_LightBlueTintColor:
+            color = [UIColor colorWithRed:14/255.0 green:128/255.0 blue:204/255.0 alpha:0.15];
+            break;
+        case ThemeColorType_TurquoiseTintColor:
+            color = [UIColor colorWithRed:34/255.0 green:161/255.0 blue:193/255.0 alpha:1.0];
             break;
         case ThemeColorType_OrangeTintColor:
             color = [UIColor colorWithRed:228/255.0 green:104/255.0 blue:54/255.0 alpha:1.0];
             break;
-        case ThemeColorType_LightOrange:
-            color =[UIColor changeBrightness:[UIColor colorWithRed:228/255.0 green:104/255.0 blue:54/255.0 alpha:1.0]
-                                      amount:1.3];
+        case ThemeColorType_Background:
+            color = [UIColor colorWithRed:250/255.0 green:254/255.0 blue:255/255.0 alpha:1.0];
             break;
         case ThemeColorType_MenuBackground:
-            color = [UIColor colorWithRed:152/255.0 green:152/255.0 blue:152/255.0 alpha:1.0];
+            color = [UIColor colorWithRed:17/255.0 green:106/255.0 blue:192/255.0 alpha:1.0];
             break;
         case ThemeColorType_MenuHighLigthedCell:
-            color = [UIColor colorWithRed:222/255.0 green:82/255.0 blue:34/255.0 alpha:0.5];
+            color = [UIColor colorWithRed:77/255.0 green:154/255.0 blue:214/255.0 alpha:0.5];
             break;
         case ThemeColorType_MenuCellSeparator:
-            color = [UIColor colorWithRed:129/255.0 green:129/255.0 blue:129/255.0 alpha:1.0];
+            color = [UIColor colorWithRed:110/255.0 green:175/255.0 blue:223/255.0 alpha:1.0];
+            break;
+        case ThemeColorType_StatusBarTintColor:
+            color = [UIColor colorWithRed:2/255.0 green:83/255.0 blue:162/255.0 alpha:0.75];
             break;
         default:
             color = [UIColor grayColor];
@@ -72,26 +83,29 @@
         case ThemeFontType_Subheader:
             font = [UIFont fontWithName:@"Lato-Bold" size:18];
             break;
-        case ThemeFontType_LeftMenuCell:
-            font = [UIFont fontWithName:@"Lato-Bold" size:20];
+        case ThemeFontType_LeftMenu_Cell:
+            font = [UIFont fontWithName:@"Lato-Light" size:22];
             break;
-        case ThemeFontType_RegularCell_Title:
+        case ThemeFontType_Cell_RegularTitle:
             font = [UIFont fontWithName:@"Lato-Regular" size:18];
             break;
-        case ThemeFontType_RegularCell_TitleHiglighted:
+        case ThemeFontType_Cell_BoldTitle:
             font = [UIFont fontWithName:@"Lato-Bold" size:18];
             break;
-        case ThemeFontType_RegularCell_Subtitle:
-            font = [UIFont fontWithName:@"Lato-Bold" size:10];
+        case ThemeFontType_Cell_LightTitle:
+            font = [UIFont fontWithName:@"Lato-Light" size:19];
             break;
-        case ThemeFontType_LightCell_Title:
-            font = [UIFont fontWithName:@"Lato-Light" size:18];
+        case ThemeFontType_Cell_RegularSubtitle:
+            font = [UIFont fontWithName:@"Lato-Regular" size:11];
             break;
         case ThemeFontType_MeasureValue:
-            font = [UIFont fontWithName:@"Lato-Bold" size:30];
+            font = [UIFont fontWithName:@"Lato-Bold" size:120];
             break;
         case ThemeFontType_MeasureUnit:
-            font = [UIFont fontWithName:@"Lato-Light" size:18];
+            font = [UIFont fontWithName:@"Lato-Light" size:50];
+            break;
+        case ThemeFontType_BluetoothStatusMessage:
+            font = [UIFont fontWithName:@"Lato-Light" size:24];
             break;
         default:
             break;

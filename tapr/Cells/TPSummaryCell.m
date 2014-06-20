@@ -32,10 +32,10 @@
     
     //titleLbl
     self.titleLbl.textColor = [UIColor blackColor];
-    self.titleLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_LightCell_Title];
+    self.titleLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_Cell_LightTitle];
     
     self.dateLbl.textColor = [UIColor darkTextColor];
-    self.dateLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_RegularCell_Subtitle];
+    self.dateLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_Cell_RegularSubtitle];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

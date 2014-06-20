@@ -62,7 +62,7 @@
                                                                       style:UIBarButtonItemStyleBordered
                                                                      target:self
                                                                      action:@selector(closeBarButtonPressed)];
-    self.navigationController.navigationBar.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_OrangeTintColor];
+    self.navigationController.navigationBar.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_DarkBlueTintColor];
     [self.navigationItem addRightBarButtonItem:customBarItem];
     
     // tableview

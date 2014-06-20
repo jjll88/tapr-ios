@@ -33,7 +33,6 @@
 		070497171951916D007CC681 /* JBChartTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 070497151951916D007CC681 /* JBChartTooltipView.m */; };
 		0704971A1951B4FC007CC681 /* JBLineChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 070497191951B4FC007CC681 /* JBLineChartFooterView.m */; };
 		0704971E1951BA04007CC681 /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704971D1951BA04007CC681 /* NSArray+Additions.m */; };
-		070497221951D906007CC681 /* TPBluetoothVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 070497211951D906007CC681 /* TPBluetoothVC.m */; };
 		070497261951E3D2007CC681 /* TPSettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 070497251951E3D2007CC681 /* TPSettingsVC.m */; };
 		07363A17194A138E00FFEF34 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07363A16194A138E00FFEF34 /* SWRevealViewController.m */; };
 		0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EB194AD7EB0011E1AC /* TPMenuCell.m */; };
@@ -121,8 +120,6 @@
 		070497191951B4FC007CC681 /* JBLineChartFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartFooterView.m; sourceTree = "<group>"; };
 		0704971C1951BA04007CC681 /* NSArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Additions.h"; sourceTree = "<group>"; };
 		0704971D1951BA04007CC681 /* NSArray+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Additions.m"; sourceTree = "<group>"; };
-		070497201951D906007CC681 /* TPBluetoothVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPBluetoothVC.h; sourceTree = "<group>"; };
-		070497211951D906007CC681 /* TPBluetoothVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPBluetoothVC.m; sourceTree = "<group>"; };
 		070497241951E3D2007CC681 /* TPSettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSettingsVC.h; sourceTree = "<group>"; };
 		070497251951E3D2007CC681 /* TPSettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSettingsVC.m; sourceTree = "<group>"; };
 		07363A15194A138E00FFEF34 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -287,15 +284,6 @@
 				070497191951B4FC007CC681 /* JBLineChartFooterView.m */,
 			);
 			name = JBChart;
-			sourceTree = "<group>";
-		};
-		0704971F1951D8E1007CC681 /* Bluetooth */ = {
-			isa = PBXGroup;
-			children = (
-				070497201951D906007CC681 /* TPBluetoothVC.h */,
-				070497211951D906007CC681 /* TPBluetoothVC.m */,
-			);
-			name = Bluetooth;
 			sourceTree = "<group>";
 		};
 		070497231951E36A007CC681 /* Settings */ = {
@@ -521,7 +509,6 @@
 				07046C96194AC7B8004A6D38 /* Left Menu */,
 				079216B719502883005D7A09 /* Profile */,
 				0739D4ED194AD86C0011E1AC /* Progress */,
-				0704971F1951D8E1007CC681 /* Bluetooth */,
 				070497231951E36A007CC681 /* Settings */,
 				0739D4F1194AD9550011E1AC /* Measure */,
 				078FFBBC194EC5A1008BFFF9 /* Test */,
@@ -684,7 +671,6 @@
 				07363A17194A138E00FFEF34 /* SWRevealViewController.m in Sources */,
 				07A6417A194B021000F75BBA /* UIImage+Additions.m in Sources */,
 				07046CC7194AD280004A6D38 /* TPLeftMenuVC.m in Sources */,
-				070497221951D906007CC681 /* TPBluetoothVC.m in Sources */,
 				070497261951E3D2007CC681 /* TPSettingsVC.m in Sources */,
 				076C9231194B2ACA00F3A2A9 /* TPSummaryCell.m in Sources */,
 				07A64180194B1A8F00F75BBA /* TPSummaryVC.m in Sources */,

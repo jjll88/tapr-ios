@@ -31,7 +31,7 @@
     self.icon.clipsToBounds = YES;
     
     //separator line
-    UIView* separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height-1, self.bounds.size.width, 1)];
+    UIView* separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(0, menuCellHeight-1, self.bounds.size.width, 1)];
     separatorLineView.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuCellSeparator];
     [self.contentView addSubview:separatorLineView];
     
@@ -40,7 +40,7 @@
     
     //titleLbl
     self.titleLbl.textColor = [UIColor whiteColor];
-    self.titleLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_LeftMenuCell];
+    self.titleLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_LeftMenu_Cell];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

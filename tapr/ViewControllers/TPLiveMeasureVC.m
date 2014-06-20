@@ -14,10 +14,11 @@
 
 @interface TPLiveMeasureVC () <TPMeasureInputDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *liveLabel;
+@property (weak, nonatomic) IBOutlet UILabel *liveLbl;
 @property (weak, nonatomic) IBOutlet UIButton *measureBtn;
-@property (weak, nonatomic) IBOutlet UILabel *measureDisplay;
+@property (weak, nonatomic) IBOutlet UILabel *capturedLbl;
 @property (weak, nonatomic) IBOutlet UILabel *measureUnits;
+@property (weak, nonatomic) IBOutlet UILabel *bluetoothStatusLbl;
 
 //Local variables
 @property (nonatomic, strong) NSDate *measureDate;
@@ -70,7 +71,7 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:BMNotification_PeripheralHaveUpdate object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
         NSData *data = note.userInfo[BMNotificationKey_PeripheralUpdateKey];
         NSString *dataStr = [NSString stringWithUTF8String:(char *)(data.bytes)];
-        self.liveLabel.text = dataStr;
+        self.liveLbl.text = dataStr;
     }];
 }
 
@@ -81,17 +82,21 @@
     
     // Displays ****
     self.measureUnits.text = [TPDataManager sharedManager].unitsStr;
-    self.measureUnits.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
+    self.measureUnits.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     self.measureUnits.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_MeasureUnit];
     
-    self.measureDisplay.text = @"";
-    self.measureDisplay.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
-    self.measureDisplay.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_MeasureValue];
+    self.capturedLbl.text = @"";
+    self.capturedLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
+    self.capturedLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_MeasureValue];
+    self.capturedLbl.adjustsFontSizeToFitWidth = YES;
 
-    CGFloat lineThickness = 1.;
-    UIView *separatorLine = [[UIView alloc] initWithFrame:CGRectMake(0, self.measureDisplay.bounds.size.height-lineThickness, self.measureDisplay.bounds.size.width, lineThickness)];
-    separatorLine.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
-    [self.measureDisplay addSubview:separatorLine];
+    self.liveLbl.text = @"";
+    self.liveLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
+    self.liveLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_MeasureValue];
+    self.liveLbl.adjustsFontSizeToFitWidth = YES;
+    
+    self.bluetoothStatusLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_BluetoothStatusMessage];
+    self.bluetoothStatusLbl.adjustsFontSizeToFitWidth = YES;
     
     // Measure Btn ****
     self.measureBtn.tintColor = [UIColor clearColor];
@@ -99,9 +104,9 @@
     self.measureBtn.adjustsImageWhenHighlighted = NO;
     self.measureBtn.tag = self.index;
     
-    UIColor *selectedColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightOrange];
-    UIColor *highlightedColor = [[[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightOrange] colorWithAlphaComponent:0.75];
-    UIColor *normalColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightOrange];
+    UIColor *selectedColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_DarkBlueTintColor];
+    UIColor *highlightedColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightBlueTintColor];
+    UIColor *normalColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     
     [self.measureBtn setBackgroundColor:normalColor forState:UIControlStateNormal];
     [self.measureBtn setBackgroundColor:highlightedColor forState:UIControlStateHighlighted];
@@ -114,39 +119,63 @@
 #pragma mark - IBActions
 - (IBAction)measureBtnPressed:(UIButton *)sender {
     if (!self.measureBtn.selected) {
+        self.measureBtn.selected = YES;
+        self.liveLbl.hidden = YES;
+        self.capturedLbl.hidden = NO;
+        self.capturedLbl.text = self.liveLbl.text;
+    } else {
+        [self saveMeasurement];
+    }
+}
+- (IBAction)manualEntryBtnPressed:(UIButton *)sender {
+    if (!self.measureBtn.selected) {
         [self performSegueWithIdentifier:@"segueMeasureInputVC" sender:sender];
     } else {
-        
-        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-        [f setNumberStyle:NSNumberFormatterDecimalStyle];
-        NSNumber *enterValue = [f numberFromString:self.measureDisplay.text];
-        NSNumber *convertedValue = [NSNumber numberWithFloat:[enterValue floatValue]/[[[TPDataManager sharedManager] unitConversionFactor] floatValue]];
-        // Save data
-        NSDictionary *dataInfo = @{@"value":convertedValue,@"date":self.measureDate};
-        [[TPDataManager sharedManager] addMeasure:dataInfo toCategory:self.index];
-        
-        [self performSegueWithIdentifier:@"segueSummaryVC" sender:sender];
+        [self saveMeasurement];
     }
 }
 
 - (IBAction)editInputValue:(UITapGestureRecognizer *)sender {
-    if (![NSString isEmpty:self.measureDisplay.text]) {
+    if (![NSString isEmpty:self.capturedLbl.text]) {
         [self performSegueWithIdentifier:@"segueMeasureInputVC" sender:sender];
     }
 }
 
 #pragma mark - TPMeasureInput Delegates
 - (void)TPMeasureInputVC:(TPMeasureInputVC *)controller didFinishEnteringMeasure:(NSString *)measureValue atDate:(NSDate *)measureDate {
+    self.liveLbl.hidden = YES;
+    self.capturedLbl.hidden = NO;
     self.measureBtn.selected = YES;
-    self.measureDisplay.text = measureValue;
+    self.capturedLbl.text = measureValue;
     self.measureDate = measureDate;
 }
 
 #pragma mark - Helpers
 - (void) resetValues {
     self.measureBtn.selected = NO;
-    self.measureDisplay.text = @"";
+    self.capturedLbl.text = @"";
     self.measureDate = nil;
+    self.liveLbl.hidden = NO;
+    self.capturedLbl.hidden = YES;
+}
+
+- (void) saveMeasurement {
+    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSNumber *enterValue = [f numberFromString:self.capturedLbl.text];
+    NSNumber *convertedValue = [NSNumber numberWithFloat:[enterValue floatValue]/[[[TPDataManager sharedManager] unitConversionFactor] floatValue]];
+    if (enterValue) {
+        // Save data
+        NSDictionary *dataInfo = @{@"value":convertedValue,@"date":self.measureDate};
+        [[TPDataManager sharedManager] addMeasure:dataInfo toCategory:self.index];
+        
+        [self performSegueWithIdentifier:@"segueSummaryVC" sender:nil];
+
+    } else {
+        self.measureBtn.selected = NO;
+        [self showAlert:@"Unable to save this value. Try again."];
+    }
+    
 }
 
 #pragma mark - Others

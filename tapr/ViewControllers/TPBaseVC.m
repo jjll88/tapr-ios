@@ -59,7 +59,7 @@
     CGFloat lineThickness = 1.;
     UIView *separatorLine = [[UIView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.bounds.size.height-lineThickness,
                                                                      self.navigationController.navigationBar.bounds.size.width, lineThickness)];
-    separatorLine.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightOrange];
+    separatorLine.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightBlueTintColor];
     [self.navigationController.navigationBar addSubview:separatorLine];
 }
 
@@ -72,7 +72,7 @@
                                                                      action:@selector(menuBarPressed)];
     
     self.navigationItem.hidesBackButton = YES;
-    self.navigationController.navigationBar.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_OrangeTintColor];
+    self.navigationController.navigationBar.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_DarkBlueTintColor];
     [self.navigationItem addLeftBarButtonItem:customBarItem];
 }
 
@@ -80,7 +80,7 @@
     
     UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                                    target:self action:@selector(plusBarButtonPressed)];
-    self.navigationController.navigationBar.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_OrangeTintColor];
+    self.navigationController.navigationBar.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_DarkBlueTintColor];
     [self.navigationItem addRightBarButtonItem:customBarItem];
 }
 
@@ -89,7 +89,7 @@
     UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
     title.text = navTitle;
     title.textAlignment = NSTextAlignmentCenter;
-    title.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
+    title.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     title.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_NavBarTitle];
     
     self.navigationItem.titleView = title;

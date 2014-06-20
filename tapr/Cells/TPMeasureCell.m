@@ -34,7 +34,8 @@
     
     //separator line
     UIView* separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(15, self.bounds.size.height-1, self.bounds.size.width, 1)];
-    separatorLineView.backgroundColor = [UIColor lightGrayColor];
+    separatorLineView.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];
+    separatorLineView.alpha = 0.15;
     [self.contentView addSubview:separatorLineView];
     
     //background color
@@ -42,7 +43,7 @@
     
     //titleLbl
     self.titleLbl.textColor = [UIColor blackColor];
-    self.titleLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_RegularCell_Title];
+    self.titleLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_Cell_LightTitle];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -52,15 +53,12 @@
     self.backgroundView = nil;
     
     if (selected) {
-        self.titleLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuHighLigthedCell];
-        self.titleLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_RegularCell_TitleHiglighted];
-//        self.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuHighLigthedCell];
-        
+        self.titleLbl.textColor = [UIColor whiteColor];
+        self.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_DarkBlueTintColor];
+
     } else {
-        
-        self.titleLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_RegularCell_Title];
         self.titleLbl.textColor = [UIColor blackColor];
-        
+        self.backgroundColor = [UIColor clearColor];
     }
 }
 @end

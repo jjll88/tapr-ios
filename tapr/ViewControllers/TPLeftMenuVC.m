@@ -14,6 +14,7 @@
 @interface TPLeftMenuVC () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIButton *logOutBtn;
 
 // Local variables
 @property (nonatomic) int selectedRow;
@@ -26,10 +27,8 @@
 - (NSArray *) menuItemArr { // Ordered elements of left menu
     if (!_menuItemArr) _menuItemArr = @[@{@"title":profileTitle,@"index":@profileCellIndex},
                                         @{@"title":progressTitle,@"index":@progressCellIndex},
-                                        @{@"title":bluetoothTitle,@"index":@bluetoothCellIndex},
-                                        @{@"title":settingsTitle,@"index":@settingsCellIndex},
                                         @{@"title":aboutTitle,@"index":@aboutCellIndex},
-                                        @{@"title":logoutTitle,@"index":@logoutCellIndex}];
+                                        @{@"title":settingsTitle,@"index":@settingsCellIndex},];
     return _menuItemArr;
 }
 
@@ -67,11 +66,31 @@
 
 #pragma mark - Set up UI
 - (void) setupUI {
-    // tableview
+    // tableview ****
     self.tableView.allowsSelection = YES;
     self.tableView.allowsMultipleSelection = NO;
+    self.tableView.scrollEnabled = NO;
     self.tableView.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuBackground];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    // table header view
+    CGFloat lineThickness = 1.;
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, 64)];
+    header.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuBackground];
+    UIView *bottomSeparatorLine = [[UIView alloc] initWithFrame:CGRectMake(0, header.bounds.size.height-lineThickness, header.bounds.size.width, lineThickness)];
+    bottomSeparatorLine.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuCellSeparator];
+    [header addSubview:bottomSeparatorLine];
+    self.tableView.tableHeaderView = header;
+    
+    // log out Btn
+    self.logOutBtn.backgroundColor = [UIColor clearColor];
+    self.logOutBtn.tintColor = [UIColor clearColor];
+    [self.logOutBtn setTitle:logoutTitle forState:UIControlStateNormal];
+    self.logOutBtn.titleLabel.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_LeftMenu_Cell];
+    [self.logOutBtn setBackgroundColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuBackground] forState:UIControlStateHighlighted];
+    [self.logOutBtn setBackgroundColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuHighLigthedCell] forState:UIControlStateNormal];
+    UIView *topSeparatorLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, header.bounds.size.width, lineThickness)];
+    topSeparatorLine.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuCellSeparator];
+    [self.logOutBtn addSubview:topSeparatorLine];
 }
 
 #pragma mark - Table view data source
@@ -107,30 +126,20 @@
         [self performSegueWithIdentifier:@"segueProgressVC" sender:cell];
     } else if (cell.tag == profileCellIndex){
         [self performSegueWithIdentifier:@"segueProfileVC" sender:cell];
-    } else if (cell.tag == bluetoothCellIndex){
-        [self performSegueWithIdentifier:@"segueBluetoothVC" sender:cell];
     } else if (cell.tag == settingsCellIndex){
         [self performSegueWithIdentifier:@"segueSettingsVC" sender:cell];
-    } else if (cell.tag != logoutCellIndex){
-        [self performSegueWithIdentifier:@"segueTestVC" sender:cell];
     } else {
-        [self toastMessage:@"Under construction"];
+        [self performSegueWithIdentifier:@"segueTestVC" sender:cell];
     }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 64.;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return menuCellHeight;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    CGFloat lineThickness = 1.;
-    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, 64)];
-    header.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuBackground];
-    UIView *separatorLine = [[UIView alloc] initWithFrame:CGRectMake(0, header.bounds.size.height-lineThickness, header.bounds.size.width, lineThickness)];
-    separatorLine.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuCellSeparator];
-    [header addSubview:separatorLine];
-    
-    return header;
+#pragma mark - IBActions
+- (IBAction)logoutBtnPressed:(UIButton *)sender {
+    [self toastMessage:@"Under construction"];
 }
 
 

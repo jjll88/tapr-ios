@@ -50,8 +50,8 @@
     self.dataInput.delegate = self;
     self.dataInput.placeholder = [TPDataManager sharedManager].unitsStr;
     
-    UIColor *highlightedColor = [[[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightOrange] colorWithAlphaComponent:0.75];
-    UIColor *normalColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightOrange];
+    UIColor *highlightedColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightBlueTintColor];
+    UIColor *normalColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     
     self.enterBtn.tintColor = [UIColor clearColor];
     self.enterBtn.backgroundColor = [UIColor clearColor];

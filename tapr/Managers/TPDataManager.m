@@ -34,7 +34,7 @@
 }
 
 - (NSString *)unitsStr  {
-    return [[TPProfileManager sharedManager] user].preferedUnits == preferedUnits_cm ? @"cm" : @"inches";
+    return [[TPProfileManager sharedManager] user].preferedUnits == preferedUnits_cm ? @"cm" : @"in.";
 }
 
 - (NSDateFormatter *)dummyDateFormatter  {

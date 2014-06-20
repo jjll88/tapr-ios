@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSMutableArray *dummyArmData;
 @property (nonatomic, strong) NSMutableArray *dummyWaistData;
 @property (nonatomic, strong) NSMutableArray *dummyLegData;
+@property (nonatomic, strong) NSDateFormatter *dummyDateFormatter;
 
 @end
 
@@ -34,6 +35,22 @@
         shared = [[self alloc] init];
     });
     return shared;
+}
+
+- (NSNumber *)unitConversionFactor  {
+    return ([[TPProfileManager sharedManager] user].preferedUnits == preferedUnits_cm ? @1 : @(cmToInchConversionFactor));
+}
+
+- (NSString *)unitsStr  {
+    return [[TPProfileManager sharedManager] user].preferedUnits == preferedUnits_cm ? @"cm" : @"inches";
+}
+
+- (NSDateFormatter *)dummyDateFormatter  {
+    if  (!_dummyDateFormatter) {
+        _dummyDateFormatter = [[NSDateFormatter alloc] init];
+        [_dummyDateFormatter setDateFormat:@"MMMM dd, yyyy\nhh:mm a"];
+    }
+    return _dummyDateFormatter;
 }
 
 #pragma mark - Core Data stack
@@ -186,10 +203,10 @@
 }
 
 - (NSMutableArray *)dummyChestData  {
-    if  (!_dummyChestData) _dummyChestData = [@[@{@"value":@"91.5",@"date":@"June 6, 2014\n8:15 PM"},
-                                                @{@"value":@"92",@"date":@"April 12, 2014\n8:25 AM"},
-                                                @{@"value":@"93.25",@"date":@"February 26, 2014\n10:15 PM"},
-                                                @{@"value":@"94",@"date":@"January 16, 2014\n9:15 AM"}] mutableCopy];
+    if  (!_dummyChestData) _dummyChestData = [@[@{@"value":@41.5,@"date":[self.dummyDateFormatter dateFromString:@"June 6, 2014\n8:15 PM"]},
+                                                @{@"value":@42,@"date":[self.dummyDateFormatter dateFromString:@"April 12, 2014\n8:25 AM"]},
+                                                @{@"value":@43.25,@"date":[self.dummyDateFormatter dateFromString:@"February 26, 2014\n10:15 PM"]},
+                                                @{@"value":@44,@"date":[self.dummyDateFormatter dateFromString:@"January 16, 2014\n9:15 AM"]}] mutableCopy];
     return _dummyChestData;
 }
 
@@ -210,10 +227,10 @@
 }
 
 - (NSMutableArray *)dummyWaistData  {
-    if  (!_dummyWaistData) _dummyWaistData = [@[@{@"value":@"82.45",@"date":@"June 4, 2014\n6:15 AM"},
-                                                @{@"value":@"85",@"date":@"January 20, 2014\n12:25 PM"},
-                                                @{@"value":@"84.25",@"date":@"December 15, 2013\n8:15 AM"},
-                                                @{@"value":@"83",@"date":@"October 11, 2013\n7:15 PM"}] mutableCopy];
+    if  (!_dummyWaistData) _dummyWaistData = [@[@{@"value":@32.45,@"date":[self.dummyDateFormatter dateFromString:@"June 4, 2014\n6:15 AM"]},
+                                                @{@"value":@31,@"date":[self.dummyDateFormatter dateFromString:@"January 20, 2014\n12:25 PM"]},
+                                                @{@"value":@33.25,@"date":[self.dummyDateFormatter dateFromString:@"December 15, 2013\n8:15 AM"]},
+                                                @{@"value":@33,@"date":[self.dummyDateFormatter dateFromString:@"October 11, 2013\n7:15 PM"]}] mutableCopy];
     return _dummyWaistData;
 }
 

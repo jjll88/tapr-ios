@@ -18,6 +18,9 @@
 
 @property (nonatomic, strong) NSMutableArray *measurementTypesArr;
 
+@property (nonatomic, strong) NSNumber *unitConversionFactor;
+@property (nonatomic, strong) NSString *unitsStr;
+
 + (instancetype)sharedManager;
 
 - (void)saveContext;

@@ -32,4 +32,6 @@
 //Archived Data Paths
 #define TPUserProfilePathKey        @"user_profile_data"
 
+#define cmToInchConversionFactor    0.393701
+
 #endif

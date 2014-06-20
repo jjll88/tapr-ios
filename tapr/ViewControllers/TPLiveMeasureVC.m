@@ -166,6 +166,7 @@
     NSNumber *convertedValue = [NSNumber numberWithFloat:[enterValue floatValue]/[[[TPDataManager sharedManager] unitConversionFactor] floatValue]];
     if (enterValue) {
         // Save data
+        self.measureDate = [NSDate date];
         NSDictionary *dataInfo = @{@"value":convertedValue,@"date":self.measureDate};
         [[TPDataManager sharedManager] addMeasure:dataInfo toCategory:self.index];
         

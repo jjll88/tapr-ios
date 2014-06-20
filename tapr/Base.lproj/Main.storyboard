@@ -1,10 +1,128 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="fmw-bc-kxc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--LoginVC-->
+        <scene sceneID="nGa-iq-ed2">
+            <objects>
+                <viewController id="fmw-bc-kxc" customClass="TPLoginVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LDJ-sT-OYq"/>
+                        <viewControllerLayoutGuide type="bottom" id="qOZ-k2-9K7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U6B-K3-74z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tapr" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yn8-nQ-iUM">
+                                <rect key="frame" x="20" y="99" width="280" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="rjd-BM-hZ4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GujaratiSangamMN" family="Gujarati Sangam MN" pointSize="60"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFc-Qe-VXk">
+                                <rect key="frame" x="26" y="289" width="268" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="dLH-eZ-I1a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CgO-oE-lJU">
+                                <rect key="frame" x="26" y="243" width="268" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="VKY-fm-l1W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGF-k6-COl">
+                                <rect key="frame" x="26" y="416" width="121" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="NCW-w8-kfq"/>
+                                    <constraint firstAttribute="width" constant="121" id="WUm-aN-PDJ"/>
+                                </constraints>
+                                <state key="normal" image="btn-facebook-login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginFBBtnPressed:" destination="fmw-bc-kxc" eventType="touchUpInside" id="tqZ-pb-Fq5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpk-xB-SO6">
+                                <rect key="frame" x="173" y="416" width="121" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btn-email-login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginEmailBtnPressed:" destination="fmw-bc-kxc" eventType="touchUpInside" id="Lcz-d2-gKH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hW-Nc-hZX">
+                                <rect key="frame" x="203" y="333" width="91" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="forgot password">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="forgotBtnPressed:" destination="fmw-bc-kxc" eventType="touchUpInside" id="ASO-on-aky"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fFc-Qe-VXk" firstAttribute="leading" secondItem="U6B-K3-74z" secondAttribute="leading" constant="26" id="1VJ-Gc-166"/>
+                            <constraint firstItem="1hW-Nc-hZX" firstAttribute="trailing" secondItem="CgO-oE-lJU" secondAttribute="trailing" id="AwX-NR-Wl4"/>
+                            <constraint firstItem="fFc-Qe-VXk" firstAttribute="trailing" secondItem="CgO-oE-lJU" secondAttribute="trailing" id="CE6-ne-PHC"/>
+                            <constraint firstAttribute="centerY" secondItem="fFc-Qe-VXk" secondAttribute="centerY" constant="-23" id="HgR-XS-WZ6"/>
+                            <constraint firstItem="fFc-Qe-VXk" firstAttribute="trailing" secondItem="wpk-xB-SO6" secondAttribute="trailing" id="LF0-bd-gpf"/>
+                            <constraint firstAttribute="trailing" secondItem="fFc-Qe-VXk" secondAttribute="trailing" constant="26" id="NM1-Jg-Q3J"/>
+                            <constraint firstAttribute="centerY" secondItem="CgO-oE-lJU" secondAttribute="centerY" constant="23" id="Oqg-ne-KbV"/>
+                            <constraint firstAttribute="centerY" secondItem="Yn8-nQ-iUM" secondAttribute="centerY" constant="150" id="SiJ-KN-6XC"/>
+                            <constraint firstItem="Yn8-nQ-iUM" firstAttribute="leading" secondItem="U6B-K3-74z" secondAttribute="leading" constant="20" id="Xsh-iY-Gwi"/>
+                            <constraint firstItem="fFc-Qe-VXk" firstAttribute="leading" secondItem="yGF-k6-COl" secondAttribute="leading" id="eKU-yi-9cf"/>
+                            <constraint firstItem="wpk-xB-SO6" firstAttribute="height" secondItem="yGF-k6-COl" secondAttribute="height" id="fgq-0h-cwq"/>
+                            <constraint firstItem="wpk-xB-SO6" firstAttribute="centerY" secondItem="yGF-k6-COl" secondAttribute="centerY" id="hdT-xp-kaX"/>
+                            <constraint firstItem="wpk-xB-SO6" firstAttribute="width" secondItem="yGF-k6-COl" secondAttribute="width" id="o7w-ZH-sA5"/>
+                            <constraint firstItem="fFc-Qe-VXk" firstAttribute="centerX" secondItem="CgO-oE-lJU" secondAttribute="centerX" id="o98-si-VV2"/>
+                            <constraint firstItem="fFc-Qe-VXk" firstAttribute="leading" secondItem="CgO-oE-lJU" secondAttribute="leading" id="sjy-Ay-6fk"/>
+                            <constraint firstItem="1hW-Nc-hZX" firstAttribute="top" secondItem="fFc-Qe-VXk" secondAttribute="bottom" constant="8" symbolic="YES" id="yW0-u3-DY3"/>
+                            <constraint firstAttribute="centerY" secondItem="yGF-k6-COl" secondAttribute="centerY" constant="-150" id="zDH-SV-Ndi"/>
+                            <constraint firstAttribute="trailing" secondItem="Yn8-nQ-iUM" secondAttribute="trailing" constant="20" id="zOb-uB-tve"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnsToCenterYConstrain" destination="zDH-SV-Ndi" id="9S2-Xz-JB2"/>
+                        <outlet property="emailTextField" destination="CgO-oE-lJU" id="qrW-o2-ENN"/>
+                        <outlet property="forgotBtn" destination="1hW-Nc-hZX" id="Aon-0Y-AwE"/>
+                        <outlet property="loginEmailBtn" destination="wpk-xB-SO6" id="07K-8e-ua6"/>
+                        <outlet property="loginFBBtn" destination="yGF-k6-COl" id="MyS-Vf-Btl"/>
+                        <outlet property="logoLbl" destination="Yn8-nQ-iUM" id="Klv-fA-asf"/>
+                        <outlet property="logoToCenterYConstrain" destination="SiJ-KN-6XC" id="Ywv-18-3Y4"/>
+                        <outlet property="passTextField" destination="fFc-Qe-VXk" id="W8Z-m9-rjM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rUX-Fz-KZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1415" y="228"/>
+        </scene>
         <!--Reveal View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -110,6 +228,7 @@
                         <segue destination="jEt-qQ-8Vr" kind="custom" identifier="segueTestVC" customClass="SWRevealViewControllerSegue" id="kAB-bH-y2h"/>
                         <segue destination="ba5-P5-pMu" kind="custom" identifier="segueProfileVC" customClass="SWRevealViewControllerSegue" id="uca-0G-TOT"/>
                         <segue destination="Mbc-vP-6i3" kind="custom" identifier="segueSettingsVC" customClass="SWRevealViewControllerSegue" id="0f5-pE-zoO"/>
+                        <segue destination="fmw-bc-kxc" kind="modal" identifier="segueLoginVC" modalTransitionStyle="flipHorizontal" id="CXE-VJ-1Y8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Biz-bi-6ex" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -236,7 +355,8 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="arV-h1-Fuk">
                                 <rect key="frame" x="0.0" y="235" width="320" height="333"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SummaryCell" rowHeight="55" id="Qoy-Xv-eA0" customClass="TPSummaryCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="55"/>
@@ -772,6 +892,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn-email-login" width="121" height="36"/>
+        <image name="btn-facebook-login" width="121" height="36"/>
         <image name="btn-nav-X" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

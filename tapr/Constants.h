@@ -29,4 +29,7 @@
 
 #define cmToInchConversionFactor    0.393701
 
+#define testUserEmail       @"  testUser@email.com"
+#define testUserPassword    @"  ************"
+
 #endif

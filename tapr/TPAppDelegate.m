@@ -7,11 +7,21 @@
 //
 
 #import "TPAppDelegate.h"
+#import "WZBluetoothManager.h"
+
+@interface TPAppDelegate ()
+
+@property (nonatomic, strong) WZBluetoothManager *btManager;
+
+@end
 
 @implementation TPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // initiate the Bluetooth manager
+    self.btManager = [WZBluetoothManager sharedManager];
+    [self setupNotificationObserver];
     // Override point for customization after application launch.
     
     // Load stored User Profile
@@ -64,6 +74,24 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)setupNotificationObserver {
+    [[NSNotificationCenter defaultCenter] addObserverForName:BMNotification_CentralManagerStateChange object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        NSLog(@"Bluetooth state update");
+        CBCentralManagerState state = [note.userInfo[BMNotificationKey_CentralManagerState] integerValue];
+        if (state == CBCentralManagerStatePoweredOn) {
+            NSLog(@"Bluetooth scanning peripherals");
+            [self.btManager startScanning];
+        }
+    }];
+    [[NSNotificationCenter defaultCenter] addObserverForName:BMNotification_PeripheralDiscovered object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        NSLog(@"Peripheral discovered, connect to it");
+        [self.btManager connectPeripheral:note.userInfo[BMNotificationKey_Peripheral]];
+        
+    }];
+    
 }
 
 @end

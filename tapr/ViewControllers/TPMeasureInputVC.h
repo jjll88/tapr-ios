@@ -12,7 +12,7 @@
 
 @protocol TPMeasureInputDelegate <NSObject>
 
-- (void)TPMeasureInputVC:(TPMeasureInputVC *)controller didFinishEnteringMeasure:(NSString *)measureValue atDate:(NSString *)measureDate;
+- (void)TPMeasureInputVC:(TPMeasureInputVC *)controller didFinishEnteringMeasure:(NSString *)measureValue atDate:(NSDate *)measureDate;
 
 @end
 

@@ -10,14 +10,17 @@
 #import "TPSummaryVC.h"
 #import "TPMeasureInputVC.h"
 
+#import "WZBluetoothManager.h"
+
 @interface TPLiveMeasureVC () <TPMeasureInputDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *liveLabel;
 @property (weak, nonatomic) IBOutlet UIButton *measureBtn;
 @property (weak, nonatomic) IBOutlet UILabel *measureDisplay;
 @property (weak, nonatomic) IBOutlet UILabel *measureUnits;
 
 //Local variables
-@property (nonatomic, strong) NSString *measureDate;
+@property (nonatomic, strong) NSDate *measureDate;
 
 @end
 
@@ -42,7 +45,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setupNotificationObserver];
+    
     [self setupUI];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -56,15 +62,29 @@
     [self resetValues];
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)setupNotificationObserver {
+    [[NSNotificationCenter defaultCenter] addObserverForName:BMNotification_PeripheralHaveUpdate object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        NSData *data = note.userInfo[BMNotificationKey_PeripheralUpdateKey];
+        NSString *dataStr = [NSString stringWithUTF8String:(char *)(data.bytes)];
+        self.liveLabel.text = dataStr;
+    }];
+}
+
 #pragma mark - Set up UI
 - (void) setupUI {
     
     [self resetValues];
     
     // Displays ****
+    self.measureUnits.text = [TPDataManager sharedManager].unitsStr;
     self.measureUnits.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
     self.measureUnits.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_MeasureUnit];
     
+    self.measureDisplay.text = @"";
     self.measureDisplay.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
     self.measureDisplay.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_MeasureValue];
 
@@ -97,8 +117,12 @@
         [self performSegueWithIdentifier:@"segueMeasureInputVC" sender:sender];
     } else {
         
+        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+        [f setNumberStyle:NSNumberFormatterDecimalStyle];
+        NSNumber *enterValue = [f numberFromString:self.measureDisplay.text];
+        NSNumber *convertedValue = [NSNumber numberWithFloat:[enterValue floatValue]/[[[TPDataManager sharedManager] unitConversionFactor] floatValue]];
         // Save data
-        NSDictionary *dataInfo = @{@"value":self.measureDisplay.text,@"date":self.measureDate};
+        NSDictionary *dataInfo = @{@"value":convertedValue,@"date":self.measureDate};
         [[TPDataManager sharedManager] addMeasure:dataInfo toCategory:self.index];
         
         [self performSegueWithIdentifier:@"segueSummaryVC" sender:sender];
@@ -112,7 +136,7 @@
 }
 
 #pragma mark - TPMeasureInput Delegates
-- (void)TPMeasureInputVC:(TPMeasureInputVC *)controller didFinishEnteringMeasure:(NSString *)measureValue atDate:(NSString *)measureDate {
+- (void)TPMeasureInputVC:(TPMeasureInputVC *)controller didFinishEnteringMeasure:(NSString *)measureValue atDate:(NSDate *)measureDate {
     self.measureBtn.selected = YES;
     self.measureDisplay.text = measureValue;
     self.measureDate = measureDate;

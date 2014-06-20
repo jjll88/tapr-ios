@@ -194,18 +194,18 @@
 }
 
 - (NSMutableArray *)dummyArmData  {
-    if  (!_dummyArmData) _dummyArmData = [@[@{@"value":@"12.25",@"date":@"April 4, 2014\n4:15 AM"},
-                                                @{@"value":@"11",@"date":@"January 2, 2014\n2:25 PM"},
-                                                @{@"value":@"10.25",@"date":@"September 5, 2013\n1:15 AM"},
-                                                @{@"value":@"9",@"date":@"April 11, 2013\n3:15 PM"}] mutableCopy];
+    if  (!_dummyArmData) _dummyArmData = [@[@{@"value":@12.25,@"date":[self.dummyDateFormatter dateFromString:@"April 4, 2014\n4:15 AM"]},
+                                            @{@"value":@11,@"date":[self.dummyDateFormatter dateFromString:@"January 2, 2014\n2:25 PM"]},
+                                            @{@"value":@10.25,@"date":[self.dummyDateFormatter dateFromString:@"September 5, 2013\n1:15 AM"]},
+                                            @{@"value":@9,@"date":[self.dummyDateFormatter dateFromString:@"April 11, 2013\n3:15 PM"]}] mutableCopy];
     return _dummyArmData;
 }
 
 - (NSMutableArray *)dummyLegData  {
-    if  (!_dummyLegData) _dummyLegData = [@[@{@"value":@"28",@"date":@"April 4, 2014\n8:15 PM"},
-                                            @{@"value":@"28",@"date":@"March 2, 2014\n12:25 AM"},
-                                            @{@"value":@"27.5",@"date":@"February 5, 2014\n11:15 PM"},
-                                            @{@"value":@"27",@"date":@"January 1, 2014\n12:15 AM"}] mutableCopy];
+    if  (!_dummyLegData) _dummyLegData = [@[@{@"value":@28,@"date":[self.dummyDateFormatter dateFromString:@"April 4, 2014\n8:15 PM"]},
+                                            @{@"value":@28,@"date":[self.dummyDateFormatter dateFromString:@"March 2, 2014\n12:25 AM"]},
+                                            @{@"value":@27.5,@"date":[self.dummyDateFormatter dateFromString:@"February 5, 2014\n11:15 PM"]},
+                                            @{@"value":@27,@"date":[self.dummyDateFormatter dateFromString:@"January 1, 2014\n12:15 AM"]}] mutableCopy];
     return _dummyLegData;
 }
 

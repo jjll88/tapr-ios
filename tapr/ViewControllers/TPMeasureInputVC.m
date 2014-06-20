@@ -48,6 +48,7 @@
 #pragma mark - Set up UI
 - (void) setupUI {
     self.dataInput.delegate = self;
+    self.dataInput.placeholder = [TPDataManager sharedManager].unitsStr;
     
     UIColor *highlightedColor = [[[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightOrange] colorWithAlphaComponent:0.75];
     UIColor *normalColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightOrange];
@@ -81,7 +82,7 @@
 
 - (IBAction)enterBtnPressed:(id)sender {
     if (![NSString isEmpty:self.dataInput.text]) {
-        [self.delegate TPMeasureInputVC:self didFinishEnteringMeasure:self.dataInput.text atDate:[self currentDateString]];
+        [self.delegate TPMeasureInputVC:self didFinishEnteringMeasure:self.dataInput.text atDate:[NSDate date]];
         
         [self.dataInput resignFirstResponder];
         [self closeBtnPressed];
@@ -91,15 +92,6 @@
 }
      
 #pragma mark - Helpers
-- (NSString *) currentDateString {
-    // Current data
-    NSDate *currDate = [NSDate date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"MMMM dd, YYYY\nhh:mm a"];
-//    DMLog(@"%@",[dateFormatter stringFromDate:currDate]);
-    
-    return [dateFormatter stringFromDate:currDate];
-}
 
 #pragma mark - Others
 - (void)didReceiveMemoryWarning {

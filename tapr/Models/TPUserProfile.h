@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum MeasureUnits : NSUInteger {
+    preferedUnits_cm = 0,
+    preferedUnits_inch
+    
+} MeasureUnits;
+
 @interface TPUserProfile : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *name;
@@ -20,5 +26,6 @@
 @property (nonatomic, strong) NSString *joinedDateStr;
 
 @property (nonatomic, strong) NSString *email;
+@property (nonatomic) MeasureUnits preferedUnits;
 
 @end

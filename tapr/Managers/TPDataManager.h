@@ -13,6 +13,9 @@
 
 + (instancetype)sharedManager;
 
+@property (nonatomic, strong) NSNumber *unitConversionFactor;
+@property (nonatomic, strong) NSString *unitsStr;
+
 @property (nonatomic, strong) NSArray *dummyBodyPartCategories;
 @property (nonatomic, strong) NSArray *dummyBodyPartData;
 

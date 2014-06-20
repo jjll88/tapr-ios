@@ -34,6 +34,7 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
 @property (nonatomic, assign) BOOL tooltipVisible;
 
 // Local variables
+@property (nonatomic, strong) TPUserProfile *user;
 @property (nonatomic, strong) NSArray *bodyPartCategories;
 @property (nonatomic, strong) NSArray *bodyPartData;            // For the table view (news to olds)
 @property (nonatomic, strong) NSArray *reverseBodyPartData;     // For the chart view (olds to news)
@@ -53,6 +54,10 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
 
 - (NSArray *)reverseBodyPartData  {
     return[self.bodyPartData reversedArray];
+}
+
+- (TPUserProfile *)user  {
+    return [[TPProfileManager sharedManager] user];
 }
 
 #pragma mark - init
@@ -133,17 +138,17 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
 }
 
 - (CGFloat)lineChartView:(JBLineChartView *)lineChartView verticalValueForHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex {
-    CGFloat yValue = [[self.reverseBodyPartData[horizontalIndex] objectForKey:@"value"] floatValue];
+    CGFloat yValue = [[self.reverseBodyPartData[horizontalIndex] objectForKey:@"value"] floatValue]*[[[TPDataManager sharedManager] unitConversionFactor] floatValue];
     return yValue; // y-position (y-axis) of point at horizontalIndex (x-axis)
 }
 
 #pragma mark - LineChartView delegate
 // Handle touch
 - (void)lineChartView:(JBLineChartView *)lineChartView didSelectLineAtIndex:(NSUInteger)lineIndex horizontalIndex:(NSUInteger)horizontalIndex touchPoint:(CGPoint)touchPoint {
-    
-    NSString *yValueStr = [NSString stringWithFormat:@"%@ inch",[self.reverseBodyPartData[horizontalIndex] objectForKey:@"value"]];
+    NSDictionary *obj = (NSDictionary *) self.reverseBodyPartData[horizontalIndex];
+    CGFloat value = [[obj objectForKey:@"value"] floatValue]*[[[TPDataManager sharedManager] unitConversionFactor] floatValue];
+    NSString *yValueStr = [NSString stringWithFormat:@"%@ %@",[NSString numberToStringWithSeparator:@(value) andDecimals:2], [TPDataManager sharedManager].unitsStr];
     NSString *dateValueStr = [NSString Date:[self.reverseBodyPartData[horizontalIndex] objectForKey:@"date"] toStringWithFormat:dateFormat];
-//    NSString *pointValueStr = [NSString stringWithFormat:@"%@ at %@", yValueStr, dateValueStr];
     
     // Update view
     self.summaryTitleLbl.text = [NSString stringWithFormat:@"%@ - %@",self.bodyPartCategories[self.index],dateValueStr];
@@ -215,7 +220,8 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
     NSDictionary *obj = (NSDictionary *) self.bodyPartData[indexPath.row];
 
     // Custom Cell
-    cell.titleLbl.text = [NSString stringWithFormat:@"%@ inch",[[obj objectForKey:@"value"] stringValue]];
+    CGFloat value = [[obj objectForKey:@"value"] floatValue]*[[[TPDataManager sharedManager] unitConversionFactor] floatValue];
+    cell.titleLbl.text = [NSString stringWithFormat:@"%@ %@",[NSString numberToStringWithSeparator:@(value) andDecimals:2], [TPDataManager sharedManager].unitsStr];
     cell.dateLbl.text = [NSString Date:[obj objectForKey:@"date"] toStringWithFormat:dateFormat];;
     
     if (indexPath.row == 0 && self.shouldShowNewMeasure) {  // Highlight new added measure

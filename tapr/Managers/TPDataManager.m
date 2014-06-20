@@ -29,6 +29,14 @@
     return shared;
 }
 
+- (NSNumber *)unitConversionFactor  {
+    return ([[TPProfileManager sharedManager] user].preferedUnits == preferedUnits_cm ? @1 : @(cmToInchConversionFactor));
+}
+
+- (NSString *)unitsStr  {
+    return [[TPProfileManager sharedManager] user].preferedUnits == preferedUnits_cm ? @"cm" : @"inches";
+}
+
 - (NSDateFormatter *)dummyDateFormatter  {
     if  (!_dummyDateFormatter) {
         _dummyDateFormatter = [[NSDateFormatter alloc] init];

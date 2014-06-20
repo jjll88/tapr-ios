@@ -10,9 +10,18 @@
 
 @interface TPSettingsVC ()
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *unitSegmentedControl;
+
+// Local variables
+@property (nonatomic, strong) TPUserProfile *user;
+
 @end
 
 @implementation TPSettingsVC
+
+- (TPUserProfile *)user  {
+    return [[TPProfileManager sharedManager] user];
+}
 
 #pragma mark - init
 - (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -43,6 +52,18 @@
 - (void) setupUI {
     // Nav bar Title
     [self setupNavBarTitle:settingsTitle];
+    
+    self.unitSegmentedControl.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_OrangeTintColor];
+    self.unitSegmentedControl.selectedSegmentIndex = self.user.preferedUnits;
+    [self.unitSegmentedControl addTarget:self
+                              action:@selector(segmentedChanged:)
+                    forControlEvents:UIControlEventValueChanged];
+}
+
+#pragma mark - IBActions
+- (void) segmentedChanged:(UISegmentedControl *) sender {
+    TPUserProfile *user = [[TPProfileManager sharedManager] user];
+    user.preferedUnits = sender.selectedSegmentIndex == 0 ? preferedUnits_cm : preferedUnits_inch;
 }
 
 #pragma mark - Others

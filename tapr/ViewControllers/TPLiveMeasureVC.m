@@ -80,9 +80,11 @@
     [self resetValues];
     
     // Displays ****
+    self.measureUnits.text = [TPDataManager sharedManager].unitsStr;
     self.measureUnits.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
     self.measureUnits.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_MeasureUnit];
     
+    self.measureDisplay.text = @"";
     self.measureDisplay.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_BlueTintColor];
     self.measureDisplay.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_MeasureValue];
 
@@ -117,10 +119,10 @@
         
         NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
         [f setNumberStyle:NSNumberFormatterDecimalStyle];
-        NSNumber *newValue = [f numberFromString:self.measureDisplay.text];
-        
+        NSNumber *enterValue = [f numberFromString:self.measureDisplay.text];
+        NSNumber *convertedValue = [NSNumber numberWithFloat:[enterValue floatValue]/[[[TPDataManager sharedManager] unitConversionFactor] floatValue]];
         // Save data
-        NSDictionary *dataInfo = @{@"value":newValue,@"date":self.measureDate};
+        NSDictionary *dataInfo = @{@"value":convertedValue,@"date":self.measureDate};
         [[TPDataManager sharedManager] addMeasure:dataInfo toCategory:self.index];
         
         [self performSegueWithIdentifier:@"segueSummaryVC" sender:sender];

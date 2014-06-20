@@ -16,6 +16,7 @@ static NSString* const TPUserGenderKey = @"gender";
 static NSString* const TPUserAvatarKey = @"avatar";
 static NSString* const TPUserJoinedDateKey = @"joinedDate";
 static NSString* const TPUserEmailKey = @"email";
+static NSString* const TPUserUnitsKey = @"preferedUnits";
 
 @implementation TPUserProfile
 
@@ -29,6 +30,7 @@ static NSString* const TPUserEmailKey = @"email";
     [encoder encodeObject:self.avatar forKey:TPUserAvatarKey];
     [encoder encodeObject:self.joinedDateStr forKey:TPUserJoinedDateKey];
     [encoder encodeObject:self.email forKey:TPUserEmailKey];
+    [encoder encodeInteger:self.preferedUnits forKey:TPUserUnitsKey];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
@@ -42,6 +44,7 @@ static NSString* const TPUserEmailKey = @"email";
         self.avatar = [decoder decodeObjectForKey:TPUserAvatarKey];
         self.joinedDateStr = [decoder decodeObjectForKey:TPUserJoinedDateKey];
         self.email = [decoder decodeObjectForKey:TPUserEmailKey];
+        self.preferedUnits = [decoder decodeIntegerForKey:TPUserUnitsKey];
     }
     return self;
 }

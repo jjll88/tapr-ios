@@ -445,9 +445,21 @@
                     <view key="view" contentMode="scaleToFill" id="Ggp-cw-g9I">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NfD-Aq-lFQ">
+                                <rect key="frame" x="99" y="54" width="123" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="cm"/>
+                                    <segment title="Inch"/>
+                                </segments>
+                                <color key="tintColor" red="0.92941176469999998" green="0.42745098040000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="unitSegmentedControl" destination="NfD-Aq-lFQ" id="PVR-Wr-pdu"/>
                         <segue destination="IU8-jg-nRB" kind="modal" identifier="segueMeasureVC" id="zbR-JO-MNn"/>
                     </connections>
                 </viewController>
@@ -567,7 +579,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7X-Jl-P6D">
-                                <rect key="frame" x="60" y="373" width="170" height="35"/>
+                                <rect key="frame" x="60" y="373" width="140" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -581,10 +593,10 @@
                                 </connections>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g3-Eo-JVU">
-                                <rect key="frame" x="230" y="387" width="30" height="21"/>
+                                <rect key="frame" x="200" y="387" width="60" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="3rk-Z2-47V"/>
+                                    <constraint firstAttribute="width" constant="60" id="3rk-Z2-47V"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -757,7 +769,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="uca-0G-TOT"/>
-        <segue reference="AyT-U9-cWk"/>
+        <segue reference="zbR-JO-MNn"/>
         <segue reference="g9I-yE-KEY"/>
     </inferredMetricsTieBreakers>
 </document>

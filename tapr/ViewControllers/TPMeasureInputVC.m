@@ -48,6 +48,7 @@
 #pragma mark - Set up UI
 - (void) setupUI {
     self.dataInput.delegate = self;
+    self.dataInput.placeholder = [TPDataManager sharedManager].unitsStr;
     
     UIColor *highlightedColor = [[[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightOrange] colorWithAlphaComponent:0.75];
     UIColor *normalColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightOrange];

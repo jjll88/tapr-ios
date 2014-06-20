@@ -89,7 +89,7 @@
     [self.logOutBtn setBackgroundColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuBackground] forState:UIControlStateHighlighted];
     [self.logOutBtn setBackgroundColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuHighLigthedCell] forState:UIControlStateNormal];
     UIView *topSeparatorLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, header.bounds.size.width, lineThickness)];
-    topSeparatorLine.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuCellSeparator];
+    topSeparatorLine.backgroundColor = [UIColor whiteColor];
     [self.logOutBtn addSubview:topSeparatorLine];
 }
 
@@ -139,7 +139,8 @@
 
 #pragma mark - IBActions
 - (IBAction)logoutBtnPressed:(UIButton *)sender {
-    [self toastMessage:@"Under construction"];
+//    [self toastMessage:@"Under construction"];
+    [self performSegueWithIdentifier:@"segueLoginVC" sender:nil];
 }
 
 

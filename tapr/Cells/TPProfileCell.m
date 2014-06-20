@@ -28,7 +28,7 @@
 - (void) setup {
     
     //background color
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor clearColor];
     
     //Lbls
     self.categoryNameLbl.textColor = [UIColor grayColor];
@@ -36,12 +36,6 @@
     
     self.categoryValueLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];
     self.categoryValueLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_Cell_RegularTitle];
-    
-    //separator line
-    UIView* separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(15, self.bounds.size.height-1, self.bounds.size.width, 1)];
-    separatorLineView.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];
-    separatorLineView.alpha = 0.15;
-    [self.contentView addSubview:separatorLineView];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

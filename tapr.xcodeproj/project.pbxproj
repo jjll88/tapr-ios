@@ -45,6 +45,7 @@
 		079216BD195028E0005D7A09 /* TPProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 079216BC195028E0005D7A09 /* TPProfileManager.m */; };
 		079216C0195039AE005D7A09 /* TPProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 079216BF195039AE005D7A09 /* TPProfileCell.m */; };
 		079216C319503B8E005D7A09 /* TPUserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 079216C219503B8E005D7A09 /* TPUserProfile.m */; };
+		07A52A3B19546B9B007D0DA2 /* TPLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A52A3A19546B9B007D0DA2 /* TPLoginVC.m */; };
 		07A64177194AE58D00F75BBA /* TPTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A64176194AE58D00F75BBA /* TPTestVC.m */; };
 		07A6417A194B021000F75BBA /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A64179194B021000F75BBA /* UIImage+Additions.m */; };
 		07A6417D194B099800F75BBA /* TPMeasureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A6417C194B099800F75BBA /* TPMeasureCell.m */; };
@@ -146,6 +147,8 @@
 		079216BF195039AE005D7A09 /* TPProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPProfileCell.m; sourceTree = "<group>"; };
 		079216C119503B8E005D7A09 /* TPUserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPUserProfile.h; sourceTree = "<group>"; };
 		079216C219503B8E005D7A09 /* TPUserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPUserProfile.m; sourceTree = "<group>"; };
+		07A52A3919546B9B007D0DA2 /* TPLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLoginVC.h; sourceTree = "<group>"; };
+		07A52A3A19546B9B007D0DA2 /* TPLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLoginVC.m; sourceTree = "<group>"; };
 		07A64175194AE58D00F75BBA /* TPTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTestVC.h; sourceTree = "<group>"; };
 		07A64176194AE58D00F75BBA /* TPTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTestVC.m; sourceTree = "<group>"; };
 		07A64178194B021000F75BBA /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
@@ -399,6 +402,15 @@
 			name = Measure;
 			sourceTree = "<group>";
 		};
+		078AAEF819546A930044E28D /* Log in */ = {
+			isa = PBXGroup;
+			children = (
+				07A52A3919546B9B007D0DA2 /* TPLoginVC.h */,
+				07A52A3A19546B9B007D0DA2 /* TPLoginVC.m */,
+			);
+			name = "Log in";
+			sourceTree = "<group>";
+		};
 		078FFBBC194EC5A1008BFFF9 /* Test */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,6 +518,7 @@
 			children = (
 				07046C97194AC7FD004A6D38 /* TPBaseVC.h */,
 				07046C98194AC7FD004A6D38 /* TPBaseVC.m */,
+				078AAEF819546A930044E28D /* Log in */,
 				07046C96194AC7B8004A6D38 /* Left Menu */,
 				079216B719502883005D7A09 /* Profile */,
 				0739D4ED194AD86C0011E1AC /* Progress */,
@@ -639,6 +652,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07A52A3B19546B9B007D0DA2 /* TPLoginVC.m in Sources */,
 				079216C319503B8E005D7A09 /* TPUserProfile.m in Sources */,
 				07A6417D194B099800F75BBA /* TPMeasureCell.m in Sources */,
 				0704971A1951B4FC007CC681 /* JBLineChartFooterView.m in Sources */,

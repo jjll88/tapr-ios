@@ -80,6 +80,14 @@
     
     [self resetValues];
     
+    UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn-bluetooth-active"]
+                                                                      style:UIBarButtonItemStyleBordered
+                                                                     target:self
+                                                                     action:@selector(bluetoothBarButtonPressed)];
+    
+    self.navigationController.navigationBar.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_DarkBlueTintColor];
+    [self.navigationItem setRightBarButtonItem:customBarItem];
+    
     // Displays ****
     self.measureUnits.text = [TPDataManager sharedManager].unitsStr;
     self.measureUnits.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
@@ -139,6 +147,10 @@
     if (![NSString isEmpty:self.capturedLbl.text]) {
         [self performSegueWithIdentifier:@"segueMeasureInputVC" sender:sender];
     }
+}
+
+- (void) bluetoothBarButtonPressed {
+    [self toastMessage:@"Under construction"];
 }
 
 #pragma mark - TPMeasureInput Delegates

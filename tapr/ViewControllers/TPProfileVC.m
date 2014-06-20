@@ -68,7 +68,6 @@
 #pragma mark - Set up UI
 - (void) setupUI {
     
-    self.view.backgroundColor = [UIColor whiteColor];
     // Nav bar Title
     [self setupNavBarTitle:profileTitle];
     
@@ -81,7 +80,8 @@
     self.tableView.allowsSelection = NO;
     self.tableView.allowsMultipleSelection = NO;
     self.tableView.backgroundColor = [UIColor clearColor];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.separatorColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightBlueTintColor];
     self.tableView.scrollEnabled = NO;
     
     //avatar
@@ -95,8 +95,7 @@
     self.joinedLbl.font = [UIFont fontWithName:@"Lato-Regular" size:15];
 }
 
-# pragma mark - TableView datasource
-
+# pragma mark - TableView datasource & delegates
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -121,6 +120,14 @@
     cell.categoryValueLbl.text = [categoryInfo objectForKey:@"value"];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 1;
 }
 
 #pragma mark - Others

@@ -52,8 +52,12 @@
         [self addMenuTapGestureRecognizer];
     }
     
+    // Background Color
+    self.view.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_Background];
+    
     // Navigation bar bkg
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    UIImage *bgIm = [UIImage imageWithColor:self.view.backgroundColor AndSize:self.navigationController.navigationBar.bounds];
+    [self.navigationController.navigationBar setBackgroundImage:bgIm forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = NO;
     CGFloat lineThickness = 1.;

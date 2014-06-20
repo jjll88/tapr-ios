@@ -29,7 +29,7 @@
     // Initialization that can't wait until viewDidLoad
     self.addMenuBarBtn = YES;
     self.addMenuPanGesture = YES;
-    self.addPlusBarBtn = YES;
+    self.addPlusBarBtn = NO;
 }
 
 #pragma mark - view events

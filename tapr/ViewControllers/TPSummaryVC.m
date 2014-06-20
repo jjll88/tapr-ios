@@ -88,7 +88,16 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
     // Nav bar Title
     [self setupNavBarTitle:@"Summary"];
     
+    // tableview
+    self.tableView.allowsSelection = YES;
+    self.tableView.allowsMultipleSelection = NO;
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.separatorColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightBlueTintColor];
+    
     //Subheader Lbl
+    self.subHeaderContainer.backgroundColor = [UIColor clearColor];
+    self.summaryTitleLbl.backgroundColor = [UIColor clearColor];
     self.summaryTitleLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_Subheader];
     self.summaryTitleLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     if (self.index <= [self.bodyPartCategories count]) {
@@ -96,6 +105,11 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
     } else {
         self.summaryTitleLbl.text = @"";
     }
+    
+    UIView* separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(0, self.subHeaderContainer.bounds.size.height-1,
+                                                                         self.subHeaderContainer.bounds.size.width, 1)];
+    separatorLineView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.5];
+    [self.subHeaderContainer addSubview:separatorLineView];
     
     // Right button
     if (self.shouldShowNewMeasure) {

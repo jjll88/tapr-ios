@@ -18,5 +18,6 @@
 #import "NSArray+Additions.h"
 
 //Subclasses
+#import "RotatedUILabel.h"
 
 #endif

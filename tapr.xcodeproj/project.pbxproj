@@ -39,6 +39,7 @@
 		0739D4F0194AD8930011E1AC /* TPProgressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EF194AD8930011E1AC /* TPProgressVC.m */; };
 		0739D4F4194AD96D0011E1AC /* TPMeasureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4F3194AD96D0011E1AC /* TPMeasureVC.m */; };
 		075D42C619629BAD00C0CF78 /* TPAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 075D42C519629BAD00C0CF78 /* TPAboutVC.m */; };
+		075D42CA1962C9D500C0CF78 /* RotatedUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 075D42C91962C9D500C0CF78 /* RotatedUILabel.m */; };
 		076C9231194B2ACA00F3A2A9 /* TPSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C9230194B2ACA00F3A2A9 /* TPSummaryCell.m */; };
 		078FFBBF194EC5C7008BFFF9 /* TPMeasureInputVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 078FFBBE194EC5C7008BFFF9 /* TPMeasureInputVC.m */; };
 		078FFBC2194EF3FD008BFFF9 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 078FFBC1194EF3FD008BFFF9 /* NSString+Additions.m */; };
@@ -135,6 +136,8 @@
 		074F6EB8194F32350097BA01 /* tapr_Dist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = tapr_Dist.plist; sourceTree = "<group>"; };
 		075D42C419629BAD00C0CF78 /* TPAboutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAboutVC.h; sourceTree = "<group>"; };
 		075D42C519629BAD00C0CF78 /* TPAboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAboutVC.m; sourceTree = "<group>"; };
+		075D42C81962C9D500C0CF78 /* RotatedUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatedUILabel.h; sourceTree = "<group>"; };
+		075D42C91962C9D500C0CF78 /* RotatedUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatedUILabel.m; sourceTree = "<group>"; };
 		076C922F194B2ACA00F3A2A9 /* TPSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSummaryCell.h; sourceTree = "<group>"; };
 		076C9230194B2ACA00F3A2A9 /* TPSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSummaryCell.m; sourceTree = "<group>"; };
 		078FFBBD194EC5C7008BFFF9 /* TPMeasureInputVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeasureInputVC.h; sourceTree = "<group>"; };
@@ -334,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				07046CA8194ACA9D004A6D38 /* Utils.h */,
+				075D42C71962C9B100C0CF78 /* Subclasses */,
 				07046CA4194ACA72004A6D38 /* Categories */,
 			);
 			path = Utils;
@@ -409,6 +413,15 @@
 				075D42C519629BAD00C0CF78 /* TPAboutVC.m */,
 			);
 			name = About;
+			sourceTree = "<group>";
+		};
+		075D42C71962C9B100C0CF78 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				075D42C81962C9D500C0CF78 /* RotatedUILabel.h */,
+				075D42C91962C9D500C0CF78 /* RotatedUILabel.m */,
+			);
+			name = Subclasses;
 			sourceTree = "<group>";
 		};
 		078AAEF819546A930044E28D /* Log in */ = {
@@ -684,6 +697,7 @@
 				07046CC4194AD0DE004A6D38 /* UIColor+Additions.m in Sources */,
 				07049710195170B4007CC681 /* JBChartView.m in Sources */,
 				07EB51D8194A0EAA0031150D /* main.m in Sources */,
+				075D42CA1962C9D500C0CF78 /* RotatedUILabel.m in Sources */,
 				07046CA7194ACA7C004A6D38 /* UINavigationItem+Additions.m in Sources */,
 				079216BD195028E0005D7A09 /* TPProfileManager.m in Sources */,
 				07046C99194AC7FD004A6D38 /* TPBaseVC.m in Sources */,

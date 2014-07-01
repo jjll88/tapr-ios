@@ -388,18 +388,40 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyg-bN-kQD" customClass="JBLineChartView">
-                                        <rect key="frame" x="23" y="30" width="277" height="155"/>
+                                        <rect key="frame" x="35" y="30" width="265" height="150"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measurment" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hey-F7-loY" customClass="RotatedUILabel">
+                                        <rect key="frame" x="5" y="30" width="30" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2y-9h-wO6">
+                                        <rect key="frame" x="35" y="165" width="265" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="tyg-bN-kQD" firstAttribute="leading" secondItem="t2y-9h-wO6" secondAttribute="leading" id="7CZ-77-X1O"/>
                                     <constraint firstItem="tyg-bN-kQD" firstAttribute="top" secondItem="u3a-ex-UJP" secondAttribute="top" constant="30" id="80p-yQ-1Xy"/>
+                                    <constraint firstItem="t2y-9h-wO6" firstAttribute="top" secondItem="Hey-F7-loY" secondAttribute="bottom" constant="5" id="8du-xB-JTs"/>
+                                    <constraint firstItem="Hey-F7-loY" firstAttribute="leading" secondItem="u3a-ex-UJP" secondAttribute="leading" constant="5" id="9mN-r6-Zbl"/>
                                     <constraint firstAttribute="height" constant="200" id="CsL-NN-I2d"/>
-                                    <constraint firstItem="tyg-bN-kQD" firstAttribute="leading" secondItem="u3a-ex-UJP" secondAttribute="leading" constant="23" id="Jjo-O4-aUY"/>
+                                    <constraint firstItem="tyg-bN-kQD" firstAttribute="leading" secondItem="u3a-ex-UJP" secondAttribute="leading" constant="35" id="Jjo-O4-aUY"/>
+                                    <constraint firstItem="tyg-bN-kQD" firstAttribute="top" secondItem="Hey-F7-loY" secondAttribute="top" id="Sjf-5m-od1"/>
+                                    <constraint firstItem="tyg-bN-kQD" firstAttribute="trailing" secondItem="t2y-9h-wO6" secondAttribute="trailing" id="ex3-OI-wUK"/>
                                     <constraint firstAttribute="trailing" secondItem="tyg-bN-kQD" secondAttribute="trailing" constant="20" id="h9S-2O-ET7"/>
-                                    <constraint firstAttribute="bottom" secondItem="tyg-bN-kQD" secondAttribute="bottom" constant="15" id="me0-u2-8RO"/>
+                                    <constraint firstAttribute="bottom" secondItem="tyg-bN-kQD" secondAttribute="bottom" constant="20" id="me0-u2-8RO"/>
+                                    <constraint firstItem="tyg-bN-kQD" firstAttribute="bottom" secondItem="Hey-F7-loY" secondAttribute="bottom" constant="20" id="qSG-lj-IDf"/>
+                                    <constraint firstItem="tyg-bN-kQD" firstAttribute="leading" secondItem="Hey-F7-loY" secondAttribute="trailing" id="wTf-AW-ajh"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -419,6 +441,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="zXZ-DX-Cc4"/>
                     <connections>
+                        <outlet property="axisXLbl" destination="t2y-9h-wO6" id="uNm-fs-9jQ"/>
+                        <outlet property="axisYLbl" destination="Hey-F7-loY" id="HkI-RT-7ii"/>
                         <outlet property="chartContainerView" destination="u3a-ex-UJP" id="09z-XU-kcg"/>
                         <outlet property="lineChartView" destination="tyg-bN-kQD" id="ddc-Z8-z4i"/>
                         <outlet property="subHeaderContainer" destination="bp8-TC-Z29" id="gda-i0-zAO"/>

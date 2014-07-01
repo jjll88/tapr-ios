@@ -22,13 +22,19 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
 
 @interface TPSummaryVC () <JBLineChartViewDataSource, JBLineChartViewDelegate,UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *summaryTitleLbl;
+// Hader
 @property (weak, nonatomic) IBOutlet UIView *subHeaderContainer;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *summaryTitleLbl;
+// Chart view
 @property (weak, nonatomic) IBOutlet UIView *chartContainerView;
 @property (weak, nonatomic) IBOutlet JBLineChartView *lineChartView;
+@property (weak, nonatomic) IBOutlet RotatedUILabel *axisYLbl;
+@property (weak, nonatomic) IBOutlet UILabel *axisXLbl;
+
 @property (nonatomic, strong) JBChartTooltipView *tooltipView;
 @property (nonatomic, strong) JBChartTooltipTipView *tooltipTipView;
+// Table view
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 // Flags
 @property (nonatomic, assign) BOOL tooltipVisible;
@@ -125,17 +131,25 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
     self.chartContainerView.backgroundColor = [UIColor colorWithWhite:1. alpha:1.];
     self.lineChartView.backgroundColor = [UIColor colorWithWhite:1. alpha:1.];
     // X axis
+    self.axisXLbl.text = @"Date";
+    self.axisXLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_QuoteAuthor];
+    self.axisXLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     JBLineChartFooterView *footerView = [[JBLineChartFooterView alloc] initWithFrame:CGRectMake(kJBLineChartViewControllerChartPadding, ceil(self.view.bounds.size.height * 0.5) - ceil(kJBLineChartViewControllerChartFooterHeight * 0.5), self.view.bounds.size.width - (kJBLineChartViewControllerChartPadding * 2), kJBLineChartViewControllerChartFooterHeight)];
     footerView.backgroundColor = [UIColor clearColor];
+    /*
     footerView.leftLabel.text = [NSString Date:[[self.reverseBodyPartData firstObject] objectForKey:@"date"] toStringWithFormat:dateFormat];
     footerView.leftLabel.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     footerView.rightLabel.text = [NSString Date:[[self.reverseBodyPartData lastObject] objectForKey:@"date"] toStringWithFormat:dateFormat];
     footerView.rightLabel.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
+     */
     footerView.sectionCount = [self.reverseBodyPartData count];
     footerView.footerSeparatorColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     self.lineChartView.footerView = footerView;
     // Y axis
-    UIView *yAxis = [[UIView alloc] initWithFrame:CGRectMake(20, self.lineChartView.frame.origin.y, 0.5, self.lineChartView.frame.size.height-20)];
+    self.axisYLbl.text = @"Measurement";
+    self.axisYLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_QuoteAuthor];
+    self.axisYLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
+    UIView *yAxis = [[UIView alloc] initWithFrame:CGRectMake(self.lineChartView.frame.origin.x-3, self.lineChartView.frame.origin.y, 0.5, self.lineChartView.frame.size.height-20)];
     yAxis.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     [self.chartContainerView addSubview:yAxis];
     

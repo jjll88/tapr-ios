@@ -27,8 +27,10 @@
 #pragma mark - Set Up
 - (void) setup {
     //left image - icon
+    self.icon.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];
     self.icon.contentMode = UIViewContentModeScaleAspectFill;
     self.icon.clipsToBounds = YES;
+    self.icon.layer.cornerRadius = self.icon.bounds.size.width/2;
     
     //separator line
     UIView* separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(0, menuCellHeight-1, self.bounds.size.width, 1)];
@@ -51,9 +53,10 @@
     
     if (selected) {
         self.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuHighLigthedCell];
+        self.icon.backgroundColor = [UIColor whiteColor];
         
     } else {
-        
+        self.icon.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];
         self.backgroundColor = [UIColor clearColor];
         
     }

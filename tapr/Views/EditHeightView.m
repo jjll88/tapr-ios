@@ -25,6 +25,10 @@
 - (void) setup {
     // Initialization that can't wait until viewDidLoad
     
+    // Tap gesture
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selfViewTapped)];
+    [self addGestureRecognizer:tap];
+    
     self.heightLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];
     self.heightLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_Cell_RegularTitle];
     
@@ -37,7 +41,9 @@
     self.heightControl.selectedSegmentIndex = [TPProfileManager sharedManager].user.heightUnits;
 }
 
-
+- (void)selfViewTapped {
+    [self endEditing:YES];
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

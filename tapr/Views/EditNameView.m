@@ -24,6 +24,10 @@
 #pragma mark - Setup view
 - (void) setup {
     // Initialization that can't wait until viewDidLoad
+   
+    // Tap gesture
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selfViewTapped)];
+    [self addGestureRecognizer:tap];
     
     // Lbl
     self.nameLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];
@@ -33,7 +37,9 @@
     self.nameTxtField.text = [TPProfileManager sharedManager].user.name;
 }
 
-
+- (void)selfViewTapped {
+    [self endEditing:YES];
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -107,6 +107,10 @@
     
 }
 
+- (IBAction)selfViewTapped:(UIControl *)sender {
+    [self.view endEditing:YES];
+}
+
 #pragma mark - Others
 - (void) didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

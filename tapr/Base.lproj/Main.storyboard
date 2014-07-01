@@ -183,22 +183,34 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egD-H8-nkp">
-                                                    <rect key="frame" x="20" y="19" width="280" height="21"/>
+                                                    <rect key="frame" x="68" y="19" width="232" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y08-iU-b46">
+                                                    <rect key="frame" x="20" y="10" width="40" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="40u-Ls-ycC"/>
+                                                        <constraint firstAttribute="width" secondItem="y08-iU-b46" secondAttribute="height" multiplier="1:1" id="S0a-cy-Civ"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="egD-H8-nkp" secondAttribute="centerY" id="46r-m7-hb8"/>
                                                 <constraint firstAttribute="trailing" secondItem="egD-H8-nkp" secondAttribute="trailing" constant="20" id="6pw-cF-koO"/>
-                                                <constraint firstItem="egD-H8-nkp" firstAttribute="leading" secondItem="C5j-Ur-rhu" secondAttribute="leading" constant="20" id="tZf-pk-FXt"/>
+                                                <constraint firstItem="y08-iU-b46" firstAttribute="leading" secondItem="C5j-Ur-rhu" secondAttribute="leading" constant="20" symbolic="YES" id="DWF-Ge-obT"/>
+                                                <constraint firstItem="egD-H8-nkp" firstAttribute="leading" secondItem="y08-iU-b46" secondAttribute="trailing" constant="8" symbolic="YES" id="PeK-sU-KYk"/>
+                                                <constraint firstAttribute="centerY" secondItem="y08-iU-b46" secondAttribute="centerY" id="zxN-f5-UiH"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="icon" destination="y08-iU-b46" id="cE0-aS-KLw"/>
                                             <outlet property="titleLbl" destination="egD-H8-nkp" id="Jna-e4-XW7"/>
                                         </connections>
                                     </tableViewCell>
@@ -569,7 +581,7 @@
                         <viewControllerLayoutGuide type="top" id="EH1-EV-N5y"/>
                         <viewControllerLayoutGuide type="bottom" id="Swv-LJ-IiP"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="93c-oi-EV3">
+                    <view key="view" contentMode="scaleToFill" id="93c-oi-EV3" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -749,7 +761,7 @@
                                 </connections>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="F1Q-qe-aWW" secondAttribute="trailing" id="3pU-Xt-2Gf"/>
                             <constraint firstAttribute="trailing" secondItem="Lmc-UX-cz3" secondAttribute="trailing" id="7Nj-7Y-FDk"/>
@@ -767,6 +779,9 @@
                             <constraint firstItem="VJ6-ki-Dtm" firstAttribute="leading" secondItem="93c-oi-EV3" secondAttribute="leading" id="k9l-ex-lbj"/>
                             <constraint firstItem="frq-70-wbE" firstAttribute="leading" secondItem="93c-oi-EV3" secondAttribute="leading" id="w1U-Pe-ACT"/>
                         </constraints>
+                        <connections>
+                            <action selector="selfViewTapped:" destination="uEF-9Z-ya6" eventType="valueChanged" id="633-IQ-eiZ"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="xct-Fl-FH2"/>
                     <connections>

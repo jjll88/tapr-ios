@@ -20,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *measureUnits;
 @property (weak, nonatomic) IBOutlet UILabel *bluetoothStatusLbl;
 
+// ** To present a VC that allows manual entry. FOR TESTING */
+@property (weak, nonatomic) IBOutlet UIButton *manualEntryBtn;
+
 //Local variables
 @property (nonatomic, strong) NSDate *measureDate;
 
@@ -81,7 +84,7 @@
     [self resetValues];
     
     UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn-bluetooth-active"]
-                                                                      style:UIBarButtonItemStyleBordered
+                                                                      style:UIBarButtonItemStylePlain
                                                                      target:self
                                                                      action:@selector(bluetoothBarButtonPressed)];
     
@@ -103,7 +106,7 @@
     self.liveLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_MeasureValue];
     self.liveLbl.adjustsFontSizeToFitWidth = YES;
     
-    self.bluetoothStatusLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_BluetoothStatusMessage];
+    self.bluetoothStatusLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_Message];
     self.bluetoothStatusLbl.adjustsFontSizeToFitWidth = YES;
     
     // Measure Btn ****
@@ -122,6 +125,10 @@
     
     [self.measureBtn setTitle:@"Capture" forState:UIControlStateNormal];
     [self.measureBtn setTitle:@"Save" forState:UIControlStateSelected];
+    
+    if (!DEBUG) {
+        self.manualEntryBtn.hidden = YES;
+    }
 }
 
 #pragma mark - IBActions

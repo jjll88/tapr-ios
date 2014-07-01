@@ -38,6 +38,7 @@
 		0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EB194AD7EB0011E1AC /* TPMenuCell.m */; };
 		0739D4F0194AD8930011E1AC /* TPProgressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EF194AD8930011E1AC /* TPProgressVC.m */; };
 		0739D4F4194AD96D0011E1AC /* TPMeasureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4F3194AD96D0011E1AC /* TPMeasureVC.m */; };
+		075D42C619629BAD00C0CF78 /* TPAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 075D42C519629BAD00C0CF78 /* TPAboutVC.m */; };
 		076C9231194B2ACA00F3A2A9 /* TPSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C9230194B2ACA00F3A2A9 /* TPSummaryCell.m */; };
 		078FFBBF194EC5C7008BFFF9 /* TPMeasureInputVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 078FFBBE194EC5C7008BFFF9 /* TPMeasureInputVC.m */; };
 		078FFBC2194EF3FD008BFFF9 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 078FFBC1194EF3FD008BFFF9 /* NSString+Additions.m */; };
@@ -46,7 +47,6 @@
 		079216C0195039AE005D7A09 /* TPProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 079216BF195039AE005D7A09 /* TPProfileCell.m */; };
 		079216C319503B8E005D7A09 /* TPUserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 079216C219503B8E005D7A09 /* TPUserProfile.m */; };
 		07A52A3B19546B9B007D0DA2 /* TPLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A52A3A19546B9B007D0DA2 /* TPLoginVC.m */; };
-		07A64177194AE58D00F75BBA /* TPTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A64176194AE58D00F75BBA /* TPTestVC.m */; };
 		07A6417A194B021000F75BBA /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A64179194B021000F75BBA /* UIImage+Additions.m */; };
 		07A6417D194B099800F75BBA /* TPMeasureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A6417C194B099800F75BBA /* TPMeasureCell.m */; };
 		07A64180194B1A8F00F75BBA /* TPSummaryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A6417F194B1A8F00F75BBA /* TPSummaryVC.m */; };
@@ -133,6 +133,8 @@
 		0739D4F2194AD96D0011E1AC /* TPMeasureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeasureVC.h; sourceTree = "<group>"; };
 		0739D4F3194AD96D0011E1AC /* TPMeasureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMeasureVC.m; sourceTree = "<group>"; };
 		074F6EB8194F32350097BA01 /* tapr_Dist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = tapr_Dist.plist; sourceTree = "<group>"; };
+		075D42C419629BAD00C0CF78 /* TPAboutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAboutVC.h; sourceTree = "<group>"; };
+		075D42C519629BAD00C0CF78 /* TPAboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAboutVC.m; sourceTree = "<group>"; };
 		076C922F194B2ACA00F3A2A9 /* TPSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSummaryCell.h; sourceTree = "<group>"; };
 		076C9230194B2ACA00F3A2A9 /* TPSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSummaryCell.m; sourceTree = "<group>"; };
 		078FFBBD194EC5C7008BFFF9 /* TPMeasureInputVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeasureInputVC.h; sourceTree = "<group>"; };
@@ -149,8 +151,6 @@
 		079216C219503B8E005D7A09 /* TPUserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPUserProfile.m; sourceTree = "<group>"; };
 		07A52A3919546B9B007D0DA2 /* TPLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLoginVC.h; sourceTree = "<group>"; };
 		07A52A3A19546B9B007D0DA2 /* TPLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLoginVC.m; sourceTree = "<group>"; };
-		07A64175194AE58D00F75BBA /* TPTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTestVC.h; sourceTree = "<group>"; };
-		07A64176194AE58D00F75BBA /* TPTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTestVC.m; sourceTree = "<group>"; };
 		07A64178194B021000F75BBA /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
 		07A64179194B021000F75BBA /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
 		07A6417B194B099800F75BBA /* TPMeasureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeasureCell.h; sourceTree = "<group>"; };
@@ -402,6 +402,15 @@
 			name = Measure;
 			sourceTree = "<group>";
 		};
+		075D42C319629B9500C0CF78 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				075D42C419629BAD00C0CF78 /* TPAboutVC.h */,
+				075D42C519629BAD00C0CF78 /* TPAboutVC.m */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
 		078AAEF819546A930044E28D /* Log in */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,8 +423,6 @@
 		078FFBBC194EC5A1008BFFF9 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				07A64175194AE58D00F75BBA /* TPTestVC.h */,
-				07A64176194AE58D00F75BBA /* TPTestVC.m */,
 				078FFBBD194EC5C7008BFFF9 /* TPMeasureInputVC.h */,
 				078FFBBE194EC5C7008BFFF9 /* TPMeasureInputVC.m */,
 			);
@@ -521,9 +528,10 @@
 				078AAEF819546A930044E28D /* Log in */,
 				07046C96194AC7B8004A6D38 /* Left Menu */,
 				079216B719502883005D7A09 /* Profile */,
-				0739D4ED194AD86C0011E1AC /* Progress */,
-				070497231951E36A007CC681 /* Settings */,
 				0739D4F1194AD9550011E1AC /* Measure */,
+				0739D4ED194AD86C0011E1AC /* Progress */,
+				075D42C319629B9500C0CF78 /* About */,
+				070497231951E36A007CC681 /* Settings */,
 				078FFBBC194EC5A1008BFFF9 /* Test */,
 			);
 			path = ViewControllers;
@@ -587,9 +595,6 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "ByteFly Inc.";
 				TargetAttributes = {
-					07EB51C7194A0EAA0031150D = {
-						DevelopmentTeam = 2NJB457542;
-					};
 					07EB51E8194A0EAA0031150D = {
 						TestTargetID = 07EB51C7194A0EAA0031150D;
 					};
@@ -662,6 +667,7 @@
 				070497171951916D007CC681 /* JBChartTooltipView.m in Sources */,
 				0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */,
 				0704971E1951BA04007CC681 /* NSArray+Additions.m in Sources */,
+				075D42C619629BAD00C0CF78 /* TPAboutVC.m in Sources */,
 				078FFBC2194EF3FD008BFFF9 /* NSString+Additions.m in Sources */,
 				07046C9C194AC89C004A6D38 /* MBProgressHUD.m in Sources */,
 				07DF0B25194B3C3100FE76FA /* TPLiveMeasureVC.m in Sources */,
@@ -680,7 +686,6 @@
 				07EB51D8194A0EAA0031150D /* main.m in Sources */,
 				07046CA7194ACA7C004A6D38 /* UINavigationItem+Additions.m in Sources */,
 				079216BD195028E0005D7A09 /* TPProfileManager.m in Sources */,
-				07A64177194AE58D00F75BBA /* TPTestVC.m in Sources */,
 				07046C99194AC7FD004A6D38 /* TPBaseVC.m in Sources */,
 				07363A17194A138E00FFEF34 /* SWRevealViewController.m in Sources */,
 				07A6417A194B021000F75BBA /* UIImage+Additions.m in Sources */,
@@ -819,7 +824,7 @@
 				INFOPLIST_FILE = tapr/tapr_Dev.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "AB4EB495-E56C-4237-B044-2CE55E09DA87";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -830,13 +835,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tapr/tapr-Prefix.pch";
 				INFOPLIST_FILE = tapr/tapr_Dist.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "AB4EB495-E56C-4237-B044-2CE55E09DA87";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

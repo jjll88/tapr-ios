@@ -20,7 +20,9 @@ typedef enum ThemeFontType : NSUInteger {
     
     ThemeFontType_MeasureValue,
     ThemeFontType_MeasureUnit,
-    ThemeFontType_BluetoothStatusMessage
+    ThemeFontType_Message,
+    ThemeFontType_QuoteText,
+    ThemeFontType_QuoteAuthor
     
 } ThemeFontType;
 

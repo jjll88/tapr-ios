@@ -11,16 +11,18 @@
 
 //Left Menu Navigator ***
 #define profileTitle            @"Profile"
+#define measureTitle            @"Measure"
 #define progressTitle           @"Progress"
-#define settingsTitle           @"Settings"
 #define aboutTitle              @"About"
+#define settingsTitle           @"Settings"
 #define logoutTitle             @"Log out"
 
 #define profileCellIndex        100
-#define progressCellIndex       101
-#define aboutCellIndex          102
-#define settingsCellIndex       103
-#define logoutCellIndex         104
+#define measureCellIndex        101
+#define progressCellIndex       102
+#define aboutCellIndex          103
+#define settingsCellIndex       104
+#define logoutCellIndex         105
 
 #define menuCellHeight          45.
 

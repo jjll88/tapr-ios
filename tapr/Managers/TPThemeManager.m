@@ -104,8 +104,14 @@
         case ThemeFontType_MeasureUnit:
             font = [UIFont fontWithName:@"Lato-Light" size:50];
             break;
-        case ThemeFontType_BluetoothStatusMessage:
-            font = [UIFont fontWithName:@"Lato-Light" size:24];
+        case ThemeFontType_Message:
+            font = [UIFont fontWithName:@"Lato-Light" size:22];
+            break;
+        case ThemeFontType_QuoteText:
+            font = [UIFont fontWithName:@"Lato-Light" size:15];
+            break;
+        case ThemeFontType_QuoteAuthor:
+            font = [UIFont fontWithName:@"Lato-Light" size:12];
             break;
         default:
             break;

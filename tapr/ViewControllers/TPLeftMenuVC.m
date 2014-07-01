@@ -9,7 +9,7 @@
 #import "TPLeftMenuVC.h"
 #import "TPMenuCell.h"
 
-#define initialSelectedRow 0
+#define initialSelectedRow 1
 
 @interface TPLeftMenuVC () <UITableViewDataSource, UITableViewDelegate>
 
@@ -24,11 +24,13 @@
 
 @implementation TPLeftMenuVC
 
-- (NSArray *) menuItemArr { // Ordered elements of left menu
-    if (!_menuItemArr) _menuItemArr = @[@{@"title":profileTitle,@"index":@profileCellIndex},
-                                        @{@"title":progressTitle,@"index":@progressCellIndex},
-                                        @{@"title":aboutTitle,@"index":@aboutCellIndex},
-                                        @{@"title":settingsTitle,@"index":@settingsCellIndex},];
+// ** Ordered elements of the left menu. Array of dictionaries. Keys: title, index, segue. */
+- (NSArray *) menuItemArr {
+    if (!_menuItemArr) _menuItemArr = @[@{@"title":profileTitle,@"index":@profileCellIndex,@"segue":@"segueProfileVC"},
+                                        @{@"title":measureTitle,@"index":@measureCellIndex,@"segue":@"segueMeasureVC"},
+                                        @{@"title":progressTitle,@"index":@progressCellIndex,@"segue":@"segueProgressVC"},
+                                        @{@"title":aboutTitle,@"index":@aboutCellIndex,@"segue":@"segueAboutVC"},
+                                        @{@"title":settingsTitle,@"index":@settingsCellIndex,@"segue":@"segueSettingsVC"}];
     return _menuItemArr;
 }
 
@@ -86,8 +88,10 @@
     self.logOutBtn.tintColor = [UIColor clearColor];
     [self.logOutBtn setTitle:logoutTitle forState:UIControlStateNormal];
     self.logOutBtn.titleLabel.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_LeftMenu_Cell];
-    [self.logOutBtn setBackgroundColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuBackground] forState:UIControlStateHighlighted];
-    [self.logOutBtn setBackgroundColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuHighLigthedCell] forState:UIControlStateNormal];
+    [self.logOutBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.logOutBtn setTitleColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor] forState:UIControlStateHighlighted];
+    [self.logOutBtn setBackgroundColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [self.logOutBtn setBackgroundColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor] forState:UIControlStateNormal];
     UIView *topSeparatorLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, header.bounds.size.width, lineThickness)];
     topSeparatorLine.backgroundColor = [UIColor whiteColor];
     [self.logOutBtn addSubview:topSeparatorLine];
@@ -121,15 +125,12 @@
     self.selectedRow = (int)indexPath.row;
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *segueStr = [self.menuItemArr[indexPath.row] objectForKey:@"segue"];
     
-    if (cell.tag == progressCellIndex) {
-        [self performSegueWithIdentifier:@"segueProgressVC" sender:cell];
-    } else if (cell.tag == profileCellIndex){
-        [self performSegueWithIdentifier:@"segueProfileVC" sender:cell];
-    } else if (cell.tag == settingsCellIndex){
-        [self performSegueWithIdentifier:@"segueSettingsVC" sender:cell];
+    if (![NSString isEmpty:segueStr] && segueStr) {
+        [self performSegueWithIdentifier:segueStr sender:cell];
     } else {
-        [self performSegueWithIdentifier:@"segueTestVC" sender:cell];
+        DMLog(@"Bad ERROR. Unknown destination VC");;
     }
 }
 

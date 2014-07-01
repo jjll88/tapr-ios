@@ -14,8 +14,7 @@
 
 // Flags
 @property (nonatomic, getter = shouldAddMenuBarBtn) BOOL addMenuBarBtn;
-@property (nonatomic, getter = shouldAddPlusBarBtn) BOOL addPlusBarBtn;
-//@property (nonatomic, getter = shouldAddCloseBarBtn) BOOL addCloseBarBtn;
+@property (nonatomic, getter = shouldAddPlusBarBtn) BOOL addPlusBarBtn;             // NOT used anymore
 @property (nonatomic, getter = shouldAddMenuPanGesture) BOOL addMenuPanGesture;
 @property (nonatomic, getter = shouldAddMenuTapGesture) BOOL addMenuTapGesture;
 

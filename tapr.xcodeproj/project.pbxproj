@@ -72,6 +72,8 @@
 		07EB51ED194A0EAA0031150D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EB51CF194A0EAA0031150D /* UIKit.framework */; };
 		07EB51F5194A0EAA0031150D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07EB51F3194A0EAA0031150D /* InfoPlist.strings */; };
 		07EB51F7194A0EAA0031150D /* taprTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EB51F6194A0EAA0031150D /* taprTests.m */; };
+		07FCD68319631D9400CFBB75 /* TPPrivacyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FCD68219631D9400CFBB75 /* TPPrivacyVC.m */; };
+		07FCD68619631DB000CFBB75 /* TPToolsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FCD68519631DB000CFBB75 /* TPToolsVC.m */; };
 		43E5BCC0195238530078AD6D /* WZBluetoothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E5BCBF195238530078AD6D /* WZBluetoothManager.m */; };
 		43E5BCC219532B900078AD6D /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E5BCC119532B900078AD6D /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
@@ -199,6 +201,10 @@
 		07EB51F2194A0EAA0031150D /* taprTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "taprTests-Info.plist"; sourceTree = "<group>"; };
 		07EB51F4194A0EAA0031150D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07EB51F6194A0EAA0031150D /* taprTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = taprTests.m; sourceTree = "<group>"; };
+		07FCD68119631D9400CFBB75 /* TPPrivacyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPrivacyVC.h; sourceTree = "<group>"; };
+		07FCD68219631D9400CFBB75 /* TPPrivacyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPrivacyVC.m; sourceTree = "<group>"; };
+		07FCD68419631DB000CFBB75 /* TPToolsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPToolsVC.h; sourceTree = "<group>"; };
+		07FCD68519631DB000CFBB75 /* TPToolsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPToolsVC.m; sourceTree = "<group>"; };
 		43E5BCBE195238530078AD6D /* WZBluetoothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZBluetoothManager.h; sourceTree = "<group>"; };
 		43E5BCBF195238530078AD6D /* WZBluetoothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZBluetoothManager.m; sourceTree = "<group>"; };
 		43E5BCC119532B900078AD6D /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
@@ -582,6 +588,8 @@
 				0739D4F1194AD9550011E1AC /* Measure */,
 				0739D4ED194AD86C0011E1AC /* Progress */,
 				075D42C319629B9500C0CF78 /* About */,
+				07FCD68019631D7300CFBB75 /* Privacy */,
+				07FCD67F19631D7100CFBB75 /* Tools */,
 				070497231951E36A007CC681 /* Settings */,
 				078FFBBC194EC5A1008BFFF9 /* Test */,
 			);
@@ -596,6 +604,24 @@
 				07363A14194A138E00FFEF34 /* SWRevealViewController */,
 			);
 			path = "ThirdParty Libraries";
+			sourceTree = "<group>";
+		};
+		07FCD67F19631D7100CFBB75 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				07FCD68419631DB000CFBB75 /* TPToolsVC.h */,
+				07FCD68519631DB000CFBB75 /* TPToolsVC.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		07FCD68019631D7300CFBB75 /* Privacy */ = {
+			isa = PBXGroup;
+			children = (
+				07FCD68119631D9400CFBB75 /* TPPrivacyVC.h */,
+				07FCD68219631D9400CFBB75 /* TPPrivacyVC.m */,
+			);
+			name = Privacy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -716,6 +742,7 @@
 				078FFBBF194EC5C7008BFFF9 /* TPMeasureInputVC.m in Sources */,
 				075D42CD1962E6F100C0CF78 /* TPEditProfileVC.m in Sources */,
 				43E5BCC0195238530078AD6D /* WZBluetoothManager.m in Sources */,
+				07FCD68619631DB000CFBB75 /* TPToolsVC.m in Sources */,
 				070497171951916D007CC681 /* JBChartTooltipView.m in Sources */,
 				0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */,
 				0704971E1951BA04007CC681 /* NSArray+Additions.m in Sources */,
@@ -731,6 +758,7 @@
 				07046CA3194ACA52004A6D38 /* TPDataManager.m in Sources */,
 				07DF0B28194B40F200FE76FA /* UIButton+Additions.m in Sources */,
 				0739D4F4194AD96D0011E1AC /* TPMeasureVC.m in Sources */,
+				07FCD68319631D9400CFBB75 /* TPPrivacyVC.m in Sources */,
 				079216BA1950289B005D7A09 /* TPProfileVC.m in Sources */,
 				075D42DD1962F0C300C0CF78 /* EditGenderView.m in Sources */,
 				07046CA0194ACA37004A6D38 /* TPThemeManager.m in Sources */,

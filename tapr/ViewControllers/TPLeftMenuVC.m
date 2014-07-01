@@ -30,6 +30,8 @@
                                         @{@"title":measureTitle,@"index":@measureCellIndex,@"segue":@"segueMeasureVC"},
                                         @{@"title":progressTitle,@"index":@progressCellIndex,@"segue":@"segueProgressVC"},
                                         @{@"title":aboutTitle,@"index":@aboutCellIndex,@"segue":@"segueAboutVC"},
+                                        @{@"title":privacyTitle,@"index":@privacyCellIndex,@"segue":@"seguePrivacyVC"},
+                                        @{@"title":toolsTitle,@"index":@toolsCellIndex,@"segue":@"segueToolsVC"},
                                         @{@"title":settingsTitle,@"index":@settingsCellIndex,@"segue":@"segueSettingsVC"}];
     return _menuItemArr;
 }

@@ -14,6 +14,8 @@
 #define measureTitle            @"Measure"
 #define progressTitle           @"Progress"
 #define aboutTitle              @"About"
+#define privacyTitle            @"Privacy"
+#define toolsTitle              @"Tools"
 #define settingsTitle           @"Settings"
 #define logoutTitle             @"Log out"
 
@@ -21,6 +23,8 @@
 #define measureCellIndex        101
 #define progressCellIndex       102
 #define aboutCellIndex          103
+#define privacyCellIndex        106
+#define toolsCellIndex          107
 #define settingsCellIndex       104
 #define logoutCellIndex         105
 

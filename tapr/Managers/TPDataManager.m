@@ -30,11 +30,11 @@
 }
 
 - (NSNumber *)unitConversionFactor  {
-    return ([[TPProfileManager sharedManager] user].preferedUnits == preferedUnits_cm ? @1 : @(cmToInchConversionFactor));
+    return ([[TPProfileManager sharedManager] user].measurementUnits == measurementUnits_cm ? @1 : @(1/inchToCmConversionFactor));
 }
 
 - (NSString *)unitsStr  {
-    return [[TPProfileManager sharedManager] user].preferedUnits == preferedUnits_cm ? @"cm" : @"in.";
+    return [[TPProfileManager sharedManager] user].measurementUnits == measurementUnits_cm ? @"cm" : @"in.";
 }
 
 - (NSDateFormatter *)dummyDateFormatter  {

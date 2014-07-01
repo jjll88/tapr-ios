@@ -552,11 +552,233 @@
                         <outlet property="avatar" destination="hMX-b9-Cnu" id="AlY-Jf-eSz"/>
                         <outlet property="joinedLbl" destination="G4q-yu-0qa" id="H1X-q1-ALq"/>
                         <outlet property="tableView" destination="zIM-m7-yyT" id="Yte-LG-50T"/>
+                        <segue destination="uEF-9Z-ya6" kind="push" identifier="segueEditProfileVC" id="LbC-fM-bap"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xoc-Mr-vei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="564" y="-1191"/>
+            <point key="canvasLocation" x="564" y="-1192"/>
+        </scene>
+        <!--Edit ProfileVC-->
+        <scene sceneID="Duv-Mv-33E">
+            <objects>
+                <viewController id="uEF-9Z-ya6" customClass="TPEditProfileVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EH1-EV-N5y"/>
+                        <viewControllerLayoutGuide type="bottom" id="Swv-LJ-IiP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="93c-oi-EV3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJ6-ki-Dtm" userLabel="Name Container" customClass="EditNameView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="55"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NG3-sq-qOL">
+                                        <rect key="frame" x="112" y="15" width="188" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                                    </textField>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRj-Ly-svG">
+                                        <rect key="frame" x="20" y="17" width="70" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="6Iz-Pb-cV6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="HRj-Ly-svG" secondAttribute="centerY" id="d9l-0u-0fB"/>
+                                    <constraint firstItem="HRj-Ly-svG" firstAttribute="leading" secondItem="VJ6-ki-Dtm" secondAttribute="leading" constant="20" symbolic="YES" id="hfF-A5-x17"/>
+                                    <constraint firstAttribute="height" constant="55" id="so5-z4-EZF"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="nameLbl" destination="HRj-Ly-svG" id="QhW-ZU-G5d"/>
+                                    <outlet property="nameTxtField" destination="NG3-sq-qOL" id="ByC-Iq-LWp"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTU-3j-hG3" userLabel="Birthday Container" customClass="EditBirthdayView">
+                                <rect key="frame" x="0.0" y="119" width="320" height="55"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIp-62-AIW">
+                                        <rect key="frame" x="20" y="17" width="70" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="o1C-sh-WIM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="leW-dv-Zkv">
+                                        <rect key="frame" x="112" y="15" width="188" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="rIp-62-AIW" secondAttribute="centerY" id="DgA-lj-6oa"/>
+                                    <constraint firstItem="rIp-62-AIW" firstAttribute="leading" secondItem="mTU-3j-hG3" secondAttribute="leading" constant="20" symbolic="YES" id="oEl-kR-aID"/>
+                                    <constraint firstAttribute="height" constant="55" id="vtW-Xd-Kuz"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="birthdayLbl" destination="rIp-62-AIW" id="gAI-qn-OWB"/>
+                                    <outlet property="birthdayTxtField" destination="leW-dv-Zkv" id="9gj-qW-lHD"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1Q-qe-aWW" userLabel="Height Container" customClass="EditHeightView">
+                                <rect key="frame" x="0.0" y="174" width="320" height="55"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EY0-0T-vYv">
+                                        <rect key="frame" x="20" y="17" width="70" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="k2i-O7-c5n"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="U8U-pa-KVY">
+                                        <rect key="frame" x="213" y="16" width="87" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="cm"/>
+                                            <segment title="ft"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pNG-iY-K5C">
+                                        <rect key="frame" x="117" y="15" width="88" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Ad5-pf-SLO"/>
+                                    <constraint firstItem="EY0-0T-vYv" firstAttribute="leading" secondItem="F1Q-qe-aWW" secondAttribute="leading" constant="20" symbolic="YES" id="PAJ-yI-iHW"/>
+                                    <constraint firstAttribute="centerY" secondItem="EY0-0T-vYv" secondAttribute="centerY" id="Y02-JN-FTN"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="heightControl" destination="U8U-pa-KVY" id="Abn-7m-7YU"/>
+                                    <outlet property="heightLbl" destination="EY0-0T-vYv" id="bcQ-pl-YAk"/>
+                                    <outlet property="heightTxtField" destination="pNG-iY-K5C" id="zHY-bm-W9R"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frq-70-wbE" userLabel="Weight Container" customClass="EditWeightView">
+                                <rect key="frame" x="0.0" y="229" width="320" height="55"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwD-SM-GbY">
+                                        <rect key="frame" x="20" y="17" width="70" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="QEd-Lk-Jp9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GWR-nZ-Hjs">
+                                        <rect key="frame" x="213" y="15" width="87" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="kg"/>
+                                            <segment title="lb"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZ5-En-O0n">
+                                        <rect key="frame" x="117" y="15" width="88" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="iwD-SM-GbY" firstAttribute="leading" secondItem="frq-70-wbE" secondAttribute="leading" constant="20" symbolic="YES" id="Vmb-94-onA"/>
+                                    <constraint firstAttribute="centerY" secondItem="iwD-SM-GbY" secondAttribute="centerY" id="f4l-OP-sYl"/>
+                                    <constraint firstAttribute="height" constant="55" id="t5Y-hi-R9m"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="weightControl" destination="GWR-nZ-Hjs" id="zhf-kU-f7y"/>
+                                    <outlet property="weightLbl" destination="iwD-SM-GbY" id="F0M-Ep-rpp"/>
+                                    <outlet property="weightTxtField" destination="hZ5-En-O0n" id="rRd-MW-W0G"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lmc-UX-cz3" userLabel="Gender Container" customClass="EditGenderView">
+                                <rect key="frame" x="0.0" y="284" width="320" height="55"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGm-Ea-VtQ">
+                                        <rect key="frame" x="20" y="17" width="70" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="7eh-ya-WTz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2QI-kl-XS7">
+                                        <rect key="frame" x="116" y="16" width="184" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="Female"/>
+                                            <segment title="Male"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="QGm-Ea-VtQ" secondAttribute="centerY" constant="0.5" id="AiN-fY-k8G"/>
+                                    <constraint firstAttribute="height" constant="55" id="gNV-OG-B1h"/>
+                                    <constraint firstItem="QGm-Ea-VtQ" firstAttribute="leading" secondItem="Lmc-UX-cz3" secondAttribute="leading" constant="20" symbolic="YES" id="olg-lR-3mW"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="genderControl" destination="2QI-kl-XS7" id="sHZ-54-ku0"/>
+                                    <outlet property="genderLbl" destination="QGm-Ea-VtQ" id="9ze-Fj-sx8"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="F1Q-qe-aWW" secondAttribute="trailing" id="3pU-Xt-2Gf"/>
+                            <constraint firstAttribute="trailing" secondItem="Lmc-UX-cz3" secondAttribute="trailing" id="7Nj-7Y-FDk"/>
+                            <constraint firstItem="VJ6-ki-Dtm" firstAttribute="top" secondItem="93c-oi-EV3" secondAttribute="top" constant="64" id="9xa-rz-M1A"/>
+                            <constraint firstItem="Lmc-UX-cz3" firstAttribute="top" secondItem="frq-70-wbE" secondAttribute="bottom" id="Bes-qb-0A6"/>
+                            <constraint firstAttribute="trailing" secondItem="mTU-3j-hG3" secondAttribute="trailing" id="GMk-Wj-ZdD"/>
+                            <constraint firstItem="mTU-3j-hG3" firstAttribute="top" secondItem="VJ6-ki-Dtm" secondAttribute="bottom" id="HfX-pr-Eba"/>
+                            <constraint firstItem="Lmc-UX-cz3" firstAttribute="leading" secondItem="93c-oi-EV3" secondAttribute="leading" id="IvG-9d-vJI"/>
+                            <constraint firstItem="frq-70-wbE" firstAttribute="top" secondItem="F1Q-qe-aWW" secondAttribute="bottom" id="JTR-zD-XIC"/>
+                            <constraint firstItem="F1Q-qe-aWW" firstAttribute="top" secondItem="mTU-3j-hG3" secondAttribute="bottom" id="POm-Yp-zWD"/>
+                            <constraint firstItem="mTU-3j-hG3" firstAttribute="leading" secondItem="93c-oi-EV3" secondAttribute="leading" id="XWb-7t-jGF"/>
+                            <constraint firstAttribute="trailing" secondItem="frq-70-wbE" secondAttribute="trailing" id="Xu0-PA-2Ec"/>
+                            <constraint firstAttribute="trailing" secondItem="VJ6-ki-Dtm" secondAttribute="trailing" id="c0U-yx-kZL"/>
+                            <constraint firstItem="F1Q-qe-aWW" firstAttribute="leading" secondItem="93c-oi-EV3" secondAttribute="leading" id="e0n-V7-KVC"/>
+                            <constraint firstItem="VJ6-ki-Dtm" firstAttribute="leading" secondItem="93c-oi-EV3" secondAttribute="leading" id="k9l-ex-lbj"/>
+                            <constraint firstItem="frq-70-wbE" firstAttribute="leading" secondItem="93c-oi-EV3" secondAttribute="leading" id="w1U-Pe-ACT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xct-Fl-FH2"/>
+                    <connections>
+                        <outlet property="editBirthdayContainer" destination="mTU-3j-hG3" id="MzP-rb-BMu"/>
+                        <outlet property="editGenderContainer" destination="Lmc-UX-cz3" id="GIY-tS-BXw"/>
+                        <outlet property="editHeightContainer" destination="F1Q-qe-aWW" id="O5s-pn-FNK"/>
+                        <outlet property="editNameContainer" destination="VJ6-ki-Dtm" id="lav-GX-wfs"/>
+                        <outlet property="editWeightContainer" destination="frq-70-wbE" id="fIC-FB-byU"/>
+                        <outlet property="topNameContainerConstrain" destination="9xa-rz-M1A" id="EaX-hz-yBc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZDS-PK-aHO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1001" y="-1192"/>
         </scene>
         <!--SettingsVC-->
         <scene sceneID="6hv-4Q-bD5">
@@ -847,7 +1069,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1001" y="-505"/>
+            <point key="canvasLocation" x="1001" y="-497"/>
         </scene>
         <!--Measure InputVC-->
         <scene sceneID="mm7-q0-Ft6">
@@ -961,7 +1183,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ZCU-0p-Lvn"/>
         <segue reference="I8c-kU-P1i"/>
+        <segue reference="g9I-yE-KEY"/>
     </inferredMetricsTieBreakers>
 </document>

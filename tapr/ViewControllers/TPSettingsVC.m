@@ -54,7 +54,7 @@
     [self setupNavBarTitle:settingsTitle];
     
     self.unitSegmentedControl.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_DarkBlueTintColor];
-    self.unitSegmentedControl.selectedSegmentIndex = self.user.preferedUnits;
+    self.unitSegmentedControl.selectedSegmentIndex = self.user.measurementUnits;
     [self.unitSegmentedControl addTarget:self
                               action:@selector(segmentedChanged:)
                     forControlEvents:UIControlEventValueChanged];
@@ -63,7 +63,7 @@
 #pragma mark - IBActions
 - (void) segmentedChanged:(UISegmentedControl *) sender {
     TPUserProfile *user = [[TPProfileManager sharedManager] user];
-    user.preferedUnits = sender.selectedSegmentIndex == 0 ? preferedUnits_cm : preferedUnits_inch;
+    user.measurementUnits = sender.selectedSegmentIndex == 0 ? measurementUnits_cm : measurementUnits_inch;
 }
 
 #pragma mark - Others

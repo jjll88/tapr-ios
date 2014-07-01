@@ -40,6 +40,12 @@
 		0739D4F4194AD96D0011E1AC /* TPMeasureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4F3194AD96D0011E1AC /* TPMeasureVC.m */; };
 		075D42C619629BAD00C0CF78 /* TPAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 075D42C519629BAD00C0CF78 /* TPAboutVC.m */; };
 		075D42CA1962C9D500C0CF78 /* RotatedUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 075D42C91962C9D500C0CF78 /* RotatedUILabel.m */; };
+		075D42CD1962E6F100C0CF78 /* TPEditProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 075D42CC1962E6F100C0CF78 /* TPEditProfileVC.m */; };
+		075D42D11962F07C00C0CF78 /* EditNameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 075D42D01962F07C00C0CF78 /* EditNameView.m */; };
+		075D42D41962F09400C0CF78 /* EditBirthdayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 075D42D31962F09400C0CF78 /* EditBirthdayView.m */; };
+		075D42D71962F0A100C0CF78 /* EditHeightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 075D42D61962F0A100C0CF78 /* EditHeightView.m */; };
+		075D42DA1962F0B100C0CF78 /* EditWeightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 075D42D91962F0B100C0CF78 /* EditWeightView.m */; };
+		075D42DD1962F0C300C0CF78 /* EditGenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 075D42DC1962F0C300C0CF78 /* EditGenderView.m */; };
 		076C9231194B2ACA00F3A2A9 /* TPSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C9230194B2ACA00F3A2A9 /* TPSummaryCell.m */; };
 		078FFBBF194EC5C7008BFFF9 /* TPMeasureInputVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 078FFBBE194EC5C7008BFFF9 /* TPMeasureInputVC.m */; };
 		078FFBC2194EF3FD008BFFF9 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 078FFBC1194EF3FD008BFFF9 /* NSString+Additions.m */; };
@@ -138,6 +144,18 @@
 		075D42C519629BAD00C0CF78 /* TPAboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAboutVC.m; sourceTree = "<group>"; };
 		075D42C81962C9D500C0CF78 /* RotatedUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatedUILabel.h; sourceTree = "<group>"; };
 		075D42C91962C9D500C0CF78 /* RotatedUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatedUILabel.m; sourceTree = "<group>"; };
+		075D42CB1962E6F100C0CF78 /* TPEditProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPEditProfileVC.h; sourceTree = "<group>"; };
+		075D42CC1962E6F100C0CF78 /* TPEditProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPEditProfileVC.m; sourceTree = "<group>"; };
+		075D42CF1962F07C00C0CF78 /* EditNameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNameView.h; sourceTree = "<group>"; };
+		075D42D01962F07C00C0CF78 /* EditNameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNameView.m; sourceTree = "<group>"; };
+		075D42D21962F09400C0CF78 /* EditBirthdayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditBirthdayView.h; sourceTree = "<group>"; };
+		075D42D31962F09400C0CF78 /* EditBirthdayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditBirthdayView.m; sourceTree = "<group>"; };
+		075D42D51962F0A100C0CF78 /* EditHeightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditHeightView.h; sourceTree = "<group>"; };
+		075D42D61962F0A100C0CF78 /* EditHeightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditHeightView.m; sourceTree = "<group>"; };
+		075D42D81962F0B100C0CF78 /* EditWeightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditWeightView.h; sourceTree = "<group>"; };
+		075D42D91962F0B100C0CF78 /* EditWeightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditWeightView.m; sourceTree = "<group>"; };
+		075D42DB1962F0C300C0CF78 /* EditGenderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditGenderView.h; sourceTree = "<group>"; };
+		075D42DC1962F0C300C0CF78 /* EditGenderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditGenderView.m; sourceTree = "<group>"; };
 		076C922F194B2ACA00F3A2A9 /* TPSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSummaryCell.h; sourceTree = "<group>"; };
 		076C9230194B2ACA00F3A2A9 /* TPSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSummaryCell.m; sourceTree = "<group>"; };
 		078FFBBD194EC5C7008BFFF9 /* TPMeasureInputVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeasureInputVC.h; sourceTree = "<group>"; };
@@ -304,6 +322,7 @@
 		07363A0D194A131300FFEF34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				075D42CE1962F04F00C0CF78 /* Edit Profile */,
 				0704971B1951B54D007CC681 /* JBChart */,
 			);
 			path = Views;
@@ -424,6 +443,23 @@
 			name = Subclasses;
 			sourceTree = "<group>";
 		};
+		075D42CE1962F04F00C0CF78 /* Edit Profile */ = {
+			isa = PBXGroup;
+			children = (
+				075D42CF1962F07C00C0CF78 /* EditNameView.h */,
+				075D42D01962F07C00C0CF78 /* EditNameView.m */,
+				075D42D21962F09400C0CF78 /* EditBirthdayView.h */,
+				075D42D31962F09400C0CF78 /* EditBirthdayView.m */,
+				075D42D51962F0A100C0CF78 /* EditHeightView.h */,
+				075D42D61962F0A100C0CF78 /* EditHeightView.m */,
+				075D42D81962F0B100C0CF78 /* EditWeightView.h */,
+				075D42D91962F0B100C0CF78 /* EditWeightView.m */,
+				075D42DB1962F0C300C0CF78 /* EditGenderView.h */,
+				075D42DC1962F0C300C0CF78 /* EditGenderView.m */,
+			);
+			name = "Edit Profile";
+			sourceTree = "<group>";
+		};
 		078AAEF819546A930044E28D /* Log in */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,6 +483,8 @@
 			children = (
 				079216B81950289B005D7A09 /* TPProfileVC.h */,
 				079216B91950289B005D7A09 /* TPProfileVC.m */,
+				075D42CB1962E6F100C0CF78 /* TPEditProfileVC.h */,
+				075D42CC1962E6F100C0CF78 /* TPEditProfileVC.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -676,10 +714,12 @@
 				0704971A1951B4FC007CC681 /* JBLineChartFooterView.m in Sources */,
 				07049711195170B4007CC681 /* JBLineChartView.m in Sources */,
 				078FFBBF194EC5C7008BFFF9 /* TPMeasureInputVC.m in Sources */,
+				075D42CD1962E6F100C0CF78 /* TPEditProfileVC.m in Sources */,
 				43E5BCC0195238530078AD6D /* WZBluetoothManager.m in Sources */,
 				070497171951916D007CC681 /* JBChartTooltipView.m in Sources */,
 				0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */,
 				0704971E1951BA04007CC681 /* NSArray+Additions.m in Sources */,
+				075D42D11962F07C00C0CF78 /* EditNameView.m in Sources */,
 				075D42C619629BAD00C0CF78 /* TPAboutVC.m in Sources */,
 				078FFBC2194EF3FD008BFFF9 /* NSString+Additions.m in Sources */,
 				07046C9C194AC89C004A6D38 /* MBProgressHUD.m in Sources */,
@@ -692,12 +732,16 @@
 				07DF0B28194B40F200FE76FA /* UIButton+Additions.m in Sources */,
 				0739D4F4194AD96D0011E1AC /* TPMeasureVC.m in Sources */,
 				079216BA1950289B005D7A09 /* TPProfileVC.m in Sources */,
+				075D42DD1962F0C300C0CF78 /* EditGenderView.m in Sources */,
 				07046CA0194ACA37004A6D38 /* TPThemeManager.m in Sources */,
 				0704970F195170B4007CC681 /* JBBarChartView.m in Sources */,
 				07046CC4194AD0DE004A6D38 /* UIColor+Additions.m in Sources */,
+				075D42D71962F0A100C0CF78 /* EditHeightView.m in Sources */,
 				07049710195170B4007CC681 /* JBChartView.m in Sources */,
 				07EB51D8194A0EAA0031150D /* main.m in Sources */,
+				075D42D41962F09400C0CF78 /* EditBirthdayView.m in Sources */,
 				075D42CA1962C9D500C0CF78 /* RotatedUILabel.m in Sources */,
+				075D42DA1962F0B100C0CF78 /* EditWeightView.m in Sources */,
 				07046CA7194ACA7C004A6D38 /* UINavigationItem+Additions.m in Sources */,
 				079216BD195028E0005D7A09 /* TPProfileManager.m in Sources */,
 				07046C99194AC7FD004A6D38 /* TPBaseVC.m in Sources */,

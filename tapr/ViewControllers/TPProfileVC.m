@@ -30,13 +30,13 @@
 }
 
 - (NSArray *)profileInfoArr  {
-    if  (!_profileInfoArr) {
-        _profileInfoArr = @[@{@"type": @"Name",@"value": self.user.name},
-                            @{@"type": @"Birthday",@"value": self.user.birthday},
-                            @{@"type": @"Height",@"value": self.user.height},
-                            @{@"type": @"Weight",@"value": self.user.weight},
-                            @{@"type": @"Gender",@"value": self.user.gender}];
-    }
+    
+    _profileInfoArr = @[@{@"type": @"Name",@"value": self.user.name},
+                        @{@"type": @"Birthday",@"value": self.user.birthday},
+                        @{@"type": @"Height",@"value": [self userHeigthString:self.user]},
+                        @{@"type": @"Weight",@"value": [self userWeigthString:self.user]},
+                        @{@"type": @"Gender",@"value": (self.user.gender == gender_female ? @"Female" : @"Male")}];
+    
     return _profileInfoArr;
 }
 
@@ -62,7 +62,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // register your notification in the init-setup
+    [self registerForKVO];
+    
     [self setupUI];
+}
+
+#pragma mark - KVOs
+- (void) registerForKVO {
+    
+    TPProfileManager *observedObj = [TPProfileManager sharedManager];
+    
+    [observedObj addObserver:self forKeyPath:@"user" options:NSKeyValueObservingOptionNew context:NULL];
+}
+
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"user"]) {
+        // Do something after observed_obj's observed_property was changed
+        
+        // update user local variable
+        _user = [TPProfileManager sharedManager].user;
+        
+        // reload table view
+        [self.tableView reloadData];
+    }
+}
+
+- (void) dealloc {
+    [[TPProfileManager sharedManager] removeObserver:self forKeyPath:@"user"];
 }
 
 #pragma mark - Set up UI
@@ -130,6 +157,25 @@
     return 1;
 }
 
+#pragma mark - Helpers
+- (NSString *) userHeigthString: (TPUserProfile *) user {
+    NSString *heightStr;
+    
+    if (user.heightUnits == heightUnits_cm) {
+        heightStr = [NSString stringWithFormat:@"%@ cm", user.height];
+    } else if (user.heightUnits == heightUnits_ft) {
+        #pragma mark - TO DO / Handle feet-inches
+    }
+    
+    return heightStr;
+}
+
+- (NSString *) userWeigthString: (TPUserProfile *) user {
+    NSString *units = user.weightUnits == weightUnits_kg ? @"kg" : @"lb";
+    
+    return [NSString stringWithFormat:@"%@ %@", user.weight, units];
+}
+
 #pragma mark - Others
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -137,8 +183,8 @@
 }
 
 #pragma mark - Navigation
-- (void) editBarButtonPressed {
-    [self toastMessage:@"Under construction"];
+- (void) editBarButtonPressed {    
+    [self performSegueWithIdentifier:@"segueEditProfileVC" sender:nil];
 }
 
 /*

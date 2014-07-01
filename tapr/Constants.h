@@ -29,7 +29,10 @@
 //Archived Data Paths
 #define TPUserProfilePathKey @"user_profile_data"
 
-#define cmToInchConversionFactor    0.393701
+#define inchToCmConversionFactor    2.54    // cm/inch
+#define ftToCmConversionFactor      30.48   // cm/ft
+#define ftToInchConversionFactor    12      // inch/ft
+
 
 #define testUserEmail       @"  testUser@email.com"
 #define testUserPassword    @"  ************"

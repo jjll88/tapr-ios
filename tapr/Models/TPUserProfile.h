@@ -8,24 +8,47 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum MeasureUnits : NSUInteger {
-    preferedUnits_cm = 0,
-    preferedUnits_inch
+typedef enum MeasurementUnits : NSUInteger {
+    measurementUnits_cm = 0,
+    measurementUnits_inch
     
-} MeasureUnits;
+} MeasurementUnits;
+
+typedef enum HeightUnits : NSUInteger {
+    heightUnits_cm = 0,
+    heightUnits_ft
+    
+} HeightUnits;
+
+typedef enum WeightUnits : NSUInteger {
+    weightUnits_kg = 0,
+    weightUnits_lb
+    
+} WeightUnits;
+
+typedef enum Gender : NSUInteger {
+    gender_female = 0,
+    gender_male
+    
+} Gender;
 
 @interface TPUserProfile : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *birthday;
-@property (nonatomic, strong) NSString *height;
-@property (nonatomic, strong) NSString *weight;
-@property (nonatomic, strong) NSString *gender;
+//height
+@property (nonatomic, strong) NSNumber *height;
+@property (nonatomic) HeightUnits heightUnits;
+//weight
+@property (nonatomic, strong) NSNumber *weight;
+@property (nonatomic) WeightUnits weightUnits;
+
+@property (nonatomic) Gender gender;
 
 @property (nonatomic, strong) UIImage *avatar;
+@property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *joinedDateStr;
 
-@property (nonatomic, strong) NSString *email;
-@property (nonatomic) MeasureUnits preferedUnits;
+@property (nonatomic) MeasurementUnits measurementUnits;
 
 @end

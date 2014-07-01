@@ -52,9 +52,13 @@
     
     user.name = @"Keti Topuria";
     user.birthday = @"July 6, 1989";
-    user.height = @"5' 8''";
-    user.weight = @"110 lbs";
-    user.gender = @"Female";
+    user.height = @180;
+    user.heightUnits = heightUnits_cm;
+    user.weight = @70;
+    user.weightUnits = weightUnits_kg;
+    user.gender = gender_male;
+    user.email = @"user@email.com";
+    user.measurementUnits = measurementUnits_cm;
     
     // Joined date
     NSDate *currDate = [NSDate date];

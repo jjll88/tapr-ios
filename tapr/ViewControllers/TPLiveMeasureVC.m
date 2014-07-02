@@ -208,7 +208,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender {
     if ([segue.identifier isEqualToString:@"segueSummaryVC"]) {
         TPSummaryVC *summaryVC = segue.destinationViewController;
-        summaryVC.index = (int)sender.tag;
+        summaryVC.index = self.index;
         summaryVC.showNewMeasure = YES;
     } else if ([segue.identifier isEqualToString:@"segueMeasureInputVC"]) {
         TPMeasureInputVC *measureInputVC = segue.destinationViewController;

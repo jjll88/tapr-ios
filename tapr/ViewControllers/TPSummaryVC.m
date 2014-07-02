@@ -390,9 +390,7 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
 
 #pragma mark - Navigation
 - (void) doneBarButtonPressed {
-    if ([self respondsToSelector:@selector(dismissViewControllerAnimated:completion:)]) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

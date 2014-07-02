@@ -903,14 +903,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: David Regatos Gomez (KSRSGZ42UK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: David Regatos Gomez (KSRSGZ42UK)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tapr/tapr-Prefix.pch";
 				INFOPLIST_FILE = tapr/tapr_Dev.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "AB4EB495-E56C-4237-B044-2CE55E09DA87";
+				PROVISIONING_PROFILE = "7197609E-6BF5-4A6B-80FE-9E6181707FA9";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -920,8 +920,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ByteFly, Inc. (2NJB457542)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ByteFly, Inc. (2NJB457542)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tapr/tapr-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=0";

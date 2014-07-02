@@ -70,11 +70,14 @@
 
 #pragma mark - Set up UI
 - (void) setupUI {
+    
+    self.view.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuBackground];
+
     // tableview ****
     self.tableView.allowsSelection = YES;
     self.tableView.allowsMultipleSelection = NO;
     self.tableView.scrollEnabled = NO;
-    self.tableView.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuBackground];
+    self.tableView.backgroundColor = [UIColor clearColor]; //[[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuBackground];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // table header view
     CGFloat lineThickness = 1.;
@@ -91,9 +94,9 @@
     [self.logOutBtn setTitle:logoutTitle forState:UIControlStateNormal];
     self.logOutBtn.titleLabel.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_LeftMenu_Cell];
     [self.logOutBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.logOutBtn setTitleColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor] forState:UIControlStateHighlighted];
-    [self.logOutBtn setBackgroundColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    [self.logOutBtn setBackgroundColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor] forState:UIControlStateNormal];
+//    [self.logOutBtn setTitleColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor] forState:UIControlStateHighlighted];
+    [self.logOutBtn setBackgroundColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuBackground] forState:UIControlStateNormal];
+    [self.logOutBtn setBackgroundColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuHighLigthedCell] forState:UIControlStateHighlighted];
     UIView *topSeparatorLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, header.bounds.size.width, lineThickness)];
     topSeparatorLine.backgroundColor = [UIColor whiteColor];
     [self.logOutBtn addSubview:topSeparatorLine];
@@ -142,7 +145,6 @@
 
 #pragma mark - IBActions
 - (IBAction)logoutBtnPressed:(UIButton *)sender {
-//    [self toastMessage:@"Under construction"];
     [self performSegueWithIdentifier:@"segueLoginVC" sender:nil];
 }
 

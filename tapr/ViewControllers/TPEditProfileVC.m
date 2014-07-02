@@ -150,6 +150,7 @@
 #pragma mark - UITextField Delegate
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     if ([[textField superview] isKindOfClass:[EditBirthdayView class]]) {
+        [self hideKeywordFromView:nil];
         self.datePicker.hidden = NO;
         
         return NO;

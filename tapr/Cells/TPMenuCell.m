@@ -27,10 +27,10 @@
 #pragma mark - Set Up
 - (void) setup {
     //left image - icon
-    self.icon.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];
-    self.icon.contentMode = UIViewContentModeScaleAspectFill;
+    self.icon.backgroundColor = [UIColor clearColor]; // [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];
+    self.icon.contentMode = UIViewContentModeCenter;
     self.icon.clipsToBounds = YES;
-    self.icon.layer.cornerRadius = self.icon.bounds.size.width/2;
+//    self.icon.layer.cornerRadius = self.icon.bounds.size.width/2;
     
     //separator line
     UIView* separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(0, menuCellHeight-1, self.bounds.size.width, 1)];
@@ -51,14 +51,29 @@
     // Don't forget to reset content of reusable cells
     self.backgroundView = nil;
     
+    if (self.tag == profileCellIndex) {
+        self.icon.image = [UIImage imageNamed:@"IC_profile"];
+    } else if (self.tag == measureCellIndex) {
+        self.icon.image = [UIImage imageNamed:@"IC_measure"];
+    } else if (self.tag == progressCellIndex) {
+        self.icon.image = [UIImage imageNamed:@"IC_progress"];
+    } else if (self.tag == aboutCellIndex) {
+        self.icon.image = [UIImage imageNamed:@"IC_about"];
+    } else if (self.tag == privacyCellIndex) {
+        self.icon.image = [UIImage imageNamed:@"IC_privacy"];
+    } else if (self.tag == toolsCellIndex) {
+        self.icon.image = [UIImage imageNamed:@"IC_tools"];
+    } else if (self.tag == settingsCellIndex) {
+        self.icon.image = [UIImage imageNamed:@"IC_settings"];
+    }
+    
     if (selected) {
         self.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuHighLigthedCell];
-        self.icon.backgroundColor = [UIColor whiteColor];
+//        self.icon.backgroundColor = [UIColor whiteColor];
         
     } else {
-        self.icon.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];
         self.backgroundColor = [UIColor clearColor];
-        
+//        self.icon.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];
     }
 }
 

@@ -108,10 +108,10 @@
             font = [UIFont fontWithName:@"Lato-Light" size:22];
             break;
         case ThemeFontType_QuoteText:
-            font = [UIFont fontWithName:@"Lato-Light" size:15];
+            font = [UIFont fontWithName:@"Lato-Light" size:16];
             break;
         case ThemeFontType_QuoteAuthor:
-            font = [UIFont fontWithName:@"Lato-Light" size:12];
+            font = [UIFont fontWithName:@"Lato-Light" size:13];
             break;
         default:
             break;

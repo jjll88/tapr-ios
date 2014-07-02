@@ -11,7 +11,7 @@
 @implementation UIButton (Additions)
 
 - (void) setBackgroundColor:(UIColor *)tintColor forState:(UIControlState) state {
-    [self setBackgroundImage:[UIImage imageWithColor:tintColor AndSize:self.bounds] forState:state];
+    [self setBackgroundImage:[UIImage imageWithColor:tintColor AndRect:self.bounds] forState:state];
 }
 
 @end

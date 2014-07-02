@@ -12,7 +12,7 @@ static CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;};
 
 @implementation UIImage (Additions)
 
-+ (UIImage *)imageWithColor:(UIColor *)color AndSize:(CGRect) rect{
++ (UIImage *)imageWithColor:(UIColor *)color AndRect:(CGRect) rect{
     
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();

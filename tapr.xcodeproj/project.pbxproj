@@ -550,8 +550,8 @@
 		07EB51D2194A0EAA0031150D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				074F6EB8194F32350097BA01 /* tapr_Dist.plist */,
 				07EB51D3194A0EAA0031150D /* tapr_Dev.plist */,
+				074F6EB8194F32350097BA01 /* tapr_Dist.plist */,
 				07EB51D4194A0EAA0031150D /* InfoPlist.strings */,
 				07EB51D7194A0EAA0031150D /* main.m */,
 				07EB51D9194A0EAA0031150D /* tapr-Prefix.pch */,

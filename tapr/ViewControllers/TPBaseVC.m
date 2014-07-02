@@ -56,7 +56,9 @@
     self.view.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_Background];
     
     // Navigation bar bkg
-    UIImage *bgIm = [UIImage imageWithColor:self.view.backgroundColor AndSize:self.navigationController.navigationBar.bounds];
+    CGRect navAndStatusBar = CGRectMake(0,-20,self.navigationController.navigationBar.bounds.size.width,
+                                        self.navigationController.navigationBar.bounds.size.height+20);
+    UIImage *bgIm = [UIImage imageWithColor:self.view.backgroundColor AndRect:navAndStatusBar];
     [self.navigationController.navigationBar setBackgroundImage:bgIm forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = NO;

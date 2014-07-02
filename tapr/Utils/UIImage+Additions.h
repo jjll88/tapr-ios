@@ -10,7 +10,7 @@
 
 @interface UIImage (Additions)
 
-+ (UIImage *)imageWithColor:(UIColor *)color AndSize:(CGRect) rect;
++ (UIImage *)imageWithColor:(UIColor *)color AndRect:(CGRect) rect;
 
 - (UIImage *)imageRotatedByDegrees:(CGFloat)degrees;
 

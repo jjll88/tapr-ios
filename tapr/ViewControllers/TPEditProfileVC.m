@@ -15,7 +15,7 @@
 
 #define topDistance 10
 
-@interface TPEditProfileVC ()
+@interface TPEditProfileVC () <UITextFieldDelegate, UIPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet EditNameView *editNameContainer;
 @property (weak, nonatomic) IBOutlet EditBirthdayView *editBirthdayContainer;
@@ -23,12 +23,17 @@
 @property (weak, nonatomic) IBOutlet EditWeightView *editWeightContainer;
 @property (weak, nonatomic) IBOutlet EditGenderView *editGenderContainer;
 
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+
+// ** Collection. Useful to loop over the editable txtFields ** //
+@property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *txtFieldCollection;
 
 // Autolayout
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topNameContainerConstrain;
 
 // Local variables
 @property (nonatomic, strong) TPUserProfile *user;
+@property (nonatomic, strong) UITextField *currentlyEditedTxtField;
 
 @end
 
@@ -55,6 +60,9 @@
     self.addMenuBarBtn = NO;
     self.addMenuPanGesture = NO;
     self.addPlusBarBtn = NO;
+    
+    // Notifications **********************
+    [self registerForNotifications];
 }
 
 #pragma mark - view events
@@ -70,6 +78,20 @@
     [self updateUI];
 }
 
+#pragma mark - NSNotification
+- (void) dealloc {
+    [self unregisterForNotifications];
+}
+
+- (void) registerForNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideKeywordFromView:) name:kNotification_HideKeyword object:nil];
+}
+
+- (void) unregisterForNotifications {
+    // Clear out _all_ observations that this object was making
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark - Set up UI
 - (void) setupUI {
     
@@ -79,8 +101,17 @@
     self.navigationController.navigationBar.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_DarkBlueTintColor];
     [self.navigationItem setRightBarButtonItem:customBarItem];
     
+    // Date Picker
+    self.datePicker.hidden = YES;
+    self.datePicker.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];
+    self.datePicker.date = self.user.birthday;
+    [self.datePicker addTarget:self action:@selector(datePickerChanged:) forControlEvents:UIControlEventValueChanged];
+    
     // Autolayout
     self.topNameContainerConstrain.constant = topDistance;
+    
+    // Delegate
+    self.editBirthdayContainer.birthdayTxtField.delegate = self;
 }
 
 - (void) updateUI {
@@ -92,23 +123,60 @@
     
     TPUserProfile *newUser = [[TPUserProfile alloc] init];
     newUser.name = self.editNameContainer.nameTxtField.text;
-    newUser.birthday = self.editBirthdayContainer.birthdayTxtField.text;
+    newUser.birthday = self.datePicker.date;
     newUser.height = [NSNumber numberWithFloat:[self.editHeightContainer.heightTxtField.text floatValue]];
+    newUser.heightUnits = self.editHeightContainer.heightControl.selectedSegmentIndex == heightUnits_cm ? heightUnits_cm : heightUnits_ft;
     newUser.weight = [NSNumber numberWithFloat:[self.editWeightContainer.weightTxtField.text floatValue]];
+    newUser.weightUnits = self.editWeightContainer.weightControl.selectedSegmentIndex == weightUnits_kg ? weightUnits_kg : weightUnits_lb;
     newUser.gender = self.editGenderContainer.genderControl.selectedSegmentIndex == 0 ? gender_female : gender_male;
     newUser.avatar = self.user.avatar;
-    newUser.joinedDateStr = self.user.joinedDateStr;
+    newUser.joinedDate = self.user.joinedDate;
     newUser.email = self.user.email;
     
     // Save. KVObserved
     [TPProfileManager sharedManager].user = newUser;
     
     [self.navigationController popViewControllerAnimated:YES];
-    
 }
 
 - (IBAction)selfViewTapped:(UIControl *)sender {
     [self.view endEditing:YES];
+}
+
+- (void)datePickerChanged:(UIDatePicker *)datePicker {
+    self.editBirthdayContainer.birthdayTxtField.text = [[TPThemeManager sharedManager] nsdateToFormattedString:datePicker.date];
+}
+
+#pragma mark - UITextField Delegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if ([[textField superview] isKindOfClass:[EditBirthdayView class]]) {
+        self.datePicker.hidden = NO;
+        
+        return NO;
+    }
+    
+    return YES;
+}
+
+//- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+//    if ([[textField superview] isKindOfClass:[EditBirthdayView class]]) {
+//        self.datePicker.hidden = NO;
+//        
+//        return YES;
+//    }
+//    
+//    return NO;
+//}
+
+#pragma mark - Keyword Controller
+// ** Hide presented keyboard when user tapped on any subview ** //
+- (void) hideKeywordFromView:(NSNotification *) notification {
+    
+    for (UITextField *txtField in self.txtFieldCollection) {
+        [txtField resignFirstResponder];
+    }
+    
+    self.datePicker.hidden = YES;
 }
 
 #pragma mark - Others

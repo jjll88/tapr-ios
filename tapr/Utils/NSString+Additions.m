@@ -97,6 +97,16 @@
     return numberStr;
 }
 
++ (NSString *)convertFeetToFeet_Inches:(float) feet {
+    
+    int feetInt = (int) feet;
+    CGFloat mod = feet - feetInt;
+    int inchInt = (int) ceil(mod*12);
+    
+    return [NSString stringWithFormat:@"%i' %i''",feetInt,inchInt];
+
+}
+
 + (NSString *) Date: (NSDate *) date toStringWithFormat:(NSString *) formatStr {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:formatStr];

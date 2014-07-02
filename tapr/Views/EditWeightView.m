@@ -29,20 +29,43 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selfViewTapped)];
     [self addGestureRecognizer:tap];
     
+    // Lbl
     self.weightLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];
     self.weightLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_Cell_RegularTitle];
     
-    self.weightControl.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];
 
     // TxtField
-    self.weightTxtField.text = [[TPProfileManager sharedManager].user.weight stringValue];
+    self.weightTxtField.text = [NSString numberToStringWithSeparator:[TPProfileManager sharedManager].user.weight andDecimals:1];
 
     // Segmented control
+    self.weightControl.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];
     self.weightControl.selectedSegmentIndex = [TPProfileManager sharedManager].user.weightUnits;
+    [self.weightControl addTarget:self
+                                  action:@selector(segmentedChanged:)
+                        forControlEvents:UIControlEventValueChanged];
+}
+
+#pragma mark - IBActions
+- (void) segmentedChanged:(UISegmentedControl *) sender {
+    if ([TPProfileManager sharedManager].user.weightUnits == weightUnits_lb) {
+        if (sender.selectedSegmentIndex == weightUnits_kg) {
+            CGFloat value = [[TPProfileManager sharedManager].user.weight floatValue]/kgToLbConversionFactor;
+            self.weightTxtField.text = [NSString numberToStringWithSeparator:@(value) andDecimals:1];
+        } else {
+            self.weightTxtField.text = [NSString numberToStringWithSeparator:[TPProfileManager sharedManager].user.weight andDecimals:1];
+        }
+    } else {
+        if (sender.selectedSegmentIndex == weightUnits_lb) {
+            CGFloat value = [[TPProfileManager sharedManager].user.weight floatValue]*kgToLbConversionFactor;
+            self.weightTxtField.text = [NSString numberToStringWithSeparator:@(value) andDecimals:1];
+        } else {
+            self.weightTxtField.text = [NSString numberToStringWithSeparator:[TPProfileManager sharedManager].user.weight andDecimals:1];
+        }
+    }
 }
 
 - (void)selfViewTapped {
-    [self endEditing:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotification_HideKeyword object:nil];
 }
 
 /*

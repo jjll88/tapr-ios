@@ -51,20 +51,21 @@
     TPUserProfile *user = [[TPUserProfile alloc] init];
     
     user.name = @"Keti Topuria";
-    user.birthday = @"July 6, 1989";
+    user.birthday = [[TPThemeManager sharedManager] dateStringToNSDate:@"July 6, 1989"];
     user.height = @180;
     user.heightUnits = heightUnits_cm;
     user.weight = @70;
     user.weightUnits = weightUnits_kg;
-    user.gender = gender_male;
+    user.gender = gender_female;
     user.email = @"user@email.com";
     user.measurementUnits = measurementUnits_cm;
     
     // Joined date
-    NSDate *currDate = [NSDate date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"MMMM dd, YYYY"];
-    user.joinedDateStr = [dateFormatter stringFromDate:currDate];
+//    NSDate *currDate = [NSDate date];
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+//    [dateFormatter setDateFormat:@"MMMM dd, YYYY"];
+//    [dateFormatter stringFromDate:currDate];
+    user.joinedDate = [NSDate date]; //
     
     //avatar
     user.avatar = [UIImage imageNamed:@"ic-profile-placeholder.png"];

@@ -32,7 +32,7 @@
 - (NSArray *)profileInfoArr  {
     
     _profileInfoArr = @[@{@"type": @"Name",@"value": self.user.name},
-                        @{@"type": @"Birthday",@"value": self.user.birthday},
+                        @{@"type": @"Birthday",@"value":[[TPThemeManager sharedManager] nsdateToFormattedString:self.user.birthday]},
                         @{@"type": @"Height",@"value": [self userHeigthString:self.user]},
                         @{@"type": @"Weight",@"value": [self userWeigthString:self.user]},
                         @{@"type": @"Gender",@"value": (self.user.gender == gender_female ? @"Female" : @"Male")}];
@@ -117,7 +117,7 @@
     self.avatar.backgroundColor = [UIColor colorWithWhite:0.85 alpha:1.0];
     
     //joined
-    self.joinedLbl.text = [NSString stringWithFormat:@"Joined %@",self.user.joinedDateStr];
+    self.joinedLbl.text = [NSString stringWithFormat:@"Joined %@",[[TPThemeManager sharedManager] nsdateToFormattedString:self.user.joinedDate]];
     self.joinedLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];
     self.joinedLbl.font = [UIFont fontWithName:@"Lato-Regular" size:15];
 }
@@ -165,6 +165,7 @@
         heightStr = [NSString stringWithFormat:@"%@ cm", user.height];
     } else if (user.heightUnits == heightUnits_ft) {
         #pragma mark - TO DO / Handle feet-inches
+        heightStr = [NSString stringWithFormat:@"%@ ft", user.height];
     }
     
     return heightStr;

@@ -58,6 +58,7 @@ typedef enum ThemeResizableImageType : NSUInteger {
 - (UIFont *)fontOfType:(ThemeFontType)type;
 //
 //// theme functions
-
+- (NSString *) nsdateToFormattedString: (NSDate *) date;
+- (NSDate *) dateStringToNSDate: (NSString *) dateStr;
 
 @end

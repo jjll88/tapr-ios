@@ -35,7 +35,7 @@ typedef enum Gender : NSUInteger {
 @interface TPUserProfile : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *birthday;
+@property (nonatomic, strong) NSDate *birthday;
 //height
 @property (nonatomic, strong) NSNumber *height;
 @property (nonatomic) HeightUnits heightUnits;
@@ -47,7 +47,7 @@ typedef enum Gender : NSUInteger {
 
 @property (nonatomic, strong) UIImage *avatar;
 @property (nonatomic, strong) NSString *email;
-@property (nonatomic, strong) NSString *joinedDateStr;
+@property (nonatomic, strong) NSDate *joinedDate;
 
 @property (nonatomic) MeasurementUnits measurementUnits;
 

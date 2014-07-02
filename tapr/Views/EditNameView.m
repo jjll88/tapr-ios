@@ -38,7 +38,7 @@
 }
 
 - (void)selfViewTapped {
-    [self endEditing:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotification_HideKeyword object:nil];
 }
 
 /*

@@ -32,7 +32,7 @@ static NSString* const TPUserUnitsKey = @"measurementUnits";
     [encoder encodeInteger:self.weightUnits forKey:TPUserWeightUnitsKey];
     [encoder encodeInteger:self.gender forKey:TPUserGenderKey];
     [encoder encodeObject:self.avatar forKey:TPUserAvatarKey];
-    [encoder encodeObject:self.joinedDateStr forKey:TPUserJoinedDateKey];
+    [encoder encodeObject:self.joinedDate forKey:TPUserJoinedDateKey];
     [encoder encodeObject:self.email forKey:TPUserEmailKey];
     [encoder encodeInteger:self.measurementUnits forKey:TPUserUnitsKey];
 }
@@ -49,7 +49,7 @@ static NSString* const TPUserUnitsKey = @"measurementUnits";
 
         self.gender = [decoder decodeIntegerForKey:TPUserGenderKey];
         self.avatar = [decoder decodeObjectForKey:TPUserAvatarKey];
-        self.joinedDateStr = [decoder decodeObjectForKey:TPUserJoinedDateKey];
+        self.joinedDate = [decoder decodeObjectForKey:TPUserJoinedDateKey];
         self.email = [decoder decodeObjectForKey:TPUserEmailKey];
         self.measurementUnits = [decoder decodeIntegerForKey:TPUserUnitsKey];
     }

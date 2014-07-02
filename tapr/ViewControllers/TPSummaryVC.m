@@ -175,7 +175,7 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
 - (void)lineChartView:(JBLineChartView *)lineChartView didSelectLineAtIndex:(NSUInteger)lineIndex horizontalIndex:(NSUInteger)horizontalIndex touchPoint:(CGPoint)touchPoint {
     NSDictionary *obj = (NSDictionary *) self.reverseBodyPartData[horizontalIndex];
     CGFloat value = [[obj objectForKey:@"value"] floatValue]*[[[TPDataManager sharedManager] unitConversionFactor] floatValue];
-    NSString *yValueStr = [NSString stringWithFormat:@"%@ %@",[NSString numberToStringWithSeparator:@(value) andDecimals:2], [TPDataManager sharedManager].unitsStr];
+    NSString *yValueStr = [NSString stringWithFormat:@"%@ %@",[NSString numberToStringWithSeparator:@(value) andDecimals:1], [TPDataManager sharedManager].unitsStr];
     NSString *dateValueStr = [NSString Date:[self.reverseBodyPartData[horizontalIndex] objectForKey:@"date"] toStringWithFormat:dateFormat];
     
     // Update view
@@ -249,7 +249,7 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
 
     // Custom Cell
     CGFloat value = [[obj objectForKey:@"value"] floatValue]*[[[TPDataManager sharedManager] unitConversionFactor] floatValue];
-    cell.titleLbl.text = [NSString stringWithFormat:@"%@ %@",[NSString numberToStringWithSeparator:@(value) andDecimals:2], [TPDataManager sharedManager].unitsStr];
+    cell.titleLbl.text = [NSString stringWithFormat:@"%@ %@",[NSString numberToStringWithSeparator:@(value) andDecimals:1], [TPDataManager sharedManager].unitsStr];
     cell.dateLbl.text = [NSString Date:[obj objectForKey:@"date"] toStringWithFormat:dateFormat];;
     
     if (indexPath.row == 0 && self.shouldShowNewMeasure) {  // Highlight new added measure

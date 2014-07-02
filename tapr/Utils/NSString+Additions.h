@@ -15,7 +15,9 @@
 + (BOOL)isZIPCode:(NSString *) zipString;
 
 + (NSString *)numberToStringWithSeparatorAndNoDecimals:(NSNumber *) number;   // Example: (NSNumber) 16867.54 --> (NSString) 16,867. Round Down!!
-+ (NSString *)numberToStringWithSeparator: (NSNumber *) number andDecimals:(int) numberOfDecimals;   // Example: (NSNumber) 16,867.5434 --> (NSString) 16,867.45 Round Down!!
++ (NSString *)numberToStringWithSeparator: (NSNumber *) number andDecimals:(int) numberOfDecimals;   // Example: (NSNumber) 16,867.5434 --> (NSString) 16,867.54 Round Down!!
+
++ (NSString *)convertFeetToFeet_Inches:(float) feet;
 
 + (NSString *) Date: (NSDate *) date toStringWithFormat:(NSString *) formatStr;
 

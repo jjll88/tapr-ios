@@ -33,12 +33,11 @@
     self.birthdayLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_Cell_RegularTitle];
     
     // TxtField
-    self.birthdayTxtField.text = [TPProfileManager sharedManager].user.birthday;
-
+    self.birthdayTxtField.text = [[TPThemeManager sharedManager] nsdateToFormattedString:[TPProfileManager sharedManager].user.birthday];
 }
 
 - (void)selfViewTapped {
-    [self endEditing:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotification_HideKeyword object:nil];
 }
 
 /*

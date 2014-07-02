@@ -119,4 +119,24 @@
     return font;
 }
 
+- (NSString *) nsdateToFormattedString: (NSDate *) date {
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"MMMM dd, yyyy"];
+    NSString *dateStr = [dateFormatter stringFromDate:date];
+    
+    return dateStr;
+}
+
+- (NSDate *) dateStringToNSDate: (NSString *) dateStr {
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"MMMM dd, yyyy"];
+    NSDate *nsdate = [dateFormatter dateFromString:dateStr];
+    
+    return nsdate;
+}
+
+
+
 @end

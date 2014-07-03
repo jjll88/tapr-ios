@@ -95,7 +95,7 @@
     self.logOutBtn.titleLabel.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_LeftMenu_Cell];
     [self.logOutBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 //    [self.logOutBtn setTitleColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor] forState:UIControlStateHighlighted];
-    [self.logOutBtn setBackgroundColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuBackground] forState:UIControlStateNormal];
+    [self.logOutBtn setBackgroundColor:[UIColor clearColor] forState:UIControlStateNormal];
     [self.logOutBtn setBackgroundColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_MenuHighLigthedCell] forState:UIControlStateHighlighted];
     UIView *topSeparatorLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, header.bounds.size.width, lineThickness)];
     topSeparatorLine.backgroundColor = [UIColor whiteColor];

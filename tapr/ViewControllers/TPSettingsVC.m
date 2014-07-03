@@ -8,9 +8,11 @@
 
 #import "TPSettingsVC.h"
 
-@interface TPSettingsVC ()
+#define footerLineThickness 1.
 
-@property (weak, nonatomic) IBOutlet UISegmentedControl *unitSegmentedControl;
+@interface TPSettingsVC () <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 // Local variables
 @property (nonatomic, strong) TPUserProfile *user;
@@ -53,18 +55,83 @@
     // Nav bar Title
     [self setupNavBarTitle:settingsTitle];
     
-    self.unitSegmentedControl.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_DarkBlueTintColor];
-    self.unitSegmentedControl.selectedSegmentIndex = self.user.measurementUnits;
-    [self.unitSegmentedControl addTarget:self
-                              action:@selector(segmentedChanged:)
-                    forControlEvents:UIControlEventValueChanged];
+    // tableview
+    self.tableView.allowsSelection = YES;
+    self.tableView.allowsMultipleSelection = NO;
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.separatorColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightBlueTintColor];
+    self.tableView.scrollEnabled = NO;
 }
 
-#pragma mark - IBActions
-- (void) segmentedChanged:(UISegmentedControl *) sender {
-    TPUserProfile *user = [[TPProfileManager sharedManager] user];
-    user.measurementUnits = sender.selectedSegmentIndex == 0 ? measurementUnits_cm : measurementUnits_inch;
+# pragma mark - TableView datasource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // Regular Cell
+    static NSString *CellIdentifier;
+    if (indexPath.row == 0) {
+        CellIdentifier = @"Settings_Units";
+    } else if (indexPath.row == 1) {
+        CellIdentifier = @"Settings_Chart";
+    } else {
+        CellIdentifier = @"";
+    }
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if(cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    // Custom Cell
+//    static NSString *CellIdentifier = @"myCustomCell";
+//    myCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    if(cell == nil) {
+//        cell = [[myCustomCell alloc] init];
+//    }
+    
+    // Configure the cell...
+    NSArray *arr = @[@"Units",@"Chart display"];
+    cell.textLabel.text = arr[indexPath.row];
+    cell.textLabel.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_Cell_LightTitle];
+    cell.backgroundColor = [UIColor clearColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    return cell;
+}
+
+#pragma mark - Table view delegates
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 1) {
+        [self toastMessage:@"Under construction"];
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return footerLineThickness;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    
+    //separator line
+    UIView *separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, footerLineThickness)];
+    separatorLineView.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightBlueTintColor];
+    
+    return separatorLineView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60;
+}
+
 
 #pragma mark - Others
 - (void)didReceiveMemoryWarning {

@@ -159,16 +159,6 @@
     return YES;
 }
 
-//- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
-//    if ([[textField superview] isKindOfClass:[EditBirthdayView class]]) {
-//        self.datePicker.hidden = NO;
-//        
-//        return YES;
-//    }
-//    
-//    return NO;
-//}
-
 #pragma mark - Keyword Controller
 // ** Hide presented keyboard when user tapped on any subview ** //
 - (void) hideKeywordFromView:(NSNotification *) notification {

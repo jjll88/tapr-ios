@@ -17,16 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tapr" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yn8-nQ-iUM">
-                                <rect key="frame" x="20" y="99" width="280" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="rjd-BM-hZ4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="GujaratiSangamMN" family="Gujarati Sangam MN" pointSize="60"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFc-Qe-VXk">
                                 <rect key="frame" x="26" y="289" width="268" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -85,18 +75,23 @@
                                     <action selector="forgotBtnPressed:" destination="fmw-bc-kxc" eventType="touchUpInside" id="ASO-on-aky"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-logo" translatesAutoresizingMaskIntoConstraints="NO" id="uVP-Bh-Vjd">
+                                <rect key="frame" x="20" y="66" width="280" height="137"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fFc-Qe-VXk" firstAttribute="leading" secondItem="U6B-K3-74z" secondAttribute="leading" constant="26" id="1VJ-Gc-166"/>
+                            <constraint firstItem="uVP-Bh-Vjd" firstAttribute="leading" secondItem="U6B-K3-74z" secondAttribute="leading" constant="20" symbolic="YES" id="3bt-jf-2l3"/>
                             <constraint firstItem="1hW-Nc-hZX" firstAttribute="trailing" secondItem="CgO-oE-lJU" secondAttribute="trailing" id="AwX-NR-Wl4"/>
                             <constraint firstItem="fFc-Qe-VXk" firstAttribute="trailing" secondItem="CgO-oE-lJU" secondAttribute="trailing" id="CE6-ne-PHC"/>
                             <constraint firstAttribute="centerY" secondItem="fFc-Qe-VXk" secondAttribute="centerY" constant="-23" id="HgR-XS-WZ6"/>
                             <constraint firstItem="fFc-Qe-VXk" firstAttribute="trailing" secondItem="wpk-xB-SO6" secondAttribute="trailing" id="LF0-bd-gpf"/>
                             <constraint firstAttribute="trailing" secondItem="fFc-Qe-VXk" secondAttribute="trailing" constant="26" id="NM1-Jg-Q3J"/>
                             <constraint firstAttribute="centerY" secondItem="CgO-oE-lJU" secondAttribute="centerY" constant="23" id="Oqg-ne-KbV"/>
-                            <constraint firstAttribute="centerY" secondItem="Yn8-nQ-iUM" secondAttribute="centerY" constant="150" id="SiJ-KN-6XC"/>
-                            <constraint firstItem="Yn8-nQ-iUM" firstAttribute="leading" secondItem="U6B-K3-74z" secondAttribute="leading" constant="20" id="Xsh-iY-Gwi"/>
+                            <constraint firstAttribute="trailing" secondItem="uVP-Bh-Vjd" secondAttribute="trailing" constant="20" symbolic="YES" id="Wb7-7K-Pke"/>
+                            <constraint firstAttribute="centerY" secondItem="uVP-Bh-Vjd" secondAttribute="centerY" constant="150" id="ac8-dQ-bVm"/>
                             <constraint firstItem="fFc-Qe-VXk" firstAttribute="leading" secondItem="yGF-k6-COl" secondAttribute="leading" id="eKU-yi-9cf"/>
                             <constraint firstItem="wpk-xB-SO6" firstAttribute="height" secondItem="yGF-k6-COl" secondAttribute="height" id="fgq-0h-cwq"/>
                             <constraint firstItem="wpk-xB-SO6" firstAttribute="centerY" secondItem="yGF-k6-COl" secondAttribute="centerY" id="hdT-xp-kaX"/>
@@ -105,7 +100,6 @@
                             <constraint firstItem="fFc-Qe-VXk" firstAttribute="leading" secondItem="CgO-oE-lJU" secondAttribute="leading" id="sjy-Ay-6fk"/>
                             <constraint firstItem="1hW-Nc-hZX" firstAttribute="top" secondItem="fFc-Qe-VXk" secondAttribute="bottom" constant="8" symbolic="YES" id="yW0-u3-DY3"/>
                             <constraint firstAttribute="centerY" secondItem="yGF-k6-COl" secondAttribute="centerY" constant="-150" id="zDH-SV-Ndi"/>
-                            <constraint firstAttribute="trailing" secondItem="Yn8-nQ-iUM" secondAttribute="trailing" constant="20" id="zOb-uB-tve"/>
                         </constraints>
                     </view>
                     <connections>
@@ -114,8 +108,7 @@
                         <outlet property="forgotBtn" destination="1hW-Nc-hZX" id="Aon-0Y-AwE"/>
                         <outlet property="loginEmailBtn" destination="wpk-xB-SO6" id="07K-8e-ua6"/>
                         <outlet property="loginFBBtn" destination="yGF-k6-COl" id="MyS-Vf-Btl"/>
-                        <outlet property="logoLbl" destination="Yn8-nQ-iUM" id="Klv-fA-asf"/>
-                        <outlet property="logoToCenterYConstrain" destination="SiJ-KN-6XC" id="Ywv-18-3Y4"/>
+                        <outlet property="logoToCenterYConstrain" destination="ac8-dQ-bVm" id="Caf-Tr-JEY"/>
                         <outlet property="passTextField" destination="fFc-Qe-VXk" id="W8Z-m9-rjM"/>
                     </connections>
                 </viewController>
@@ -927,8 +920,28 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <view key="view" contentMode="scaleToFill" id="fDE-IL-hcz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ukO-Lg-bXR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4no-Vf-rgJ" id="PME-QU-e9D"/>
+                                    <outlet property="delegate" destination="4no-Vf-rgJ" id="v4g-ip-Css"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yoc-Kt-TaA" firstAttribute="top" secondItem="ukO-Lg-bXR" secondAttribute="bottom" id="cBH-Uv-0Cx"/>
+                            <constraint firstItem="ukO-Lg-bXR" firstAttribute="leading" secondItem="fDE-IL-hcz" secondAttribute="leading" id="gTJ-G6-vly"/>
+                            <constraint firstItem="ukO-Lg-bXR" firstAttribute="top" secondItem="fDE-IL-hcz" secondAttribute="top" id="gnJ-OY-lHZ"/>
+                            <constraint firstAttribute="trailing" secondItem="ukO-Lg-bXR" secondAttribute="trailing" id="l2n-PK-Jmv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="ukO-Lg-bXR" id="AXw-HS-Pyy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z17-HU-JDK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1321,6 +1334,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="btn-email-login" width="121" height="36"/>
         <image name="btn-facebook-login" width="121" height="36"/>
         <image name="btn-nav-X" width="25" height="25"/>
+        <image name="login-logo" width="213" height="137"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

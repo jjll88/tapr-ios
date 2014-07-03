@@ -11,7 +11,6 @@
 
 @interface TPLoginVC ()
 
-@property (weak, nonatomic) IBOutlet UILabel *logoLbl;
 @property (weak, nonatomic) IBOutlet UIButton *loginFBBtn;
 @property (weak, nonatomic) IBOutlet UIButton *loginEmailBtn;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
@@ -49,9 +48,7 @@
 
 #pragma mark - Set up UI
 - (void) setupUI {
-    
-    self.logoLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
-    
+        
     self.emailTextField.text = testUserEmail;
     self.emailTextField.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_Cell_LightTitle];
     self.emailTextField.layer.borderColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightBlueTintColor].CGColor;
@@ -62,7 +59,8 @@
     self.passTextField.layer.borderColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightBlueTintColor].CGColor;
     self.passTextField.layer.borderWidth = 1.0;
     
-    self.forgotBtn.titleLabel.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
+    [self.forgotBtn setTitleColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor] forState:UIControlStateNormal];
+    [self.forgotBtn setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
     
     // Layout
     self.logoToCenterYConstrain.constant = self.view.bounds.size.height/4;

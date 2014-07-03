@@ -28,7 +28,7 @@
 @implementation TPMeasureVC
 
 - (NSArray *) menuItemTitlesArr { // Order is important.
-    if (!_menuItemTitlesArr) _menuItemTitlesArr = @[@"Chest",@"Arm",@"Waist",@"Legs"];
+    if (!_menuItemTitlesArr) _menuItemTitlesArr = [[TPDataManager sharedManager] dummyBodyPartCategories];
     return _menuItemTitlesArr;
 }
 

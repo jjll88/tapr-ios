@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSMutableArray *dummyArmData;
 @property (nonatomic, strong) NSMutableArray *dummyWaistData;
 @property (nonatomic, strong) NSMutableArray *dummyLegData;
+@property (nonatomic, strong) NSMutableArray *dummyHipData;
 @property (nonatomic, strong) NSDateFormatter *dummyDateFormatter;
 
 @end
@@ -46,7 +47,7 @@
 }
 
 - (NSArray *)dummyBodyPartCategories  {
-    if  (!_dummyBodyPartCategories) _dummyBodyPartCategories = @[@"Chest",@"Arm",@"Waist",@"Legs"];
+    if  (!_dummyBodyPartCategories) _dummyBodyPartCategories = @[@"Chest",@"Arm",@"Waist",@"Legs",@"Hip"];
     return _dummyBodyPartCategories;
 }
 
@@ -82,8 +83,16 @@
     return _dummyWaistData;
 }
 
+- (NSMutableArray *)dummyHipData  {
+    if  (!_dummyHipData) _dummyHipData = [@[@{@"value":@90.45,@"date":[self.dummyDateFormatter dateFromString:@"April 4, 2015\n9:17 AM"]},
+                                          @{@"value":@91,@"date":[self.dummyDateFormatter dateFromString:@"September 20, 2014\n10:22 PM"]},
+                                          @{@"value":@93.5,@"date":[self.dummyDateFormatter dateFromString:@"April 15, 2014\n1:15 AM"]},
+                                          @{@"value":@96,@"date":[self.dummyDateFormatter dateFromString:@"September 11, 2013\n7:10 PM"]}] mutableCopy];
+    return _dummyHipData;
+}
+
 - (NSArray *)dummyBodyPartData  {
-    if  (!_dummyBodyPartData) _dummyBodyPartData = @[self.dummyChestData,self.dummyArmData,self.dummyWaistData,self.dummyLegData];
+    if  (!_dummyBodyPartData) _dummyBodyPartData = @[self.dummyChestData,self.dummyArmData,self.dummyWaistData,self.dummyLegData, self.dummyHipData];
     return _dummyBodyPartData;
 }
 

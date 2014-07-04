@@ -8,27 +8,29 @@
 
 #import <Foundation/Foundation.h>
 
+#define userProfileTagOffset 100
+
 typedef enum MeasurementUnits : NSUInteger {
-    measurementUnits_cm = 0,
-    measurementUnits_inch
+    measurementUnits_cm = userProfileTagOffset,
+    measurementUnits_inch = userProfileTagOffset+1
     
 } MeasurementUnits;
 
 typedef enum HeightUnits : NSUInteger {
-    heightUnits_cm = 0,
-    heightUnits_ft
+    heightUnits_cm = userProfileTagOffset,
+    heightUnits_ft = userProfileTagOffset+1
     
 } HeightUnits;
 
 typedef enum WeightUnits : NSUInteger {
-    weightUnits_kg = 0,
-    weightUnits_lb
+    weightUnits_kg = userProfileTagOffset,
+    weightUnits_lb = userProfileTagOffset+1
     
 } WeightUnits;
 
 typedef enum Gender : NSUInteger {
-    gender_female = 0,
-    gender_male
+    gender_female = userProfileTagOffset,
+    gender_male = userProfileTagOffset+1
     
 } Gender;
 

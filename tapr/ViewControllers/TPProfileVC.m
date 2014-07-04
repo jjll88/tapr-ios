@@ -31,11 +31,11 @@
 
 - (NSArray *)profileInfoArr  {
     
-    _profileInfoArr = @[@{@"type": @"Name",@"value": self.user.name},
-                        @{@"type": @"Birthday",@"value":[[TPThemeManager sharedManager] nsdateToFormattedString:self.user.birthday]},
-                        @{@"type": @"Height",@"value": [self userHeigthString:self.user]},
-                        @{@"type": @"Weight",@"value": [self userWeigthString:self.user]},
-                        @{@"type": @"Gender",@"value": (self.user.gender == gender_female ? @"Female" : @"Male")}];
+    _profileInfoArr = @[@{@"type": @"Name",  @"value": self.user.name ? self.user.name : @""},
+                        @{@"type": @"Age",   @"value": [self userAgeString:self.user] ? [self userAgeString:self.user] : @""},
+                        @{@"type": @"Gender",@"value": [self userGenderString:self.user] ? [self userGenderString:self.user] : @""},
+                        @{@"type": @"Height",@"value": [self userHeigthString:self.user] ? [self userHeigthString:self.user] : @"" },
+                        @{@"type": @"Weight",@"value": [self userWeigthString:self.user] ? [self userWeigthString:self.user] : @""}];
     
     return _profileInfoArr;
 }
@@ -66,6 +66,10 @@
     [self registerForKVO];
     
     [self setupUI];
+    
+    if (![self isUserProfileCompleted]) {
+        [self showAlert:@"Please complete your profile information."];
+    }
 }
 
 #pragma mark - KVOs
@@ -79,7 +83,6 @@
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"user"]) {
         // Do something after observed_obj's observed_property was changed
-        
         // update user local variable
         _user = [TPProfileManager sharedManager].user;
         
@@ -113,7 +116,7 @@
     
     //avatar
     self.avatar.layer.cornerRadius = self.avatar.bounds.size.width/2;
-    self.avatar.image = self.user.avatar;
+    self.avatar.image = self.user.avatar ? self.user.avatar : [UIImage imageNamed:@"ic-profile-placeholder.png"];
     self.avatar.backgroundColor = [UIColor colorWithWhite:0.85 alpha:1.0];
     
     //joined
@@ -161,20 +164,59 @@
 - (NSString *) userHeigthString: (TPUserProfile *) user {
     NSString *heightStr;
     
-    if (user.heightUnits == heightUnits_cm) {
-        heightStr = [NSString stringWithFormat:@"%@ cm", user.height];
-    } else if (user.heightUnits == heightUnits_ft) {
-        #pragma mark - TO DO / Handle feet-inches
-        heightStr = [NSString stringWithFormat:@"%@ ft", user.height];
+    if (user.height) {
+        if (user.heightUnits == heightUnits_cm) {
+            heightStr = [NSString stringWithFormat:@"%@ cm", user.height];
+        } else if (user.heightUnits == heightUnits_ft) {
+            #pragma mark - TO DO / Handle feet-inches
+            heightStr = [NSString stringWithFormat:@"%@ ft", user.height];
+        }
     }
     
-    return heightStr;
+    return heightStr ? heightStr : @"";
 }
 
 - (NSString *) userWeigthString: (TPUserProfile *) user {
-    NSString *units = user.weightUnits == weightUnits_kg ? @"kg" : @"lb";
     
-    return [NSString stringWithFormat:@"%@ %@", user.weight, units];
+    if (user.weight) {
+        NSString *units = user.weightUnits == weightUnits_kg ? @"kg" : @"lb";
+        return [NSString stringWithFormat:@"%@ %@", user.weight, units];
+    } else {
+        return @"";
+    }
+}
+
+- (NSString *) userAgeString: (TPUserProfile *) user {
+    if (user.birthday) {
+        NSDate* now = [NSDate date];
+        NSDateComponents* ageComponents = [[NSCalendar currentCalendar]
+                                           components:NSYearCalendarUnit
+                                           fromDate:user.birthday
+                                           toDate:now
+                                           options:0];
+        NSInteger age = [ageComponents year];
+        
+        return [NSString stringWithFormat:@"%i", age];
+    } else {
+        return @"";
+    }
+}
+
+- (NSString *) userGenderString: (TPUserProfile *) user {
+    
+    if (user.gender == gender_female || user.gender == gender_male) {
+        return (self.user.gender == gender_female ? @"Female" : @"Male");
+    }
+    
+    return @"";
+}
+
+- (BOOL) isUserProfileCompleted {
+    if (self.user.name && self.user.birthday && self.user.gender!=0 && self.user.height && self.user.weight) {
+        return YES;
+    }
+    
+    return NO;
 }
 
 #pragma mark - Others

@@ -32,6 +32,7 @@
     
     //Lbls
     self.categoryNameLbl.textColor = [UIColor grayColor];
+    self.categoryNameLbl.textAlignment = NSTextAlignmentRight;
     self.categoryNameLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_Cell_RegularTitle];
     
     self.categoryValueLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];

@@ -50,14 +50,14 @@
 - (TPUserProfile *) createDummyUserProfile {
     TPUserProfile *user = [[TPUserProfile alloc] init];
     
-    user.name = @"Keti Topuria";
-    user.birthday = [[TPThemeManager sharedManager] dateStringToNSDate:@"July 6, 1989"];
-    user.height = @180;
+//    user.name = @"Keti Topuria";
+//    user.birthday = [[TPThemeManager sharedManager] dateStringToNSDate:@"July 6, 1989"];
+//    user.height = @180;
     user.heightUnits = heightUnits_cm;
-    user.weight = @70;
+//    user.weight = @70;
     user.weightUnits = weightUnits_kg;
-    user.gender = gender_female;
-    user.email = @"user@email.com";
+//    user.gender = gender_female;
+//    user.email = @"user@email.com";
     user.measurementUnits = measurementUnits_cm;
     
     // Joined date
@@ -68,7 +68,7 @@
     user.joinedDate = [NSDate date]; //
     
     //avatar
-    user.avatar = [UIImage imageNamed:@"ic-profile-placeholder.png"];
+//    user.avatar = nil;
     
     return user;
 }

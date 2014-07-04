@@ -34,6 +34,7 @@
 // Local variables
 @property (nonatomic, strong) TPUserProfile *user;
 @property (nonatomic, strong) UITextField *currentlyEditedTxtField;
+@property (nonatomic, strong) NSDate *currentDate;
 
 @end
 
@@ -42,6 +43,11 @@
 - (TPUserProfile *)user  {
     if  (!_user) _user = [TPProfileManager sharedManager].user;
     return _user;
+}
+
+- (NSDate *)currentDate  {
+    if  (!_currentDate) _currentDate = [NSDate date];
+    return _currentDate;
 }
 
 #pragma mark - init
@@ -104,7 +110,7 @@
     // Date Picker
     self.datePicker.hidden = YES;
     self.datePicker.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_TurquoiseTintColor];
-    self.datePicker.date = self.user.birthday;
+    self.datePicker.date = self.user.birthday ? self.user.birthday : self.currentDate;
     [self.datePicker addTarget:self action:@selector(datePickerChanged:) forControlEvents:UIControlEventValueChanged];
     
     // Autolayout
@@ -122,13 +128,23 @@
 - (void) saveBarButtonPressed {
     
     TPUserProfile *newUser = [[TPUserProfile alloc] init];
-    newUser.name = self.editNameContainer.nameTxtField.text;
-    newUser.birthday = self.datePicker.date;
-    newUser.height = [NSNumber numberWithFloat:[self.editHeightContainer.heightTxtField.text floatValue]];
-    newUser.heightUnits = self.editHeightContainer.heightControl.selectedSegmentIndex == heightUnits_cm ? heightUnits_cm : heightUnits_ft;
-    newUser.weight = [NSNumber numberWithFloat:[self.editWeightContainer.weightTxtField.text floatValue]];
-    newUser.weightUnits = self.editWeightContainer.weightControl.selectedSegmentIndex == weightUnits_kg ? weightUnits_kg : weightUnits_lb;
-    newUser.gender = self.editGenderContainer.genderControl.selectedSegmentIndex == 0 ? gender_female : gender_male;
+    
+    if (![NSString isEmpty:self.editNameContainer.nameTxtField.text]) {
+        newUser.name = self.editNameContainer.nameTxtField.text;
+    }
+    if (![self.datePicker.date isEqualToDate:self.currentDate]) {
+        newUser.birthday = self.datePicker.date;
+    }
+    if (![NSString isEmpty:self.editHeightContainer.heightTxtField.text]) {
+        newUser.height = [NSNumber numberWithFloat:[self.editHeightContainer.heightTxtField.text floatValue]];
+    }
+    if (![NSString isEmpty:self.editWeightContainer.weightTxtField.text]) {
+        newUser.weight = [NSNumber numberWithFloat:[self.editWeightContainer.weightTxtField.text floatValue]];
+    }
+    
+    newUser.heightUnits = self.editHeightContainer.heightControl.selectedSegmentIndex+userProfileTagOffset == heightUnits_cm ? heightUnits_cm : heightUnits_ft;
+    newUser.weightUnits = self.editWeightContainer.weightControl.selectedSegmentIndex+userProfileTagOffset == weightUnits_kg ? weightUnits_kg : weightUnits_lb;
+    newUser.gender = self.editGenderContainer.genderControl.selectedSegmentIndex+userProfileTagOffset == gender_female ? gender_female : gender_male;
     newUser.avatar = self.user.avatar;
     newUser.joinedDate = self.user.joinedDate;
     newUser.email = self.user.email;

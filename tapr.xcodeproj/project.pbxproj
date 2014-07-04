@@ -35,6 +35,7 @@
 		0704971E1951BA04007CC681 /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704971D1951BA04007CC681 /* NSArray+Additions.m */; };
 		070497261951E3D2007CC681 /* TPSettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 070497251951E3D2007CC681 /* TPSettingsVC.m */; };
 		0711D3061966A5F10081AC90 /* TPSettingsGoalLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0711D3051966A5F10081AC90 /* TPSettingsGoalLineCell.m */; };
+		0711D3091966B0620081AC90 /* UIApplication+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0711D3081966B0620081AC90 /* UIApplication+Additions.m */; };
 		07363A17194A138E00FFEF34 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07363A16194A138E00FFEF34 /* SWRevealViewController.m */; };
 		0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EB194AD7EB0011E1AC /* TPMenuCell.m */; };
 		0739D4F0194AD8930011E1AC /* TPProgressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EF194AD8930011E1AC /* TPProgressVC.m */; };
@@ -136,6 +137,8 @@
 		070497251951E3D2007CC681 /* TPSettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSettingsVC.m; sourceTree = "<group>"; };
 		0711D3041966A5F10081AC90 /* TPSettingsGoalLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSettingsGoalLineCell.h; sourceTree = "<group>"; };
 		0711D3051966A5F10081AC90 /* TPSettingsGoalLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSettingsGoalLineCell.m; sourceTree = "<group>"; };
+		0711D3071966B0620081AC90 /* UIApplication+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Additions.h"; sourceTree = "<group>"; };
+		0711D3081966B0620081AC90 /* UIApplication+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Additions.m"; sourceTree = "<group>"; };
 		07363A15194A138E00FFEF34 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		07363A16194A138E00FFEF34 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		07363A18194A140F00FFEF34 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -274,6 +277,8 @@
 				07046CC3194AD0DE004A6D38 /* UIColor+Additions.m */,
 				0704971C1951BA04007CC681 /* NSArray+Additions.h */,
 				0704971D1951BA04007CC681 /* NSArray+Additions.m */,
+				0711D3071966B0620081AC90 /* UIApplication+Additions.h */,
+				0711D3081966B0620081AC90 /* UIApplication+Additions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -776,6 +781,7 @@
 				0704970F195170B4007CC681 /* JBBarChartView.m in Sources */,
 				07046CC4194AD0DE004A6D38 /* UIColor+Additions.m in Sources */,
 				075D42D71962F0A100C0CF78 /* EditHeightView.m in Sources */,
+				0711D3091966B0620081AC90 /* UIApplication+Additions.m in Sources */,
 				07049710195170B4007CC681 /* JBChartView.m in Sources */,
 				07EB51D8194A0EAA0031150D /* main.m in Sources */,
 				075D42D41962F09400C0CF78 /* EditBirthdayView.m in Sources */,

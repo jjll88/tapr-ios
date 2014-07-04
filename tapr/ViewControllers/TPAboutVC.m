@@ -10,7 +10,9 @@
 
 @interface TPAboutVC ()
 
-@property (weak, nonatomic) IBOutlet UILabel *aboutDescription;
+@property (weak, nonatomic) IBOutlet UILabel *aboutMessage;
+@property (weak, nonatomic) IBOutlet UILabel *buildNumberLbl;
+@property (weak, nonatomic) IBOutlet UILabel *buildDateLbl;
 
 @end
 
@@ -52,29 +54,27 @@
     // Nav bar Title
     [self setupNavBarTitle:aboutTitle];
     
-    NSString *mssg = @"Welcome to the Tapr app, this app will allow users to measure any part of their body while charting out the measurements.";
     UIFont *font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_Message];
     
-    // For regular string **
-//    self.aboutDescription.textColor = [UIColor darkGrayColor];
-//    self.aboutDescription.textAlignment = NSTextAlignmentJustified;
-//    self.aboutDescription.lineBreakMode = NSLineBreakByCharWrapping;
-//    self.aboutDescription.font = font;
+    // Lbls **
+    self.aboutMessage.text = @"Welcome to Tapr!";
+    self.aboutMessage.textColor = [UIColor darkGrayColor];
+    self.aboutMessage.textAlignment = NSTextAlignmentCenter;
+    self.aboutMessage.font = font;
     
-    // For attributed string **
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:mssg];
-    NSMutableParagraphStyle *paragraphStyle=[[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setAlignment:NSTextAlignmentJustified];
-    [paragraphStyle setLineBreakMode:NSLineBreakByWordWrapping];
-    [attributedString addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, [attributedString length])];
-    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor darkGrayColor] range:NSMakeRange(0, [attributedString length])];
-    // NOTE - XCode bug: we need to set a stroke if we want to justify the text
-    [attributedString addAttribute:NSStrokeColorAttributeName value:[UIColor clearColor] range:NSMakeRange(0, [attributedString length])];
-    [attributedString addAttribute:NSStrokeWidthAttributeName value:[NSNumber numberWithFloat:0.0] range:NSMakeRange(0, [attributedString length])];
-    // ------
-    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [attributedString length])];
+    NSString *buildNum = @"11"; // [UIApplication versionBuild];
+    self.buildNumberLbl.text = [NSString stringWithFormat:@"Build #: %@", buildNum];
+    self.buildNumberLbl.textColor = [UIColor darkGrayColor];
+    self.buildNumberLbl.textAlignment = NSTextAlignmentCenter;
+    self.buildNumberLbl.font = font;
     
-    [self.aboutDescription setAttributedText:attributedString];
+
+    NSString *buildDateStr = [UIApplication buildDate];
+    self.buildDateLbl.text = [NSString stringWithFormat:@"Date: %@", buildDateStr];
+    self.buildDateLbl.textColor = [UIColor darkGrayColor];
+    self.buildDateLbl.textAlignment = NSTextAlignmentCenter;
+    self.buildDateLbl.font = font;
+    
 }
 
 - (void) updateUI {

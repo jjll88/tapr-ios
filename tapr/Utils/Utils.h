@@ -16,6 +16,7 @@
 #import "UIButton+Additions.h"
 #import "NSString+Additions.h"
 #import "NSArray+Additions.h"
+#import "UIApplication+Additions.h"
 
 //Subclasses
 #import "RotatedUILabel.h"

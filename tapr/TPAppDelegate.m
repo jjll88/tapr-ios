@@ -78,9 +78,7 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:BMNotification_PeripheralDiscovered object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
         NSLog(@"Peripheral discovered, connect to it");
         [self.btManager connectPeripheral:note.userInfo[BMNotificationKey_Peripheral]];
-        
     }];
-    
 }
 
 @end

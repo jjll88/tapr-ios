@@ -988,16 +988,38 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Build #: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIM-0f-bzA">
+                                <rect key="frame" x="20" y="101" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmF-pm-GwP">
+                                <rect key="frame" x="20" y="142" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="F9X-C7-w3k" secondAttribute="trailing" constant="30" id="Dto-AO-f40"/>
+                            <constraint firstItem="cmF-pm-GwP" firstAttribute="top" secondItem="eIM-0f-bzA" secondAttribute="bottom" constant="20" id="Dzc-Fd-Ffe"/>
+                            <constraint firstAttribute="trailing" secondItem="eIM-0f-bzA" secondAttribute="trailing" constant="20" id="Erj-ou-Rad"/>
+                            <constraint firstItem="eIM-0f-bzA" firstAttribute="top" secondItem="F9X-C7-w3k" secondAttribute="bottom" constant="40" id="GNP-nG-yRe"/>
                             <constraint firstItem="F9X-C7-w3k" firstAttribute="top" secondItem="kc4-Ec-lyY" secondAttribute="bottom" constant="20" id="Ibk-He-qb2"/>
+                            <constraint firstItem="eIM-0f-bzA" firstAttribute="leading" secondItem="UQs-6N-fNC" secondAttribute="leading" constant="20" id="LOj-s3-1O4"/>
                             <constraint firstItem="F9X-C7-w3k" firstAttribute="leading" secondItem="UQs-6N-fNC" secondAttribute="leading" constant="30" id="VZ5-g0-gsc"/>
+                            <constraint firstAttribute="trailing" secondItem="cmF-pm-GwP" secondAttribute="trailing" constant="20" id="vXX-xf-vGk"/>
+                            <constraint firstItem="cmF-pm-GwP" firstAttribute="leading" secondItem="UQs-6N-fNC" secondAttribute="leading" constant="20" id="z95-cK-hwd"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="aboutDescription" destination="F9X-C7-w3k" id="Mgc-7i-hOg"/>
+                        <outlet property="aboutMessage" destination="F9X-C7-w3k" id="3Xi-Bm-Bel"/>
+                        <outlet property="buildDateLbl" destination="cmF-pm-GwP" id="sCl-yL-ao5"/>
+                        <outlet property="buildNumberLbl" destination="eIM-0f-bzA" id="NOh-nT-rRu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzj-Vm-MMR" userLabel="First Responder" sceneMemberID="firstResponder"/>

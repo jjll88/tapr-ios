@@ -9,6 +9,7 @@
 #import "TPToolsVC.h"
 
 #define footerLineThickness 1.
+#define toolsCategories @[@"Body fat calculator",@"Waist to Hip ratio", @"Waist vs Weight", @"Hip vs Weight", @"Central Adiposity", @"Goal Line"]
 
 @interface TPToolsVC ()
 
@@ -75,7 +76,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 6;
+    return [toolsCategories count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -88,11 +89,11 @@
     }
     
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"Tool #%i",indexPath.row];
+    cell.textLabel.text = toolsCategories[indexPath.row];
     cell.textLabel.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_Cell_LightTitle];
-    cell.backgroundColor = [UIColor clearColor];
+    cell.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightBlueTintColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.accessoryType = UITableViewCellAccessoryNone;
     
     return cell;
 }
@@ -116,7 +117,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60;
+    return 50;
 }
 
 #pragma mark - Others

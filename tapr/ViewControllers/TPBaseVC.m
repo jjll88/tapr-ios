@@ -65,7 +65,7 @@
     CGFloat lineThickness = 1.1;
     UIView *separatorLine = [[UIView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.bounds.size.height-lineThickness,
                                                                      self.navigationController.navigationBar.bounds.size.width, lineThickness)];
-    separatorLine.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightBlueTintColor];
+    separatorLine.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     [self.navigationController.navigationBar addSubview:separatorLine];
 }
 

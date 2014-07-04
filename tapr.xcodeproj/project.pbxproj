@@ -36,6 +36,8 @@
 		070497261951E3D2007CC681 /* TPSettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 070497251951E3D2007CC681 /* TPSettingsVC.m */; };
 		0711D3061966A5F10081AC90 /* TPSettingsGoalLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0711D3051966A5F10081AC90 /* TPSettingsGoalLineCell.m */; };
 		0711D3091966B0620081AC90 /* UIApplication+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0711D3081966B0620081AC90 /* UIApplication+Additions.m */; };
+		0711D30C1966BDF10081AC90 /* TPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0711D30B1966BDF10081AC90 /* TPButton.m */; };
+		0711D30F1966D62D0081AC90 /* TPLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0711D30E1966D62D0081AC90 /* TPLabel.m */; };
 		07363A17194A138E00FFEF34 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07363A16194A138E00FFEF34 /* SWRevealViewController.m */; };
 		0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EB194AD7EB0011E1AC /* TPMenuCell.m */; };
 		0739D4F0194AD8930011E1AC /* TPProgressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EF194AD8930011E1AC /* TPProgressVC.m */; };
@@ -139,6 +141,10 @@
 		0711D3051966A5F10081AC90 /* TPSettingsGoalLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSettingsGoalLineCell.m; sourceTree = "<group>"; };
 		0711D3071966B0620081AC90 /* UIApplication+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Additions.h"; sourceTree = "<group>"; };
 		0711D3081966B0620081AC90 /* UIApplication+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Additions.m"; sourceTree = "<group>"; };
+		0711D30A1966BDF10081AC90 /* TPButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPButton.h; sourceTree = "<group>"; };
+		0711D30B1966BDF10081AC90 /* TPButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPButton.m; sourceTree = "<group>"; };
+		0711D30D1966D62D0081AC90 /* TPLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLabel.h; sourceTree = "<group>"; };
+		0711D30E1966D62D0081AC90 /* TPLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLabel.m; sourceTree = "<group>"; };
 		07363A15194A138E00FFEF34 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		07363A16194A138E00FFEF34 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		07363A18194A140F00FFEF34 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -460,6 +466,10 @@
 			children = (
 				075D42C81962C9D500C0CF78 /* RotatedUILabel.h */,
 				075D42C91962C9D500C0CF78 /* RotatedUILabel.m */,
+				0711D30A1966BDF10081AC90 /* TPButton.h */,
+				0711D30B1966BDF10081AC90 /* TPButton.m */,
+				0711D30D1966D62D0081AC90 /* TPLabel.h */,
+				0711D30E1966D62D0081AC90 /* TPLabel.m */,
 			);
 			name = Subclasses;
 			sourceTree = "<group>";
@@ -783,6 +793,7 @@
 				075D42D71962F0A100C0CF78 /* EditHeightView.m in Sources */,
 				0711D3091966B0620081AC90 /* UIApplication+Additions.m in Sources */,
 				07049710195170B4007CC681 /* JBChartView.m in Sources */,
+				0711D30F1966D62D0081AC90 /* TPLabel.m in Sources */,
 				07EB51D8194A0EAA0031150D /* main.m in Sources */,
 				075D42D41962F09400C0CF78 /* EditBirthdayView.m in Sources */,
 				075D42CA1962C9D500C0CF78 /* RotatedUILabel.m in Sources */,
@@ -796,6 +807,7 @@
 				07046CC7194AD280004A6D38 /* TPLeftMenuVC.m in Sources */,
 				070497261951E3D2007CC681 /* TPSettingsVC.m in Sources */,
 				076C9231194B2ACA00F3A2A9 /* TPSummaryCell.m in Sources */,
+				0711D30C1966BDF10081AC90 /* TPButton.m in Sources */,
 				07A64180194B1A8F00F75BBA /* TPSummaryVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

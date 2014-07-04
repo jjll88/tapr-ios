@@ -9,26 +9,30 @@
 #import "TPLiveMeasureVC.h"
 #import "TPSummaryVC.h"
 #import "TPMeasureInputVC.h"
-
 #import "WZBluetoothManager.h"
+#import "TPButton.h"
+#import "TPLabel.h"
 
 @interface TPLiveMeasureVC () <TPMeasureInputDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *liveLbl;
-@property (weak, nonatomic) IBOutlet UIButton *measureBtn;
-@property (weak, nonatomic) IBOutlet UILabel *capturedLbl;
-@property (weak, nonatomic) IBOutlet UILabel *measureUnits;
-@property (weak, nonatomic) IBOutlet UILabel *bluetoothStatusLbl;
+@property (weak, nonatomic) IBOutlet TPLabel *measureUnits;
+@property (weak, nonatomic) IBOutlet TPLabel *liveLbl;
+@property (weak, nonatomic) IBOutlet TPButton *saveBtn;
 
 // ** To present a VC that allows manual entry. FOR TESTING */
 @property (weak, nonatomic) IBOutlet UIButton *manualEntryBtn;
 
 //Local variables
+@property (weak, nonatomic) NSString *capturedStr;
 @property (nonatomic, strong) NSDate *measureDate;
 
 @end
 
 @implementation TPLiveMeasureVC
+
+- (void)setCapturedStr:(NSString *)capturedStr {
+    _capturedStr = capturedStr;
+}
 
 #pragma mark - init
 - (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -74,7 +78,14 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:BMNotification_PeripheralHaveUpdate object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
         NSData *data = note.userInfo[BMNotificationKey_PeripheralUpdateKey];
         NSString *dataStr = [NSString stringWithUTF8String:(char *)(data.bytes)];
-        self.liveLbl.text = dataStr;
+        // convert to one decimal point number
+        NSNumber *value = [NSNumber numberWithDouble:[dataStr doubleValue]];
+        self.liveLbl.text = [NSString numberToStringWithSeparator:value andDecimals:1];
+        
+        /** SET Button and Labels STATUS */
+        self.saveBtn.enabled = YES;
+        self.liveLbl.status = Status_HighLighted;
+        self.measureUnits.status = Status_HighLighted;
     }];
 }
 
@@ -93,38 +104,25 @@
     
     // Displays ****
     self.measureUnits.text = [TPDataManager sharedManager].unitsStr;
-    self.measureUnits.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
+    [self.measureUnits setTextColor:[UIColor lightGrayColor] forState:Status_Normal];
+    [self.measureUnits setTextColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor] forState:Status_HighLighted];
     self.measureUnits.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_MeasureUnit];
-    
-    self.capturedLbl.text = @"";
-    self.capturedLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
-    self.capturedLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_MeasureValue];
-    self.capturedLbl.adjustsFontSizeToFitWidth = YES;
+    self.measureUnits.addUnderline = NO;
+    self.measureUnits.status = Status_Normal;  // disabled by default
 
-    self.liveLbl.text = @"";
-    self.liveLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
+
+    self.liveLbl.text = @"0.0";
+    [self.liveLbl setTextColor:[UIColor lightGrayColor] forState:Status_Normal];
+    [self.liveLbl setTextColor:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor] forState:Status_HighLighted];
     self.liveLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_MeasureValue];
-    self.liveLbl.adjustsFontSizeToFitWidth = YES;
-    
-    self.bluetoothStatusLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_Message];
-    self.bluetoothStatusLbl.adjustsFontSizeToFitWidth = YES;
+    self.liveLbl.addUnderline = YES;
+    self.liveLbl.status = Status_Normal;  // disabled by default
     
     // Measure Btn ****
-    self.measureBtn.tintColor = [UIColor clearColor];
-    self.measureBtn.backgroundColor = [UIColor clearColor];
-    self.measureBtn.adjustsImageWhenHighlighted = NO;
-    self.measureBtn.tag = self.index;
-    
-    UIColor *selectedColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_DarkBlueTintColor];
-    UIColor *highlightedColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightBlueTintColor];
-    UIColor *normalColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
-    
-    [self.measureBtn setBackgroundColor:normalColor forState:UIControlStateNormal];
-    [self.measureBtn setBackgroundColor:highlightedColor forState:UIControlStateHighlighted];
-    [self.measureBtn setBackgroundColor:selectedColor forState:UIControlStateSelected];
-    
-    [self.measureBtn setTitle:@"Capture" forState:UIControlStateNormal];
-    [self.measureBtn setTitle:@"Save" forState:UIControlStateSelected];
+    self.saveBtn.enabled = NO;              // disabled by default
+    [self.saveBtn setTitle:@"Save" forState:UIControlStateNormal];
+    self.saveBtn.inactiveColor = [UIColor lightGrayColor];
+    self.saveBtn.activeColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     
     if (!DEBUG) {
         self.manualEntryBtn.hidden = YES;
@@ -132,26 +130,17 @@
 }
 
 #pragma mark - IBActions
-- (IBAction)measureBtnPressed:(UIButton *)sender {
-    if (!self.measureBtn.selected) {
-        self.measureBtn.selected = YES;
-        self.liveLbl.hidden = YES;
-        self.capturedLbl.hidden = NO;
-        self.capturedLbl.text = self.liveLbl.text;
-    } else {
-        [self saveMeasurement];
-    }
+- (IBAction)saveBtnPressed:(UIButton *)sender {
+    /** Before saving the measure you must enabled the saveBtn */
+    self.capturedStr = self.liveLbl.text;
+    [self saveMeasurement];
 }
 - (IBAction)manualEntryBtnPressed:(UIButton *)sender {
-    if (!self.measureBtn.selected) {
-        [self performSegueWithIdentifier:@"segueMeasureInputVC" sender:sender];
-    } else {
-        [self saveMeasurement];
-    }
+    [self performSegueWithIdentifier:@"segueMeasureInputVC" sender:sender];
 }
 
 - (IBAction)editInputValue:(UITapGestureRecognizer *)sender {
-    if (![NSString isEmpty:self.capturedLbl.text]) {
+    if (![NSString isEmpty:self.capturedStr]) {
         [self performSegueWithIdentifier:@"segueMeasureInputVC" sender:sender];
     }
 }
@@ -162,28 +151,27 @@
 
 #pragma mark - TPMeasureInput Delegates
 - (void)TPMeasureInputVC:(TPMeasureInputVC *)controller didFinishEnteringMeasure:(NSString *)measureValue atDate:(NSDate *)measureDate {
-    self.liveLbl.hidden = YES;
-    self.capturedLbl.hidden = NO;
-    self.measureBtn.selected = YES;
-    self.capturedLbl.text = measureValue;
+    self.saveBtn.enabled = YES;
+    self.measureUnits.status = Status_HighLighted;
+    self.liveLbl.status = Status_HighLighted;
+    self.capturedStr = measureValue;
+    self.liveLbl.text = self.capturedStr;
     self.measureDate = measureDate;
 }
 
 #pragma mark - Helpers
 - (void) resetValues {
-    self.measureBtn.selected = NO;
-    self.capturedLbl.text = @"";
+    self.capturedStr = @"";
+    self.liveLbl.text = self.capturedStr;
     self.measureDate = nil;
-    self.liveLbl.hidden = NO;
-    self.capturedLbl.hidden = YES;
 }
 
 - (void) saveMeasurement {
     NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
     [f setNumberStyle:NSNumberFormatterDecimalStyle];
-    NSNumber *enterValue = [f numberFromString:self.capturedLbl.text];
+    NSNumber *enterValue = [f numberFromString:self.capturedStr];
     NSNumber *convertedValue = [NSNumber numberWithFloat:[enterValue floatValue]/[[[TPDataManager sharedManager] unitConversionFactor] floatValue]];
-    if (enterValue) {
+    if (enterValue && ![enterValue isEqualToNumber:@0]) {
         // Save data
         self.measureDate = [NSDate date];
         NSDictionary *dataInfo = @{@"value":convertedValue,@"date":self.measureDate};
@@ -192,10 +180,8 @@
         [self performSegueWithIdentifier:@"segueSummaryVC" sender:nil];
 
     } else {
-        self.measureBtn.selected = NO;
         [self showAlert:@"Unable to save this value. Try again."];
     }
-    
 }
 
 #pragma mark - Others

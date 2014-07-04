@@ -99,7 +99,7 @@
             font = [UIFont fontWithName:@"Lato-Regular" size:11];
             break;
         case ThemeFontType_MeasureValue:
-            font = [UIFont fontWithName:@"Lato-Bold" size:120];
+            font = [UIFont fontWithName:@"Lato-Light" size:120];
             break;
         case ThemeFontType_MeasureUnit:
             font = [UIFont fontWithName:@"Lato-Light" size:50];

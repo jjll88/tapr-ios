@@ -90,9 +90,10 @@
     [formatter setUsesGroupingSeparator:YES];
     [formatter setGroupingSize:3];
     
-    [formatter setAlwaysShowsDecimalSeparator:NO];
+    [formatter setAlwaysShowsDecimalSeparator:YES];
     [formatter setMaximumFractionDigits:numberOfDecimals];
-    
+    [formatter setMinimumFractionDigits:numberOfDecimals];
+
     NSString *numberStr = [formatter stringFromNumber:number];
     return numberStr;
 }

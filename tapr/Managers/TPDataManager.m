@@ -47,7 +47,7 @@
 }
 
 - (NSArray *)dummyBodyPartCategories  {
-    if  (!_dummyBodyPartCategories) _dummyBodyPartCategories = @[@"Chest",@"Arm",@"Waist",@"Legs",@"Hip"];
+    if  (!_dummyBodyPartCategories) _dummyBodyPartCategories = @[@"Chest",@"Waist",@"Hip",@"Arms",@"Legs",];
     return _dummyBodyPartCategories;
 }
 
@@ -92,7 +92,7 @@
 }
 
 - (NSArray *)dummyBodyPartData  {
-    if  (!_dummyBodyPartData) _dummyBodyPartData = @[self.dummyChestData,self.dummyArmData,self.dummyWaistData,self.dummyLegData, self.dummyHipData];
+    if  (!_dummyBodyPartData) _dummyBodyPartData = @[self.dummyChestData,self.dummyWaistData,self.dummyHipData,self.dummyArmData, self.dummyLegData];
     return _dummyBodyPartData;
 }
 

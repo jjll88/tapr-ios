@@ -32,7 +32,7 @@
     
     // Segmented Controller
     self.unitSegmentedControl.tintColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_DarkBlueTintColor];
-    self.unitSegmentedControl.selectedSegmentIndex = [[TPProfileManager sharedManager] user].measurementUnits;
+    self.unitSegmentedControl.selectedSegmentIndex = [[TPProfileManager sharedManager] user].measurementUnits == measurementUnits_cm ? 0 : 1;
     [self.unitSegmentedControl addTarget:self
                                   action:@selector(segmentedChanged:)
                         forControlEvents:UIControlEventValueChanged];

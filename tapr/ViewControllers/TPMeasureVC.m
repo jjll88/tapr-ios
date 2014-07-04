@@ -13,12 +13,6 @@
 @interface TPMeasureVC () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UILabel *quoteText;
-@property (weak, nonatomic) IBOutlet UILabel *quoteAuthor;
-
-// Autolayout
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightMessageLblConstrain;
-
 
 // Local variables
 @property (nonatomic, strong) NSArray *menuItemTitlesArr;
@@ -67,34 +61,6 @@
 - (void) setupUI {
     // Nav bar Title ****
     [self setupNavBarTitle:measureTitle];
-    
-    // Message view ****
-    self.quoteAuthor.text = @"H. James Harrington";
-    self.quoteAuthor.textColor = [UIColor darkGrayColor];
-    self.quoteAuthor.textAlignment = NSTextAlignmentJustified;
-    self.quoteAuthor.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_QuoteAuthor];
-    
-    NSString *quote = @"\"Measurement is the first step that leads to control and eventually to improvement. If you can't measure something, you can't understand it. If you can't understand it, you can't control it. If you can't control it, you can't improve it.\"";
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString: quote];
-    NSMutableParagraphStyle *paragraphStyle=[[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setAlignment:NSTextAlignmentCenter];
-    [paragraphStyle setLineBreakMode:NSLineBreakByWordWrapping];
-    //[paragraphStyle setLineSpacing:5];
-    [attributedString addAttribute:NSFontAttributeName
-                             value:[[TPThemeManager sharedManager] fontOfType:ThemeFontType_QuoteText]
-                             range:NSMakeRange(1, [attributedString length]-2)];
-    [attributedString addAttribute:NSForegroundColorAttributeName
-                             value:[[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor]
-                             range:NSMakeRange(1, [@"Measurement" length])];
-    // NOTE - XCode bug: we need to set a stroke if we want to justify the text
-    [attributedString addAttribute:NSStrokeColorAttributeName value:[UIColor clearColor] range:NSMakeRange(0, [attributedString length])];
-    [attributedString addAttribute:NSStrokeWidthAttributeName value:[NSNumber numberWithFloat:0.0] range:NSMakeRange(0, [attributedString length])];
-    // ------
-    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [attributedString length])];
-    
-    [self.quoteText setAttributedText:attributedString];
-    
-    
 
     // tableview ****
     self.tableView.allowsSelection = YES;
@@ -106,9 +72,6 @@
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, lineThickness)];
     header.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightBlueTintColor];
     self.tableView.tableHeaderView = header;
-    
-    // Autolayout ****
-    self.heightMessageLblConstrain.constant = self.view.bounds.size.height/2-50;
 }
 
 # pragma mark - TableView datasource
@@ -138,8 +101,11 @@
 #pragma mark - TableView Delegates
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    TPMeasureCell *cell = (TPMeasureCell *)[tableView cellForRowAtIndexPath:indexPath];
-    [self performSegueWithIdentifier:@"segueLiveMeasureVC" sender:indexPath];
+    if (![self isLeftMenuVisible]) {  //avoid push if left menu is visible
+        [self performSegueWithIdentifier:@"segueLiveMeasureVC" sender:indexPath];
+    } else {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
 }
 
 #pragma mark - IBActions

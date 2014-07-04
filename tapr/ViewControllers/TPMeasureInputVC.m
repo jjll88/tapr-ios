@@ -82,7 +82,8 @@
 
 - (IBAction)enterBtnPressed:(id)sender {
     if (![NSString isEmpty:self.dataInput.text]) {
-        [self.delegate TPMeasureInputVC:self didFinishEnteringMeasure:self.dataInput.text atDate:[NSDate date]];
+        NSNumber *value = [NSNumber numberWithDouble:[self.dataInput.text doubleValue]];
+        [self.delegate TPMeasureInputVC:self didFinishEnteringMeasure:[NSString numberToStringWithSeparator:value andDecimals:1] atDate:[NSDate date]];
         
         [self.dataInput resignFirstResponder];
         [self closeBtnPressed];

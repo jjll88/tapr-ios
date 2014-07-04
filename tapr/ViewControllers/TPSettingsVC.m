@@ -9,6 +9,7 @@
 #import "TPSettingsVC.h"
 
 #define footerLineThickness 1.
+#define settingsCategories @[@"Units",@"Chart display",@"Goal line display"]
 
 @interface TPSettingsVC () <UITableViewDataSource, UITableViewDelegate>
 
@@ -72,7 +73,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 2;
+    return [settingsCategories count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -83,6 +84,8 @@
         CellIdentifier = @"Settings_Units";
     } else if (indexPath.row == 1) {
         CellIdentifier = @"Settings_Chart";
+    } else if (indexPath.row == 2) {
+        CellIdentifier = @"Settings_GoalLine";
     } else {
         CellIdentifier = @"";
     }
@@ -99,8 +102,7 @@
 //    }
     
     // Configure the cell...
-    NSArray *arr = @[@"Units",@"Chart display"];
-    cell.textLabel.text = arr[indexPath.row];
+    cell.textLabel.text = settingsCategories[indexPath.row];
     cell.textLabel.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_Cell_LightTitle];
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -110,7 +112,7 @@
 
 #pragma mark - Table view delegates
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 1) {
+    if (indexPath.row != 0) {
         [self toastMessage:@"Under construction"];
     }
 }
@@ -129,7 +131,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60;
+    return 50;
 }
 
 

@@ -34,6 +34,7 @@
 		0704971A1951B4FC007CC681 /* JBLineChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 070497191951B4FC007CC681 /* JBLineChartFooterView.m */; };
 		0704971E1951BA04007CC681 /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704971D1951BA04007CC681 /* NSArray+Additions.m */; };
 		070497261951E3D2007CC681 /* TPSettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 070497251951E3D2007CC681 /* TPSettingsVC.m */; };
+		0711D3061966A5F10081AC90 /* TPSettingsGoalLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0711D3051966A5F10081AC90 /* TPSettingsGoalLineCell.m */; };
 		07363A17194A138E00FFEF34 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07363A16194A138E00FFEF34 /* SWRevealViewController.m */; };
 		0739D4EC194AD7EB0011E1AC /* TPMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EB194AD7EB0011E1AC /* TPMenuCell.m */; };
 		0739D4F0194AD8930011E1AC /* TPProgressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739D4EF194AD8930011E1AC /* TPProgressVC.m */; };
@@ -133,6 +134,8 @@
 		0704971D1951BA04007CC681 /* NSArray+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Additions.m"; sourceTree = "<group>"; };
 		070497241951E3D2007CC681 /* TPSettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSettingsVC.h; sourceTree = "<group>"; };
 		070497251951E3D2007CC681 /* TPSettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSettingsVC.m; sourceTree = "<group>"; };
+		0711D3041966A5F10081AC90 /* TPSettingsGoalLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSettingsGoalLineCell.h; sourceTree = "<group>"; };
+		0711D3051966A5F10081AC90 /* TPSettingsGoalLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSettingsGoalLineCell.m; sourceTree = "<group>"; };
 		07363A15194A138E00FFEF34 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		07363A16194A138E00FFEF34 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		07363A18194A140F00FFEF34 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -410,6 +413,8 @@
 				079216BF195039AE005D7A09 /* TPProfileCell.m */,
 				0780D22A19654CAF00290105 /* TPSettingsUnitCell.h */,
 				0780D22B19654CAF00290105 /* TPSettingsUnitCell.m */,
+				0711D3041966A5F10081AC90 /* TPSettingsGoalLineCell.h */,
+				0711D3051966A5F10081AC90 /* TPSettingsGoalLineCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -780,6 +785,7 @@
 				079216BD195028E0005D7A09 /* TPProfileManager.m in Sources */,
 				07046C99194AC7FD004A6D38 /* TPBaseVC.m in Sources */,
 				07363A17194A138E00FFEF34 /* SWRevealViewController.m in Sources */,
+				0711D3061966A5F10081AC90 /* TPSettingsGoalLineCell.m in Sources */,
 				07A6417A194B021000F75BBA /* UIImage+Additions.m in Sources */,
 				07046CC7194AD280004A6D38 /* TPLeftMenuVC.m in Sources */,
 				070497261951E3D2007CC681 /* TPSettingsVC.m in Sources */,

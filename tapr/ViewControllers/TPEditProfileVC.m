@@ -151,6 +151,12 @@
     
     // Save. KVObserved
     [TPProfileManager sharedManager].user = newUser;
+    BOOL success = [[TPProfileManager sharedManager] saveProfile];
+    if (success) {
+        DMLog(@"User profile succesfully saved");
+    } else {
+        DMLog(@"Could not save User profile");
+    }
     
     [self.navigationController popViewControllerAnimated:YES];
 }

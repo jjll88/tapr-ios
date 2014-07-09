@@ -45,5 +45,6 @@
 
 #define testUserEmail       @"  testUser@email.com"
 #define testUserPassword    @"  ************"
+#define testBuildNumber     12
 
 #endif

@@ -14,6 +14,7 @@
 + (instancetype)sharedManager;
 
 @property (nonatomic, strong) TPUserProfile *user;
+@property (nonatomic, getter = isLoggedIn) BOOL loggedIn;
 
 //Persistance
 - (BOOL) saveProfile;

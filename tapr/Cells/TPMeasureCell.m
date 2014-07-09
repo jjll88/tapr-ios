@@ -39,7 +39,7 @@
     [self.contentView addSubview:separatorLineView];
     
     //background color
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightBlueTintColor];
     
     //titleLbl
     self.titleLbl.textColor = [UIColor blackColor];
@@ -58,7 +58,7 @@
 
     } else {
         self.titleLbl.textColor = [UIColor blackColor];
-        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightBlueTintColor];
     }
 }
 @end

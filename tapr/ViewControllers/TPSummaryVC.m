@@ -22,7 +22,7 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
 
 @interface TPSummaryVC () <JBLineChartViewDataSource, JBLineChartViewDelegate,UITableViewDataSource, UITableViewDelegate>
 
-// Hader
+// Header
 @property (weak, nonatomic) IBOutlet UIView *subHeaderContainer;
 @property (weak, nonatomic) IBOutlet UILabel *summaryTitleLbl;
 // Chart view
@@ -102,20 +102,15 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
     self.tableView.separatorColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_LightBlueTintColor];
     
     //Subheader Lbl
-    self.subHeaderContainer.backgroundColor = [UIColor clearColor];
+    self.subHeaderContainer.backgroundColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     self.summaryTitleLbl.backgroundColor = [UIColor clearColor];
     self.summaryTitleLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_Subheader];
-    self.summaryTitleLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
+    self.summaryTitleLbl.textColor = [UIColor whiteColor];
     if (self.index <= [self.bodyPartCategories count]) {
         self.summaryTitleLbl.text = self.bodyPartCategories[self.index];
     } else {
         self.summaryTitleLbl.text = @"";
     }
-    
-    UIView* separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(0, self.subHeaderContainer.bounds.size.height-1,
-                                                                         self.subHeaderContainer.bounds.size.width, 1)];
-    separatorLineView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.5];
-    [self.subHeaderContainer addSubview:separatorLineView];
     
     // Right button
     if (self.shouldShowNewMeasure) {
@@ -131,17 +126,16 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
     self.chartContainerView.backgroundColor = [UIColor colorWithWhite:1. alpha:1.];
     self.lineChartView.backgroundColor = [UIColor colorWithWhite:1. alpha:1.];
     // X axis
-    self.axisXLbl.text = @"Date";
-    self.axisXLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_QuoteAuthor];
-    self.axisXLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
+    self.axisXLbl.hidden = YES;         /** axis Label is HIDDEN */
+//    self.axisXLbl.text = @"Date";
+//    self.axisXLbl.font = [[TPThemeManager sharedManager] fontOfType:ThemeFontType_QuoteAuthor];
+//    self.axisXLbl.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     JBLineChartFooterView *footerView = [[JBLineChartFooterView alloc] initWithFrame:CGRectMake(kJBLineChartViewControllerChartPadding, ceil(self.view.bounds.size.height * 0.5) - ceil(kJBLineChartViewControllerChartFooterHeight * 0.5), self.view.bounds.size.width - (kJBLineChartViewControllerChartPadding * 2), kJBLineChartViewControllerChartFooterHeight)];
     footerView.backgroundColor = [UIColor clearColor];
-    /*
     footerView.leftLabel.text = [NSString Date:[[self.reverseBodyPartData firstObject] objectForKey:@"date"] toStringWithFormat:dateFormat];
     footerView.leftLabel.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     footerView.rightLabel.text = [NSString Date:[[self.reverseBodyPartData lastObject] objectForKey:@"date"] toStringWithFormat:dateFormat];
     footerView.rightLabel.textColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
-     */
     footerView.sectionCount = [self.reverseBodyPartData count];
     footerView.footerSeparatorColor = [[TPThemeManager sharedManager] colorOfType:ThemeColorType_RegularBlueTintColor];
     self.lineChartView.footerView = footerView;
@@ -185,6 +179,7 @@ CGFloat const kJBLineChartViewControllerChartFooterHeight = 20.0f;
     
     [self setTooltipVisible:YES animated:YES atTouchPoint:touchPoint];
     [self.tooltipView setText:yValueStr];
+//    [self.tooltipView setText:[NSString stringWithFormat:@"%@ (%@)",yValueStr,dateValueStr]];
 }
 
 - (void)didUnselectLineInLineChartView:(JBLineChartView *)lineChartView {

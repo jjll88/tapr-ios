@@ -67,7 +67,15 @@
     
     [self setupUI];
     
-    if (![self isUserProfileCompleted]) {
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (![TPProfileManager sharedManager].isLoggedIn) {
+        [TPProfileManager sharedManager].loggedIn = YES;
+        [self.revealViewController revealToggle:nil];
+    } else if (![self isUserProfileCompleted]) {
         [self showAlert:@"Please complete your profile information."];
     }
 }
@@ -196,7 +204,7 @@
                                            options:0];
         NSInteger age = [ageComponents year];
         
-        return [NSString stringWithFormat:@"%i", age];
+        return [NSString stringWithFormat:@"%i", (int)age];
     } else {
         return @"";
     }

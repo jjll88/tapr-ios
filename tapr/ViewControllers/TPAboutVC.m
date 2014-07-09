@@ -62,8 +62,7 @@
     self.aboutMessage.textAlignment = NSTextAlignmentCenter;
     self.aboutMessage.font = font;
     
-    NSString *buildNum = @"11"; // [UIApplication versionBuild];
-    self.buildNumberLbl.text = [NSString stringWithFormat:@"Build #: %@", buildNum];
+    self.buildNumberLbl.text = [NSString stringWithFormat:@"Build #: %i", testBuildNumber];
     self.buildNumberLbl.textColor = [UIColor darkGrayColor];
     self.buildNumberLbl.textAlignment = NSTextAlignmentCenter;
     self.buildNumberLbl.font = font;

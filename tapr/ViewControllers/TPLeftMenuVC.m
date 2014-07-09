@@ -9,7 +9,7 @@
 #import "TPLeftMenuVC.h"
 #import "TPMenuCell.h"
 
-#define initialSelectedRow 1
+#define initialSelectedRow 0
 
 @interface TPLeftMenuVC () <UITableViewDataSource, UITableViewDelegate>
 
@@ -29,9 +29,9 @@
     if (!_menuItemArr) _menuItemArr = @[@{@"title":profileTitle,@"index":@profileCellIndex,@"segue":@"segueProfileVC"},
                                         @{@"title":measureTitle,@"index":@measureCellIndex,@"segue":@"segueMeasureVC"},
                                         @{@"title":progressTitle,@"index":@progressCellIndex,@"segue":@"segueProgressVC"},
-                                        @{@"title":aboutTitle,@"index":@aboutCellIndex,@"segue":@"segueAboutVC"},
-                                        @{@"title":privacyTitle,@"index":@privacyCellIndex,@"segue":@"seguePrivacyVC"},
                                         @{@"title":toolsTitle,@"index":@toolsCellIndex,@"segue":@"segueToolsVC"},
+                                        @{@"title":privacyTitle,@"index":@privacyCellIndex,@"segue":@"seguePrivacyVC"},
+                                        @{@"title":aboutTitle,@"index":@aboutCellIndex,@"segue":@"segueAboutVC"},
                                         @{@"title":settingsTitle,@"index":@settingsCellIndex,@"segue":@"segueSettingsVC"}];
     return _menuItemArr;
 }
@@ -145,6 +145,7 @@
 
 #pragma mark - IBActions
 - (IBAction)logoutBtnPressed:(UIButton *)sender {
+    [TPProfileManager sharedManager].loggedIn = NO;
     [self performSegueWithIdentifier:@"segueLoginVC" sender:nil];
 }
 
